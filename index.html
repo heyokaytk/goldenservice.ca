@@ -16,6 +16,14 @@
   <meta property="og:image:width" content="2400">
   <meta property="og:image:height" content="1160">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
   <!-- Canonical -->
   <link rel="canonical" href="https://goldenservice.ca/">
 
@@ -43,20 +51,100 @@
       "name": "Nova Scotia"
     },
     "sameAs": [
-      "https://www.facebook.com/goldenservicebar/"
+      "https://www.facebook.com/goldenservicebar/",
+      "https://www.instagram.com/goldenservicebar/"
     ],
     "priceRange": "$$",
-    "servesCuisine": "Bar & Catering"
+    "servesCuisine": "Bar & Catering",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "49",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Nalz" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Tristan and his team are BOMB DOT COM. Everyone at our wedding raved about how awesome they were. They took over all our alcohol planning and did a fabulous job. Planning a wedding is so challenging — Golden Service made it effortless."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Angelica M." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "The bartenders were absolute gems of human beings for the whole night. Professional, personable, and a pleasure to work with. Thank you for making our wedding absolutely amazing."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Justin C." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Golden Service provided incredible service for our wedding. Our guests were singing their praises all night — they went the extra mile to make sure we all had an amazing time. Highly recommended!"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who handles the licensing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We do. Golden Service is fully licensed and insured. If your venue requires a special event liquor license, we apply for it on your behalf at no extra charge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's actually included in a booking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every booking includes professional bartenders, all mixers, garnishes, ice, glassware, and debit machines. We arrive early for setup and handle the full teardown at the end of the night."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you handle non-bar logistics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Beyond the bar we can manage your full event operations including site plans, permits, and staffing. You have one point of contact for the entire setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I secure my date?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We require a non-refundable deposit to hold your date. For open bar packages the final balance is due 60 days before your event. If you need to reschedule, reach out as early as possible and we will do our best to accommodate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you travel outside Halifax?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are based in Halifax and regularly service events across Nova Scotia. Let us know your location and we will handle the rest."
+        }
+      }
+    ]
   }
   </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
 
   <style>
     *,*::before,*::after{box-sizing:border-box}
