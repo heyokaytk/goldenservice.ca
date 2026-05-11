@@ -187,8 +187,8 @@
     /* TICKER */
     .gs-ticker{background:#C9A84C;padding:13px 0;overflow:hidden}
     .gs-ticker-inner{display:flex;gap:0;white-space:nowrap;animation:gsTicker 28s linear infinite}
-    .gs-ticker-inner span{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;font-weight:500;padding:0 28px}
-    .gs-ticker-inner span::after{content:'|';margin-left:28px;color:rgba(0,0,0,0.3);font-weight:200;font-size:10px}
+    .gs-ticker-inner span{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;font-weight:500;padding:0 0 0 28px}
+    .gs-ticker-inner span::after{content:'◆';font-size:7px;color:rgba(26,26,26,0.35);margin-left:28px;vertical-align:middle;line-height:0}
     @keyframes gsTicker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
     /* SECTIONS */
@@ -414,9 +414,9 @@
   <main>
   <!-- HERO -->
   <div class="gs-hero">
-    <h1><span style="color:#C9A84C">GOLDEN</span> SERVICE</h1>
-    <p class="gs-hero-eyebrow">Mobile Bar Service · Est. 2016</p>
-    <p class="gs-hero-sub">Halifax's mobile bar service for weddings, corporate events, and private parties. Hundreds of events served across Nova Scotia.</p>
+    <h1><span style="color:#C9A84C">Golden</span> Service</h1>
+    <p class="gs-hero-eyebrow">Halifax, Nova Scotia</p>
+    <p class="gs-hero-sub">Halifax's mobile bar service for weddings, corporate events, and private parties. Licensed, insured, and local with hundreds of events served across Nova Scotia.</p>
     <div class="gs-hero-btns">
       <a href="#gs-contact" class="gs-btn-primary">Get a Quote</a>
       <a href="#gs-packages" class="gs-btn-outline">View Packages</a>
@@ -730,8 +730,8 @@
             <textarea id="gs-message" name="message"></textarea>
           </div>
           <input type="hidden" name="_subject" value="New Booking Inquiry - Golden Service">
-          <button type="submit" id="gsSubmit">Request a Quote &rarr;</button>
-          <div id="gsSuccess">&#10003; Thanks! We'll be in touch shortly.</div>
+          <button type="submit" id="gsSubmit">Request A Quote &rarr;</button>
+          <div id="gsSuccess">&#10003; Thanks! We'll be in touch within 24 hours.</div>
           <div id="gsError">Oops — something went wrong. Please email us directly at <a href="mailto:goldenservicebar@gmail.com" style="color:#991b1b">goldenservicebar@gmail.com</a> and we'll get right back to you!</div>
         </form>
       </div>
