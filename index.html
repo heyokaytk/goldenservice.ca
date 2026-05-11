@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Bar Service Halifax | Weddings &amp; Events | Golden Service</title>
+  <meta name="description" content="Halifax's mobile bar service for weddings, corporate events, and private parties. Fully licensed, insured, and local with hundreds of events served across Nova Scotia.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mobile Bar Service Halifax | Golden Service">
+  <meta property="og:description" content="Halifax's mobile bar service for weddings, corporate events, and private parties. Fully licensed, insured, and local.">
+  <meta property="og:url" content="https://goldenservice.ca">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://goldenservice.ca/champagne-toast-service-wedding-events.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://goldenservice.ca/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;padding:0;background:#fff}
+
+    .gs-wrap{font-family:'DM Sans',sans-serif;color:#1a1a1a;margin:0;padding:0;background:#fff}
+    .gs-wrap *{box-sizing:border-box}
+
+    /* NAV */
+    .gs-nav{background:#fff;border-bottom:1px solid #e8e4da;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .gs-nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;letter-spacing:1px;color:#1a1a1a;text-decoration:none}
+    .gs-nav-logo span{color:#8B6914}
+    .gs-nav-links{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+    .gs-nav-links a{font-size:12px;font-weight:500;color:#7a7670;text-decoration:none;letter-spacing:1px;text-transform:uppercase}
+    .gs-nav-links a:hover{color:#C9A84C}
+    .gs-nav-cta{background:#C9A84C;color:#1a1a1a;padding:10px 22px;border-radius:4px;font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-decoration:none}
+    .gs-nav-cta:hover{background:#9A7530;color:#fff}
+
+    /* HERO */
+    .gs-hero{background:#FAFAF8;padding:72px 0 0;text-align:center;border-bottom:1px solid #e8e4da}
+    .gs-hero-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8B6914;font-weight:500;margin-bottom:18px}
+    .gs-hero h1{font-family:'Playfair Display',Georgia,serif;font-size:60px;font-weight:700;line-height:1.1;margin:0 0 18px}
+    .gs-hero h1 em{color:#C9A84C;font-style:italic}
+    .gs-hero-sub{font-size:17px;color:#5a5650;max-width:520px;margin:0 auto 36px;line-height:1.7;font-weight:300}
+    .gs-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:52px}
+    .gs-btn-primary{background:#C9A84C;color:#1a1a1a;padding:14px 34px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;display:inline-block;transition:background 0.2s,color 0.2s}
+    .gs-btn-primary:hover{background:#9A7530!important;color:#fff!important}
+    .gs-btn-outline{background:transparent;color:#1a1a1a;padding:14px 34px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;border:1.5px solid #1a1a1a;display:inline-block;transition:background 0.2s,color 0.2s,border-color 0.2s}
+    .gs-btn-outline:hover{background:#C9A84C!important;color:#fff!important;border-color:#C9A84C!important}
+    .gs-hero-img{width:100%;height:520px;object-fit:cover;display:block}
+
+    /* STATS */
+    .gs-stats{display:flex;justify-content:space-around;background:#1a1a1a;padding:40px 20px;flex-wrap:wrap}
+    .gs-stat{text-align:center;padding:16px 24px;border-right:1px solid rgba(255,255,255,0.12);flex:1;min-width:150px;display:flex;flex-direction:column;align-items:center}
+    .gs-stat:last-child{border-right:none}
+    .gs-stat-num{font-family:'Playfair Display',Georgia,serif;font-size:44px;font-weight:700;color:#C9A84C;line-height:1;min-height:60px;display:flex;align-items:center;justify-content:center}
+    .gs-stat-lbl{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:auto;padding-top:10px}
+    .gs-stat-sub{font-size:13px;color:#C9A84C;letter-spacing:1px;margin-top:3px}
+
+    /* TICKER */
+    .gs-ticker{background:#C9A84C;padding:13px 0;overflow:hidden}
+    .gs-ticker-inner{display:flex;gap:0;white-space:nowrap;animation:gsTicker 28s linear infinite}
+    .gs-ticker-inner span{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;font-weight:500;padding:0 28px}
+    .gs-ticker-inner span::after{content:'|';margin-left:28px;color:rgba(0,0,0,0.3);font-weight:200;font-size:10px}
+    @keyframes gsTicker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* SECTIONS */
+    .gs-section{padding:76px 24px;max-width:1100px;margin:0 auto}
+    .gs-section-dark{background:#1a1a1a;padding:76px 24px}
+    .gs-section-dark .gs-faq-header .gs-tag{color:#C9A84C}
+    .gs-section-dark .gs-faq-header h2{color:#fff}
+    .gs-faq-inner{max-width:780px;margin:0 auto}
+    .gs-faq-header{text-align:center;margin-bottom:48px}
+    .gs-accordion-item{border-bottom:1px solid rgba(255,255,255,0.12);overflow:hidden}
+    .gs-accordion-btn{width:100%;background:none;border:none;padding:22px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px}
+    .gs-accordion-btn:hover .gs-accordion-q{color:#C9A84C!important;transition:color 0.2s}
+    .gs-accordion-q{font-size:15px;font-weight:500;color:#fff;font-family:'DM Sans',sans-serif;line-height:1.4}
+    .gs-accordion-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.25s;color:rgba(255,255,255,0.5);font-size:18px;line-height:1}
+    .gs-accordion-item.open .gs-accordion-icon{border-color:#C9A84C;color:#C9A84C;transform:rotate(45deg)}
+    .gs-accordion-body{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
+    .gs-accordion-item.open .gs-accordion-body{max-height:300px}
+    .gs-accordion-a{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,0.65);line-height:1.85;font-family:'DM Sans',sans-serif}
+    .gs-section-full{padding:76px 24px;background:#f5f3ee}
+    .gs-section-full-inner{max-width:1100px;margin:0 auto}
+    .gs-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8B6914;font-weight:500;margin-bottom:12px}
+    .gs-title{font-family:'Playfair Display',Georgia,serif;font-size:38px;font-weight:700;line-height:1.2;margin:0 0 14px}
+    .gs-divider{width:48px;height:2px;background:#C9A84C;margin:18px 0}
+    .gs-body{font-size:15px;color:#7a7670;line-height:1.8;max-width:560px}
+
+    /* SPLIT */
+    .gs-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .gs-about-img{border-radius:8px;background:#f5f3ee;height:440px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .gs-about-img img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+    .gs-about-badge{position:absolute;bottom:24px;left:24px;background:#fff;border:1px solid #e8e4da;border-radius:6px;padding:16px 22px}
+    .gs-about-badge .num{font-family:'Playfair Display',Georgia,serif;font-size:32px;font-weight:700;color:#8B6914;line-height:1}
+    .gs-about-badge .lbl{font-size:11px;color:#7a7670;letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+    .gs-feat-list{margin-top:28px;display:flex;flex-direction:column;gap:16px}
+    .gs-feat-item{display:flex;gap:14px;align-items:flex-start}
+    .gs-feat-icon{width:36px;height:36px;background:#f5f3ee;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+    .gs-feat-icon i{font-size:22px;color:#C9A84C}
+    .gs-feat-text strong{display:block;font-size:14px;font-weight:500;margin-bottom:3px}
+    .gs-feat-text span{font-size:13px;color:#7a7670}
+
+    /* CLIENTS */
+    .gs-clients-intro{text-align:center;margin-bottom:40px}
+    .gs-clients-intro .gs-divider{margin:18px auto}
+    .gs-logo-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #e8e4da;border-radius:8px;overflow:hidden;background:#fff;max-width:1060px;margin:0 auto}
+    .gs-logo-cell{padding:22px 14px;display:flex;align-items:center;justify-content:center;border-right:1px solid #e8e4da;border-bottom:1px solid #e8e4da;text-align:center}
+    .gs-logo-cell:nth-child(5n){border-right:none}
+    .gs-logo-cell:nth-last-child(-n+5){border-bottom:none}
+    .gs-logo-text{font-size:11px;font-weight:500;color:#7a7670;letter-spacing:0.5px;text-transform:uppercase;line-height:1.4}
+
+    /* PACKAGES */
+    .gs-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+    .gs-pkg-card{border:1px solid #e8e4da;border-radius:8px;padding:28px;position:relative}
+    .gs-pkg-card.featured{border:2px solid #C9A84C;background:#FAFAF8}
+    .gs-pkg-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#C9A84C;color:#fff;font-size:10px;padding:4px 16px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;font-weight:500}
+    .gs-pkg-icon{font-size:28px;margin-bottom:16px}
+    .gs-pkg-icon i{font-size:36px;color:#C9A84C}
+    .gs-pkg-title{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;margin:0 0 10px}
+    .gs-pkg-desc{font-size:13px;color:#7a7670;line-height:1.7;margin-bottom:20px}
+    .gs-pkg-features{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .gs-pkg-features li{font-size:13px;color:#7a7670;display:flex;align-items:center;gap:8px}
+    .gs-pkg-features li::before{content:'';width:6px;height:6px;border-radius:50%;background:#C9A84C;flex-shrink:0}
+    .gs-pkg-cta{text-align:center;margin-top:32px}
+
+    /* TESTIMONIALS */
+    .gs-testimonials{background:#1a1a1a;padding:76px 24px}
+    .gs-t-inner{max-width:1100px;margin:0 auto}
+    .gs-t-header{text-align:center;margin-bottom:40px}
+    .gs-t-header .gs-tag{color:#C9A84C}
+    .gs-t-header .gs-title{color:#fff}
+    .gs-t-header p{font-size:13px;color:rgba(255,255,255,0.7);margin-top:8px}
+    .gs-t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .gs-t-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:26px}
+    .gs-t-stars{color:#C9A84C;font-size:13px;margin-bottom:12px;letter-spacing:2px}
+    .gs-t-text{font-size:13px;color:rgba(255,255,255,0.72);line-height:1.8;margin-bottom:16px;font-style:italic}
+    .gs-t-author{font-size:11px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:1px;text-transform:uppercase}
+    .gs-t-cta{text-align:center;margin-top:32px}
+    .gs-btn-gold-outline{border:1.5px solid #C9A84C;color:#C9A84C;padding:12px 28px;border-radius:4px;font-size:13px;font-weight:500;text-decoration:none;display:inline-block;transition:background 0.2s,color 0.2s}
+    .gs-btn-gold-outline:hover{background:#C9A84C!important;color:#fff!important}
+
+    /* CHARC */
+    .gs-charc-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .gs-charc-img{border-radius:8px;background:#e8e4da;height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .gs-charc-img img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+
+    /* ADD-ON CARDS */
+    .gs-addons-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+    .gs-addon-card{border:1px solid #e8e4da;border-radius:8px;padding:28px;background:#fff}
+    .gs-addon-icon{font-size:32px;margin-bottom:14px}
+    .gs-addon-icon i{font-size:32px;color:#C9A84C}
+    .gs-addon-title{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;margin:0 0 10px;color:#1a1a1a}
+    .gs-addon-desc{font-size:13px;color:#7a7670;line-height:1.75;margin-bottom:18px}
+    .gs-addon-features{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:8px}
+    .gs-addon-features li{font-size:13px;color:#7a7670;display:flex;align-items:center;gap:8px}
+    .gs-addon-features li::before{content:'';width:6px;height:6px;border-radius:50%;background:#C9A84C;flex-shrink:0}
+    .gs-addon-features li b{color:#1a1a1a}
+    .gs-boards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+    .gs-board{background:#fff;border:1px solid #e8e4da;border-radius:6px;padding:18px}
+    .gs-board-icon{font-size:22px;margin-bottom:8px}
+    .gs-board-icon i{font-size:24px;color:#C9A84C}
+    .gs-board-name{font-size:14px;font-weight:500;margin-bottom:4px}
+    .gs-board-desc{font-size:12px;color:#7a7670;line-height:1.6}
+
+    /* FAQ */
+    .gs-faq-header{text-align:center;margin-bottom:40px}
+    .gs-faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .gs-faq-col{display:flex;flex-direction:column;gap:24px}
+    .gs-faq-item{border-bottom:1px solid #e8e4da;padding-bottom:20px}
+    .gs-faq-q{font-size:15px;font-weight:500;margin-bottom:8px}
+    .gs-faq-a{font-size:13px;color:#7a7670;line-height:1.8}
+
+    /* CTA BAND */
+    .gs-cta-band{background:#C9A84C;padding:72px 24px;text-align:center}
+    .gs-cta-band h2{font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:700;color:#fff;margin:0 0 14px}
+    .gs-cta-band p{font-size:15px;color:rgba(255,255,255,0.85);margin:0 0 28px}
+    .gs-btn-white{background:#fff;color:#9A7530;padding:14px 36px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;display:inline-block}
+    .gs-btn-white:hover{background:rgba(255,255,255,0.85)!important;color:#9A7530}
+
+    /* FOOTER */
+    .gs-footer{background:#1a1a1a;padding:44px 24px 24px}
+    .gs-footer-top{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:16px}
+    .gs-footer-logo{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#fff;text-decoration:none}
+    .gs-footer-logo span{color:#C9A84C}
+    .gs-footer-right{display:flex;align-items:center}
+    .gs-footer-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+    .gs-footer-links a{font-size:12px;color:rgba(255,255,255,0.7);text-decoration:none;letter-spacing:0.5px;transition:color 0.2s}
+    .gs-footer-links a:hover{color:#C9A84C}
+    .gs-footer-social-icon{color:rgba(255,255,255,0.5);text-decoration:none;display:flex;align-items:center;transition:color 0.2s}
+    .gs-footer-social-icon:hover{color:#C9A84C}
+    .gs-footer-copy{text-align:center;font-size:11px;color:rgba(255,255,255,0.55);padding-top:20px;letter-spacing:0.5px;max-width:1100px;margin:0 auto}
+
+    /* FORM */
+    #gsForm label{display:block;font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#7a7670;margin-bottom:6px}
+    #gsForm .gs-field-wrap{margin-bottom:16px;position:relative}
+    #gsForm select{-webkit-appearance:none!important;-moz-appearance:none!important;appearance:none!important;cursor:pointer}
+    #gsForm input:not([type="radio"]),#gsForm select,#gsForm textarea{display:block!important;width:100%!important;padding:12px 14px!important;border:1px solid #e8e4da!important;border-radius:4px!important;font-size:14px!important;font-family:'DM Sans',sans-serif!important;background-color:#fff!important;color:#1a1a1a!important;box-sizing:border-box!important;box-shadow:none!important;outline:none!important}
+    #gsForm select{height:46px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237a7670' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 14px center!important;background-size:14px!important;padding-right:40px!important}
+    #gsForm input:not([type="radio"]){height:46px!important}
+    #gsForm input:not([type="radio"]):focus,#gsForm select:focus,#gsForm textarea:focus{border-color:#C9A84C!important}
+    #gsForm textarea{min-height:150px!important;resize:vertical;padding-top:12px}
+    .gsRow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+    .gsRow .gs-field-wrap{margin-bottom:0}
+    .gs-radio-group{display:flex;flex-direction:column;gap:10px;padding:4px 0 2px}
+    #gsForm label.gs-radio-opt{display:flex!important;align-items:center;gap:10px;font-size:14px!important;font-weight:400!important;letter-spacing:0!important;text-transform:none!important;color:#1a1a1a!important;margin-bottom:0!important;cursor:pointer;line-height:1.4}
+    #gsForm input[type="radio"]{display:inline-block!important;width:17px!important;height:17px!important;min-width:17px!important;padding:0!important;border:1.5px solid #e8e4da!important;border-radius:50%!important;background:#fff!important;flex-shrink:0;appearance:none!important;-webkit-appearance:none!important;position:relative;transition:border-color 0.15s;box-shadow:none!important;outline:none!important;cursor:pointer}
+    #gsForm input[type="radio"]:checked{border-color:#C9A84C!important}
+    #gsForm input[type="radio"]:checked::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:#C9A84C}
+    #gsForm label.gs-radio-opt:hover input[type="radio"]:not(:checked){border-color:#C9A84C!important}
+    #gsSubmit{width:100%;padding:15px;background:#C9A84C;color:#1a1a1a;border:none;border-radius:4px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:0.5px;margin-top:8px;transition:background 0.2s,color 0.2s}
+    #gsSubmit:hover{background:#9A7530;color:#fff}
+    #gsSuccess{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:4px;padding:14px;color:#166534;font-size:14px;text-align:center;margin-top:14px;display:none}
+    #gsError{background:#fef2f2;border:1px solid #fecaca;border-radius:4px;padding:14px;color:#991b1b;font-size:14px;text-align:center;margin-top:14px;display:none}
+
+    /* HAMBURGER */
+    .gs-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+    .gs-hamburger span{width:22px;height:2px;background:#1a1a1a;border-radius:2px;display:block;transition:all 0.25s}
+    .gs-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .gs-hamburger.open span:nth-child(2){opacity:0}
+    .gs-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .gs-mobile-menu{display:none;position:fixed;top:61px;left:0;right:0;background:#fff;border-bottom:1px solid #e8e4da;padding:8px 24px 20px;flex-direction:column;z-index:99;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+    .gs-mobile-menu.open{display:flex}
+    .gs-mobile-menu a{font-size:13px;font-weight:500;color:#7a7670;text-decoration:none;letter-spacing:1px;text-transform:uppercase;padding:13px 0;border-bottom:1px solid #f0ede8}
+    .gs-mobile-menu a:last-child{border-bottom:none}
+    .gs-mobile-menu a:hover{color:#C9A84C}
+    .gs-mobile-cta{background:#C9A84C!important;color:#fff!important;text-align:center;border-radius:4px;padding:13px 0!important;margin-top:8px;border-bottom:none!important}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .gs-hero h1{font-size:40px}
+      .gs-split,.gs-charc-grid{grid-template-columns:1fr}
+      .gs-about-img{height:300px}
+      .gs-pkg-grid,.gs-t-grid{grid-template-columns:1fr}
+      .gs-logo-grid{grid-template-columns:repeat(3,1fr)}
+      .gs-logo-cell:nth-child(5n){border-right:1px solid #e8e4da}
+      .gs-logo-cell:nth-child(3n){border-right:none}
+      .gs-faq-grid{grid-template-columns:1fr}
+      .gs-stats{flex-wrap:wrap}
+      .gs-stat{min-width:45%;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1)}
+    }
+    @media(max-width:600px){
+      .gs-hero h1{font-size:32px}
+      .gs-title{font-size:28px}
+      .gs-logo-grid{grid-template-columns:repeat(2,1fr)}
+      .gs-boards{grid-template-columns:1fr}
+      .gsRow{grid-template-columns:1fr;gap:16px}
+      .gs-nav-links{display:none}
+      .gs-hero-img{height:320px}
+      .gs-hamburger{display:flex}
+      .gs-nav-cta{display:none}
+      .gs-addons-grid{grid-template-columns:1fr}
+      .gs-contact-grid{grid-template-columns:1fr!important}
+    }
+  </style>
+</head>
+<body>
+<div class="gs-wrap">
+
+  <!-- NAV -->
+  <nav class="gs-nav">
+    <a href="#" class="gs-nav-logo"><span>GOLDEN</span> SERVICE</a>
+    <ul class="gs-nav-links">
+      <li><a href="#gs-about">About</a></li>
+      <li><a href="#gs-direction">Event Management</a></li>
+      <li><a href="#gs-clients">Clients</a></li>
+      <li><a href="#gs-packages">Packages</a></li>
+      <li><a href="#gs-faq">FAQ</a></li>
+      <li><a href="#gs-contact">Contact</a></li>
+    </ul>
+    <a href="#gs-contact" class="gs-nav-cta">Book Now</a>
+    <button class="gs-hamburger" id="gsHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="gs-mobile-menu" id="gsMobileMenu">
+    <a href="#gs-about">About</a>
+    <a href="#gs-direction">Event Management</a>
+    <a href="#gs-clients">Clients</a>
+    <a href="#gs-packages">Packages</a>
+    <a href="#gs-faq">FAQ</a>
+    <a href="#gs-contact" class="gs-mobile-cta">Book Now</a>
+  </div>
+
+  <main>
+  <!-- HERO -->
+  <div class="gs-hero">
+    <h1><span style="color:#C9A84C">Golden</span> Service</h1>
+    <p class="gs-hero-eyebrow">Halifax, Nova Scotia</p>
+    <p class="gs-hero-sub">Halifax's mobile bar service for weddings, corporate events, and private parties. Licensed, insured, and local with hundreds of events served across Nova Scotia.</p>
+    <div class="gs-hero-btns">
+      <a href="#gs-contact" class="gs-btn-primary">Get a Quote</a>
+      <a href="#gs-packages" class="gs-btn-outline">View Packages</a>
+    </div>
+    <img class="gs-hero-img" src="champagne-toast-service-wedding-events.jpg" alt="Golden Service Mobile Bar pouring champagne at a Halifax wedding event" loading="eager">
+  </div>
+
+  <!-- STATS -->
+  <div class="gs-stats">
+    <div class="gs-stat"><div class="gs-stat-num">100<sup>+</sup></div><div class="gs-stat-lbl">Events Per Year</div></div>
+    <div class="gs-stat"><div class="gs-stat-num" style="font-size:26px;padding-top:10px">5&#9733;</div><div class="gs-stat-lbl">on Google Reviews</div></div>
+    <div class="gs-stat"><div class="gs-stat-num" style="font-size:24px;white-space:nowrap">Halifax, Nova Scotia</div><div class="gs-stat-lbl">Home Base</div></div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="gs-ticker">
+    <div class="gs-ticker-inner">
+      <span>Weddings</span><span>Corporate Events</span><span>Festivals</span><span>Private Parties</span><span>Concerts</span><span>Galas</span><span>University Events</span><span>Fundraisers</span>
+      <span>Weddings</span><span>Corporate Events</span><span>Festivals</span><span>Private Parties</span><span>Concerts</span><span>Galas</span><span>University Events</span><span>Fundraisers</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="gs-about">
+    <div class="gs-section">
+      <div class="gs-split">
+        <div class="gs-about-img">
+          <img src="golden-service-mobile-bar-catering-team.jpg" alt="Professional bartender serving cocktails at a Halifax wedding event — Golden Service Mobile Bar" style="width:100%;height:100%;object-fit:cover;border-radius:8px" loading="lazy">
+          <div class="gs-about-badge"><div class="num">100+</div><div class="lbl">Events Every Year</div></div>
+        </div>
+        <div>
+          <div class="gs-tag">About Us</div>
+          <h2 class="gs-title">Halifax's Most Trusted Mobile Bar</h2>
+          <div class="gs-divider"></div>
+          <p class="gs-body">Golden Service takes care of everything so you never have to think about the bar. We handle the licensing, staffing, and logistics so you can actually be present at your own event. Every booking gets the same level of attention whether it is a corporate gala or a backyard wedding. One team, one point of contact, everything covered.</p>
+          <div class="gs-feat-list">
+            <div class="gs-feat-item">
+              <div class="gs-feat-icon"><i class="fas fa-bolt"></i></div>
+              <div class="gs-feat-text">
+                <strong>Last-Minute Ready</strong>
+                <span>Quick setups, flexible scheduling, no surprises.</span>
+              </div>
+            </div>
+            <div class="gs-feat-item">
+              <div class="gs-feat-icon"><i class="fas fa-leaf"></i></div>
+              <div class="gs-feat-text">
+                <strong>Local &amp; Seasonal Selections</strong>
+                <span>Nova Scotia's best craft beer, wine, and spirits.</span>
+              </div>
+            </div>
+            <div class="gs-feat-item">
+              <div class="gs-feat-icon"><i class="fas fa-user-tie"></i></div>
+              <div class="gs-feat-text">
+                <strong>Experienced Professional Team</strong>
+                <span>Friendly, trained staff who know great hospitality.</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:28px">
+            <a href="#gs-contact" class="gs-btn-primary">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT MANAGEMENT -->
+  <div id="gs-direction" class="gs-section">
+    <div class="gs-charc-grid">
+      <div>
+        <p class="gs-tag">Event Management</p>
+        <h2 class="gs-title">Every detail, start to finish.</h2>
+        <div class="gs-divider"></div>
+        <p style="font-size:15px;color:#7a7670;line-height:1.8;margin-bottom:20px;">We handle the behind-the-scenes complexity so your day feels effortless. From the first permit to the final pour, we manage the systems and coordination that keep every detail in sync.</p>
+        <ul class="gs-addon-features" style="margin-bottom:28px;">
+          <li><b>Logistics.</b> Permits, site plans handled from day one.</li>
+          <li><b>Operations.</b> Bar and payment systems ready before your guests arrive.</li>
+          <li><b>Staffing.</b> A managed professional team with one point of contact.</li>
+        </ul>
+        <a href="#gs-contact" class="gs-btn-primary">Get in Touch &rarr;</a>
+      </div>
+      <div class="gs-charc-img">
+        <img src="mobile-bar-event-management-halifax.jpg" alt="Event management and coordination team at Golden Service Mobile Bar Halifax" style="width:100%;height:100%;object-fit:cover;border-radius:8px" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENTS -->
+  <div id="gs-clients" class="gs-section-full">
+    <div class="gs-section-full-inner">
+      <div class="gs-clients-intro">
+        <p class="gs-tag">Trusted By</p>
+        <h2 class="gs-title">Who We've Served</h2>
+        <div class="gs-divider" style="margin:18px auto;"></div>
+        <p style="font-size:13px;color:#7a7670;margin-top:8px;">From major Nova Scotia institutions to nationally recognized events. We are proud to have served some incredible clients.</p>
+      </div>
+      <div class="gs-logo-grid">
+        <div class="gs-logo-cell"><span class="gs-logo-text">Atlantic Film<br>Festival</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Bastid's<br>BBQ</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">BIRD<br>Infrastructure</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Dalhousie<br>University</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Dash Hudson</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Deloitte</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Digital Nova<br>Scotia</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Ernst &amp;<br>Young LLP</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Greenfoot Energy<br>Centre</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Grant<br>Thorton</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Ha!ifax Comedy<br>Fest</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Halifax Public<br>Library</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Halifax Regional<br>Municipality</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Maritime Museum<br>of the Atlantic</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">McInnes<br>Cooper</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">NS Health<br>Innovation Hub</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">NS Power</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">QEH 2<br>Foundation</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">RBC<br>Centre</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Skate<br>Canada</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">TD Jazz<br>Fest</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">The COVE</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">The Junos</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">The PIER</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Volta</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKAGES -->
+  <div id="gs-packages">
+    <div class="gs-section">
+      <div style="text-align:center;margin-bottom:8px">
+        <div class="gs-tag">Our Services</div>
+        <h2 class="gs-title" style="max-width:440px;margin:0 auto 12px">Bar Packages For Every Occasion</h2>
+        <p style="font-size:14px;color:#7a7670">All packages include professional staff, glassware, ice, garnishes, and full bar setup.</p>
+      </div>
+      <div class="gs-pkg-grid">
+        <div class="gs-pkg-card">
+          <div class="gs-pkg-icon"><i class="fas fa-money-bill-wave"></i></div>
+          <div class="gs-pkg-title">Cash Bar</div>
+          <p class="gs-pkg-desc">Guests purchase their own drinks from a full bar menu. Beer, wine, spirits, ciders, and non-alcoholic options available. A debit machine is always on site.</p>
+          <ul class="gs-pkg-features"><li>Full bar menu</li><li>Debit machines on site</li></ul>
+        </div>
+        <div class="gs-pkg-card">
+          <div class="gs-pkg-icon"><i class="fas fa-glass-cheers"></i></div>
+          <div class="gs-pkg-title">Open Bar</div>
+          <p class="gs-pkg-desc">One flat rate covers unlimited drinks for your guests all night. No transactions, no limits — just a seamless bar experience from start to finish. The most popular choice for weddings and corporate events.</p>
+          <ul class="gs-pkg-features"><li>Unlimited drinks at a set rate</li><li>Signature cocktail option</li><li>Licensing fully handled</li></ul>
+        </div>
+        <div class="gs-pkg-card">
+          <div class="gs-pkg-icon"><i class="fas fa-ticket-alt"></i></div>
+          <div class="gs-pkg-title">Drink Tickets</div>
+          <p class="gs-pkg-desc">Pre-purchase a set number of drinks for your guests. Once tickets are redeemed, the bar transitions to cash and debit. Perfect for corporate mixers &amp; weddings.</p>
+          <ul class="gs-pkg-features"><li>Customizable ticket count</li><li>Seamless transition to cash bar</li></ul>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:13px;color:#7a7670;margin:32px 0 8px">Looking to add something extra? Ask us about our <a href="#gs-contact" style="color:#C9A84C;text-decoration:none;border-bottom:1px solid #C9A84C">Signature Cocktail</a> add-on.</p>
+      <div class="gs-pkg-cta"><a href="#gs-contact" class="gs-btn-primary">Request a Custom Quote</a></div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="gs-testimonials">
+    <div class="gs-t-inner">
+      <div class="gs-t-header">
+        <div class="gs-tag">Testimonials</div>
+        <h2 class="gs-title">What Our Clients Say</h2>
+        <p>Rated Excellent &nbsp;&middot;&nbsp; 50 Reviews on Google</p>
+      </div>
+      <div class="gs-t-grid">
+        <div class="gs-t-card"><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">"Tristan and his team are BOMB DOT COM. Everyone at our wedding raved about how awesome they were. They took over all our alcohol planning and did a fabulous job. Planning a wedding is so challenging — Golden Service made it effortless."</p><div class="gs-t-author">— Nalz</div></div>
+        <div class="gs-t-card"><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">"The bartenders were absolute gems of human beings for the whole night. Professional, personable, and a pleasure to work with. Thank you for making our wedding absolutely amazing."</p><div class="gs-t-author">— Angelica M.</div></div>
+        <div class="gs-t-card"><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">"Golden Service provided incredible service for our wedding. Our guests were singing their praises all night — they went the extra mile to make sure we all had an amazing time. Highly recommended!"</p><div class="gs-t-author">— Justin C.</div></div>
+      </div>
+      <div class="gs-t-cta"><a href="https://www.google.com/search?q=Golden+Service+Mobile+Bar+Halifax" target="_blank" rel="noopener" class="gs-btn-gold-outline">Read All Reviews on Google &rarr;</a></div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div id="gs-faq" class="gs-section-dark">
+    <div class="gs-faq-inner">
+      <div class="gs-faq-header">
+        <div class="gs-tag">FAQ</div>
+        <h2 class="gs-title">Frequently Asked Questions</h2>
+      </div>
+      <div class="gs-accordion">
+        <div class="gs-accordion-item">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+            <span class="gs-accordion-q">Who handles the licensing?</span>
+            <span class="gs-accordion-icon">+</span>
+          </button>
+          <div class="gs-accordion-body">
+            <p class="gs-accordion-a">We do. Golden Service is fully licensed and insured. If your venue requires a special event liquor license, we apply for it on your behalf at no extra charge.</p>
+          </div>
+        </div>
+        <div class="gs-accordion-item">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+            <span class="gs-accordion-q">What's actually included in a booking?</span>
+            <span class="gs-accordion-icon">+</span>
+          </button>
+          <div class="gs-accordion-body">
+            <p class="gs-accordion-a">Every booking includes professional bartenders, all mixers, garnishes, ice, glassware, and debit machines. We arrive early for setup and handle the full teardown at the end of the night.</p>
+          </div>
+        </div>
+        <div class="gs-accordion-item">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+            <span class="gs-accordion-q">Do you handle non-bar logistics?</span>
+            <span class="gs-accordion-icon">+</span>
+          </button>
+          <div class="gs-accordion-body">
+            <p class="gs-accordion-a">Yes. Beyond the bar we can manage your full event operations including site plans, permits, and staffing. You have one point of contact for the entire setup.</p>
+          </div>
+        </div>
+        <div class="gs-accordion-item">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+            <span class="gs-accordion-q">How do I secure my date?</span>
+            <span class="gs-accordion-icon">+</span>
+          </button>
+          <div class="gs-accordion-body">
+            <p class="gs-accordion-a">We require a non-refundable deposit to hold your date. For open bar packages the final balance is due 60 days before your event. If you need to reschedule, reach out as early as possible and we will do our best to accommodate.</p>
+          </div>
+        </div>
+        <div class="gs-accordion-item">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+            <span class="gs-accordion-q">Do you travel outside Halifax?</span>
+            <span class="gs-accordion-icon">+</span>
+          </button>
+          <div class="gs-accordion-body">
+            <p class="gs-accordion-a">We are based in Halifax and regularly service events across Nova Scotia. Let us know your location and we will handle the rest.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="gs-contact" style="background:#FAFAF8;padding:72px 0">
+    <div style="max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start" class="gs-contact-grid">
+      <div>
+        <p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:500;margin:0 0 12px">Book Now</p>
+        <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:700;line-height:1.2;margin:0 0 14px;color:#1a1a1a">Let's Plan Your Event</h2>
+        <div style="width:48px;height:2px;background:#C9A84C;margin:18px 0"></div>
+        <p style="font-size:15px;color:#1a1a1a;line-height:1.8;margin:0 0 24px">Tell us about your event and we'll put together a custom quote tailored to your needs.</p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#1a1a1a"><span><i class="fas fa-map-marker-alt" style="color:#C9A84C"></i></span> Based in Halifax, NS. Serving HRM &amp; surrounding areas.</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#1a1a1a"><span><i class="fas fa-star" style="color:#C9A84C"></i></span> 50 Five Star Reviews on Google</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#1a1a1a"><span><i class="fas fa-check-circle" style="color:#C9A84C"></i></span> Fully licensed, insured &amp; ready to serve.</div>
+          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#1a1a1a"><span><i class="fas fa-bolt" style="color:#C9A84C"></i></span> Fast response. Typically within 2 hours.</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #e8e4da;border-radius:8px;padding:36px">
+        <form id="gsForm" action="https://formspree.io/f/mdapozvl" method="POST">
+          <div style="font-size:11px;color:#7a7670;text-align:right;margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase;">* Indicates a required field</div>
+          <div class="gsRow">
+            <div class="gs-field-wrap">
+              <label for="gs-name">Full Name *</label>
+              <input id="gs-name" type="text" name="name" required>
+            </div>
+            <div class="gs-field-wrap">
+              <label for="gs-email">Email *</label>
+              <input id="gs-email" type="email" name="_replyto" required>
+            </div>
+          </div>
+          <div class="gsRow" style="align-items:start">
+            <div class="gs-field-wrap">
+              <fieldset style="border:none;padding:0;margin:0">
+                <legend style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#7a7670;margin-bottom:10px;padding:0">Type of Event *</legend>
+                <div class="gs-radio-group">
+                  <label class="gs-radio-opt"><input type="radio" name="event_type" value="Wedding" required> Wedding</label>
+                  <label class="gs-radio-opt"><input type="radio" name="event_type" value="Corporate Event"> Corporate Event</label>
+                  <label class="gs-radio-opt"><input type="radio" name="event_type" value="Private Party"> Private Party</label>
+                  <label class="gs-radio-opt"><input type="radio" name="event_type" value="Concert / Festival"> Concert / Festival</label>
+                  <label class="gs-radio-opt"><input type="radio" name="event_type" value="Other"> Other</label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="gs-field-wrap">
+              <label for="gs-date">Event Date *</label>
+              <input id="gs-date" type="text" name="event_date" required>
+            </div>
+          </div>
+          <div class="gsRow">
+            <div class="gs-field-wrap">
+              <label for="gs-guests">Number of Guests *</label>
+              <input id="gs-guests" type="number" name="guests" required>
+            </div>
+            <div class="gs-field-wrap">
+              <label for="gs-hours">Estimated Hours of Service *</label>
+              <select id="gs-hours" name="service_hours" required>
+                <option value="" disabled selected>Select duration</option>
+                <option>2 Hours</option>
+                <option>3 Hours</option>
+                <option>4 Hours</option>
+                <option>5 Hours</option>
+                <option>6 Hours</option>
+                <option>7+ Hours</option>
+              </select>
+            </div>
+          </div>
+          <div class="gs-field-wrap" style="margin-bottom:16px">
+            <fieldset style="border:none;padding:0;margin:0">
+              <legend style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#7a7670;margin-bottom:10px;padding:0">What Package *</legend>
+              <div class="gs-radio-group">
+                <label class="gs-radio-opt"><input type="radio" name="package" value="Cash Bar" required> Cash Bar</label>
+                <label class="gs-radio-opt"><input type="radio" name="package" value="Open Bar"> Open Bar</label>
+                <label class="gs-radio-opt"><input type="radio" name="package" value="Drink Tickets"> Drink Tickets</label>
+                <label class="gs-radio-opt"><input type="radio" name="package" value="Event Management"> Event Management</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="gs-field-wrap" style="margin-top:10px;margin-bottom:20px">
+            <label for="gs-message">Additional Information</label>
+            <textarea id="gs-message" name="message"></textarea>
+          </div>
+          <input type="hidden" name="_subject" value="New Booking Inquiry - Golden Service">
+          <button type="submit" id="gsSubmit">Request A Quote &rarr;</button>
+          <div id="gsSuccess">&#10003; Thanks! We'll be in touch within 24 hours.</div>
+          <div id="gsError">Oops — something went wrong. Please email us directly at <a href="mailto:goldenservicebar@gmail.com" style="color:#991b1b">goldenservicebar@gmail.com</a> and we'll get right back to you!</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="gs-footer">
+    <div class="gs-footer-top">
+      <a href="#" class="gs-footer-logo"><span>GOLDEN</span> SERVICE</a>
+      <div class="gs-footer-right">
+        <div class="gs-footer-links">
+          <a href="#gs-about">About</a>
+          <a href="#gs-direction">Event Management</a>
+          <a href="#gs-clients">Clients</a>
+          <a href="#gs-packages">Packages</a>
+          <a href="#gs-faq">FAQ</a>
+          <a href="#gs-contact">Contact</a>
+          <a href="https://www.instagram.com/goldenservicebar/" target="_blank" rel="noopener" aria-label="Instagram" class="gs-footer-social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/goldenservicebar/" target="_blank" rel="noopener" aria-label="Facebook" class="gs-footer-social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="gs-footer-copy">© 2026 Golden Service Mobile Bar &amp; Catering Ltd. · Halifax, Nova Scotia</div>
+  </footer>
+
+</div>
+
+<script>
+  // Hamburger menu
+  (function(){
+    var btn = document.getElementById('gsHamburger');
+    var menu = document.getElementById('gsMobileMenu');
+    if(!btn || !menu) return;
+    btn.addEventListener('click', function(){
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  })();
+
+  // FAQ accordion
+  function gsToggle(btn) {
+    var item = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.gs-accordion-item.open').forEach(function(i){ i.classList.remove('open'); });
+    if (!isOpen) { item.classList.add('open'); }
+  }
+
+  // Contact form
+  (function(){
+    var form = document.getElementById('gsForm');
+    if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = document.getElementById('gsSubmit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      var data = new FormData(form);
+      fetch('https://formspree.io/f/mdapozvl', {
+        method: 'POST', body: data, headers: {'Accept': 'application/json'}
+      }).then(function(r){
+        if(r.ok){
+          form.reset();
+          document.getElementById('gsSuccess').style.display = 'block';
+          document.getElementById('gsError').style.display = 'none';
+          btn.textContent = 'Sent!';
+        } else {
+          document.getElementById('gsError').style.display = 'block';
+          btn.textContent = 'Send My Request →';
+          btn.disabled = false;
+        }
+      }).catch(function(){
+        document.getElementById('gsError').style.display = 'block';
+        btn.textContent = 'Send My Request →';
+        btn.disabled = false;
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
