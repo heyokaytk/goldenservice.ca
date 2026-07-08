@@ -139,245 +139,278 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Font Awesome -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
 
+  <!-- Hero image priority -->
+  <link rel="preload" as="image" href="champagne-toast-service-wedding-events.jpg" fetchpriority="high">
+
   <style>
     *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{margin:0;padding:0;background:#fff}
 
-    .gs-wrap{font-family:'DM Sans',sans-serif;color:#1a1a1a;margin:0;padding:0;background:#fff}
+    :root{
+      /* Core palette — gold/dark/cream identity, refined into a fuller ramp */
+      --gs-gold:#C9A84C;
+      --gs-gold-deep:#8a641f;
+      --gs-gold-pale:#f4ead0;
+      --gs-ink:#17140f;
+      --gs-ink-soft:#2a251d;
+      --gs-paper:#FAFAF8;
+      --gs-paper-deep:#f2ede2;
+      --gs-body:#524c42;
+      --gs-body-on-dark:rgba(250,247,240,.72);
+      --gs-line:#e6e0d2;
+      --gs-line-on-dark:rgba(250,247,240,.14);
+      --gs-shadow:0 20px 50px -24px rgba(23,20,15,.35);
+      --gs-ease:cubic-bezier(.16,1,.3,1);
+      /* z-index scale */
+      --z-sticky:100;
+      --z-overlay:99;
+    }
+
+    .gs-wrap{font-family:'DM Sans',sans-serif;color:var(--gs-ink);margin:0;padding:0;background:#fff}
     .gs-wrap *{box-sizing:border-box}
+    .gs-wrap img{max-width:100%}
+
+    a{-webkit-tap-highlight-color:transparent}
+    :focus-visible{outline:2px solid var(--gs-gold);outline-offset:3px}
+
+    h1,h2,h3{text-wrap:balance}
+    p{text-wrap:pretty}
 
     /* NAV */
-    .gs-nav{background:#fff;border-bottom:1px solid #e8e4da;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-    .gs-nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;letter-spacing:1px;color:#1a1a1a;text-decoration:none}
-    .gs-nav-logo span{color:#8B6914}
-    .gs-nav-links{display:flex;gap:24px;list-style:none;margin:0;padding:0}
-    .gs-nav-links a{font-size:12px;font-weight:500;color:#7a7670;text-decoration:none;letter-spacing:1px;text-transform:uppercase}
-    .gs-nav-links a:hover{color:#C9A84C}
-    .gs-nav-cta{background:#C9A84C;color:#1a1a1a;padding:10px 22px;border-radius:4px;font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-decoration:none}
-    .gs-nav-cta:hover{background:#9A7530;color:#fff}
+    .gs-nav{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--gs-line);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:var(--z-sticky);transition:box-shadow .3s var(--gs-ease)}
+    .gs-nav.gs-nav--scrolled{box-shadow:0 8px 24px -18px rgba(23,20,15,.4)}
+    .gs-nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;letter-spacing:.5px;color:var(--gs-ink);text-decoration:none}
+    .gs-nav-logo span{color:var(--gs-gold-deep)}
+    .gs-nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+    .gs-nav-links a{font-size:12px;font-weight:600;color:var(--gs-body);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;position:relative;padding-bottom:3px}
+    .gs-nav-links a::after{content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gs-gold);transition:right .25s var(--gs-ease)}
+    .gs-nav-links a:hover{color:var(--gs-ink)}
+    .gs-nav-links a:hover::after{right:0}
+    .gs-nav-cta{background:var(--gs-gold);color:var(--gs-ink);padding:11px 24px;border-radius:3px;font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s,transform .2s}
+    .gs-nav-cta:hover{background:var(--gs-gold-deep);color:#fff;transform:translateY(-1px)}
 
-    /* HERO */
-    .gs-hero{background:#FAFAF8;padding:72px 0 0;text-align:center;border-bottom:1px solid #e8e4da}
-    .gs-hero-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8B6914;font-weight:500;margin-bottom:18px}
-    .gs-hero h1{font-family:'Playfair Display',Georgia,serif;font-size:60px;font-weight:700;line-height:1.1;margin:0 0 18px}
-    .gs-hero h1 em{color:#C9A84C;font-style:italic}
-    .gs-hero-sub{font-size:17px;color:#5a5650;max-width:520px;margin:0 auto 36px;line-height:1.7;font-weight:300}
-    .gs-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:52px}
-    .gs-btn-primary{background:#C9A84C;color:#1a1a1a;padding:14px 34px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;display:inline-block;transition:background 0.2s,color 0.2s}
-    .gs-btn-primary:hover{background:#9A7530!important;color:#fff!important}
-    .gs-btn-outline{background:transparent;color:#1a1a1a;padding:14px 34px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;border:1.5px solid #1a1a1a;display:inline-block;transition:background 0.2s,color 0.2s,border-color 0.2s}
-    .gs-btn-outline:hover{background:#C9A84C!important;color:#fff!important;border-color:#C9A84C!important}
-    .gs-hero-img{width:100%;height:520px;object-fit:cover;display:block}
+    /* HERO — full-bleed photographic, editorial */
+    .gs-hero{position:relative;min-height:min(94vh,860px);display:flex;align-items:flex-end;overflow:hidden;color:#fff;isolation:isolate}
+    .gs-hero-media{position:absolute;inset:0;z-index:-1}
+    .gs-hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;display:block}
+    .gs-hero-scrim{position:absolute;inset:0;background:
+      linear-gradient(180deg, rgba(15,12,8,.05) 0%, rgba(15,12,8,.28) 46%, rgba(13,11,7,.86) 92%),
+      linear-gradient(90deg, rgba(10,8,5,.45) 0%, rgba(10,8,5,0) 55%)}
+    .gs-hero-content{position:relative;width:100%;max-width:1100px;margin:0 auto;padding:120px 28px 72px}
+    .gs-hero-eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gs-gold);font-weight:600;margin:0 0 20px;text-shadow:0 2px 16px rgba(0,0,0,.4)}
+    .gs-hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.6rem,3vw + 2.3rem,4.75rem);font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0 0 22px;max-width:14ch;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+    .gs-hero h1 em{color:var(--gs-gold);font-style:italic}
+    .gs-hero-sub{font-size:clamp(15px,1vw + 12px,18px);color:rgba(255,255,255,.88);max-width:46ch;margin:0 0 40px;line-height:1.7;font-weight:300}
+    .gs-hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+    .gs-btn-primary{background:var(--gs-gold);color:var(--gs-ink);padding:15px 34px;border-radius:3px;font-size:14px;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s,color .2s,transform .2s,box-shadow .2s}
+    .gs-btn-primary:hover{background:var(--gs-gold-deep);color:#fff;transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(138,100,31,.6)}
+    .gs-btn-outline{background:transparent;color:#fff;padding:15px 34px;border-radius:3px;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,.55);display:inline-block;transition:background .2s,color .2s,border-color .2s,transform .2s}
+    .gs-btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
 
     /* STATS */
-    .gs-stats{display:flex;justify-content:space-around;background:#1a1a1a;padding:40px 20px;flex-wrap:wrap}
-    .gs-stat{text-align:center;padding:16px 24px;border-right:1px solid rgba(255,255,255,0.12);flex:1;min-width:150px;display:flex;flex-direction:column;align-items:center}
+    .gs-stats{display:flex;justify-content:space-around;background:var(--gs-ink);padding:44px 20px;flex-wrap:wrap;position:relative}
+    .gs-stats::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gs-gold),transparent)}
+    .gs-stat{text-align:center;padding:16px 28px;border-right:1px solid var(--gs-line-on-dark);flex:1;min-width:150px;display:flex;flex-direction:column;align-items:center}
     .gs-stat:last-child{border-right:none}
-    .gs-stat-num{font-family:'Playfair Display',Georgia,serif;font-size:44px;font-weight:700;color:#C9A84C;line-height:1;min-height:60px;display:flex;align-items:center;justify-content:center}
-    .gs-stat-lbl{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:auto;padding-top:10px}
-    .gs-stat-sub{font-size:13px;color:#C9A84C;letter-spacing:1px;margin-top:3px}
+    .gs-stat-num{font-family:'Playfair Display',Georgia,serif;font-size:44px;font-weight:700;color:var(--gs-gold);line-height:1;min-height:60px;display:flex;align-items:center;justify-content:center}
+    .gs-stat-lbl{font-size:11px;color:rgba(255,255,255,.55);letter-spacing:2px;text-transform:uppercase;margin-top:auto;padding-top:12px;font-weight:600}
 
     /* TICKER */
-    .gs-ticker{background:#C9A84C;padding:13px 0;overflow:hidden}
-    .gs-ticker-inner{display:flex;gap:0;white-space:nowrap;animation:gsTicker 28s linear infinite}
-    .gs-ticker-inner span{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;font-weight:500;padding:0 0 0 28px}
-    .gs-ticker-inner span::after{content:'◆';font-size:7px;color:rgba(26,26,26,0.35);margin-left:28px;vertical-align:middle;line-height:0}
+    .gs-ticker{background:var(--gs-gold);padding:14px 0;overflow:hidden}
+    .gs-ticker-inner{display:flex;gap:0;white-space:nowrap;animation:gsTicker 32s linear infinite;width:max-content}
+    .gs-ticker:hover .gs-ticker-inner{animation-play-state:paused}
+    .gs-ticker-inner span{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gs-ink);font-weight:600;padding:0 0 0 30px}
+    .gs-ticker-inner span::after{content:'◆';font-size:7px;color:rgba(23,20,15,.35);margin-left:30px;vertical-align:middle;line-height:0}
     @keyframes gsTicker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    /* SECTIONS */
-    .gs-section{padding:76px 24px;max-width:1100px;margin:0 auto}
-    .gs-section-dark{background:#1a1a1a;padding:76px 24px}
-    .gs-section-dark .gs-faq-header .gs-tag{color:#C9A84C}
-    .gs-section-dark .gs-faq-header h2{color:#fff}
-    .gs-faq-inner{max-width:780px;margin:0 auto}
-    .gs-faq-header{text-align:center;margin-bottom:48px}
-    .gs-accordion-item{border-bottom:1px solid rgba(255,255,255,0.12);overflow:hidden}
-    .gs-accordion-btn{width:100%;background:none;border:none;padding:22px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px}
-    .gs-accordion-btn:hover .gs-accordion-q{color:#C9A84C!important;transition:color 0.2s}
-    .gs-accordion-q{font-size:15px;font-weight:500;color:#fff;font-family:'DM Sans',sans-serif;line-height:1.4}
-    .gs-accordion-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.25s;color:rgba(255,255,255,0.5);font-size:18px;line-height:1}
-    .gs-accordion-item.open .gs-accordion-icon{border-color:#C9A84C;color:#C9A84C;transform:rotate(45deg)}
-    .gs-accordion-body{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-    .gs-accordion-item.open .gs-accordion-body{max-height:300px}
-    .gs-accordion-a{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,0.65);line-height:1.85;font-family:'DM Sans',sans-serif}
-    .gs-section-full{padding:76px 24px;background:#f5f3ee}
-    .gs-section-full-inner{max-width:1100px;margin:0 auto}
-    .gs-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8B6914;font-weight:500;margin-bottom:12px}
-    .gs-title{font-family:'Playfair Display',Georgia,serif;font-size:38px;font-weight:700;line-height:1.2;margin:0 0 14px}
-    .gs-divider{width:48px;height:2px;background:#C9A84C;margin:18px 0}
-    .gs-body{font-size:15px;color:#7a7670;line-height:1.8;max-width:560px}
+    /* SECTION SHELL */
+    .gs-section{padding:clamp(64px,9vw,108px) 24px;max-width:1120px;margin:0 auto}
+    .gs-section-dark{background:var(--gs-ink);padding:clamp(64px,9vw,108px) 24px;color:#fff}
+    .gs-section-full{padding:clamp(64px,9vw,108px) 24px;background:var(--gs-paper-deep)}
+    .gs-section-full-inner{max-width:1120px;margin:0 auto}
+    .gs-tag{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gs-gold-deep);font-weight:700;margin-bottom:14px}
+    .gs-section-dark .gs-tag{color:var(--gs-gold)}
+    .gs-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.9rem,1.4vw + 1.5rem,2.75rem);font-weight:700;line-height:1.16;letter-spacing:-.01em;margin:0 0 16px}
+    .gs-divider{width:44px;height:2px;background:var(--gs-gold);margin:0 0 22px}
+    .gs-body{font-size:15.5px;color:var(--gs-body);line-height:1.85;max-width:60ch}
 
-    /* SPLIT */
-    .gs-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-    .gs-about-img{border-radius:8px;background:#f5f3ee;height:440px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-    .gs-about-img img{width:100%;height:100%;object-fit:cover;border-radius:8px}
-    .gs-about-badge{position:absolute;bottom:24px;left:24px;background:#fff;border:1px solid #e8e4da;border-radius:6px;padding:16px 22px}
-    .gs-about-badge .num{font-family:'Playfair Display',Georgia,serif;font-size:32px;font-weight:700;color:#8B6914;line-height:1}
-    .gs-about-badge .lbl{font-size:11px;color:#7a7670;letter-spacing:1px;text-transform:uppercase;margin-top:4px}
-    .gs-feat-list{margin-top:28px;display:flex;flex-direction:column;gap:16px}
-    .gs-feat-item{display:flex;gap:14px;align-items:flex-start}
-    .gs-feat-icon{width:36px;height:36px;background:#f5f3ee;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
-    .gs-feat-icon i{font-size:22px;color:#C9A84C}
-    .gs-feat-text strong{display:block;font-size:14px;font-weight:500;margin-bottom:3px}
-    .gs-feat-text span{font-size:13px;color:#7a7670}
+    /* Scroll reveal (progressive enhancement — see script) */
+    [data-reveal].gs-reveal-pending{opacity:0;transform:translateY(22px);transition:opacity .7s var(--gs-ease),transform .7s var(--gs-ease)}
+    [data-reveal].gs-reveal-in{opacity:1;transform:translateY(0)}
+    @media(prefers-reduced-motion:reduce){
+      [data-reveal].gs-reveal-pending{opacity:1;transform:none;transition:none}
+    }
+
+    /* ABOUT split */
+    .gs-split{display:grid;grid-template-columns:.9fr 1.1fr;gap:68px;align-items:center}
+    .gs-about-img{border-radius:6px;background:var(--gs-paper-deep);height:460px;position:relative;overflow:hidden}
+    .gs-about-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--gs-ease)}
+    .gs-about-img:hover img{transform:scale(1.045)}
+    .gs-about-badge{position:absolute;bottom:22px;left:22px;background:rgba(250,247,240,.94);backdrop-filter:blur(6px);border-radius:5px;padding:16px 22px}
+    .gs-about-badge .num{font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:700;color:var(--gs-gold-deep);line-height:1}
+    .gs-about-badge .lbl{font-size:11px;color:var(--gs-body);letter-spacing:1px;text-transform:uppercase;margin-top:4px;font-weight:600}
+    .gs-feat-list{margin-top:30px;display:flex;flex-direction:column;gap:20px}
+    .gs-feat-item{display:flex;gap:16px;align-items:flex-start}
+    .gs-feat-icon{width:22px;flex-shrink:0;padding-top:2px;text-align:center}
+    .gs-feat-icon i{font-size:17px;color:var(--gs-gold-deep)}
+    .gs-feat-text strong{display:block;font-size:14.5px;font-weight:600;margin-bottom:3px;letter-spacing:-.01em}
+    .gs-feat-text span{font-size:13.5px;color:var(--gs-body)}
+
+    /* EVENT MANAGEMENT */
+    .gs-charc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:68px;align-items:center}
+    .gs-charc-img{border-radius:6px;background:var(--gs-line);height:420px;overflow:hidden}
+    .gs-charc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--gs-ease)}
+    .gs-charc-img:hover img{transform:scale(1.045)}
+    .gs-charc-list{list-style:none;padding:0;margin:0 0 30px;display:flex;flex-direction:column;gap:14px}
+    .gs-charc-list li{font-size:14.5px;color:var(--gs-body);line-height:1.7;display:flex;gap:12px;align-items:baseline}
+    .gs-charc-list li b{color:var(--gs-ink);font-weight:600}
+    .gs-charc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gs-gold);flex-shrink:0;transform:translateY(-3px)}
 
     /* CLIENTS */
     .gs-clients-intro{text-align:center;margin-bottom:40px}
-    .gs-clients-intro .gs-divider{margin:18px auto}
-    .gs-logo-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #e8e4da;border-radius:8px;overflow:hidden;background:#fff;max-width:1060px;margin:0 auto}
-    .gs-logo-cell{padding:22px 14px;display:flex;align-items:center;justify-content:center;border-right:1px solid #e8e4da;border-bottom:1px solid #e8e4da;text-align:center}
+    .gs-clients-intro .gs-divider{margin:0 auto 22px}
+    .gs-logo-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--gs-line);border-radius:8px;overflow:hidden;background:#fff;max-width:1060px;margin:0 auto}
+    .gs-logo-cell{padding:22px 14px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--gs-line);border-bottom:1px solid var(--gs-line);text-align:center;transition:background .2s,color .2s}
+    .gs-logo-cell:hover{background:rgba(201,168,76,.08)}
     .gs-logo-cell:nth-child(5n){border-right:none}
     .gs-logo-cell:nth-last-child(-n+5){border-bottom:none}
-    .gs-logo-text{font-size:11px;font-weight:500;color:#7a7670;letter-spacing:0.5px;text-transform:uppercase;line-height:1.4}
+    .gs-logo-text{font-size:11px;font-weight:600;color:var(--gs-body);letter-spacing:.5px;text-transform:uppercase;line-height:1.4;transition:color .2s}
+    .gs-logo-cell:hover .gs-logo-text{color:var(--gs-gold-deep)}
 
     /* PACKAGES */
-    .gs-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
-    .gs-pkg-card{border:1px solid #e8e4da;border-radius:8px;padding:28px;position:relative}
-    .gs-pkg-card.featured{border:2px solid #C9A84C;background:#FAFAF8}
-    .gs-pkg-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#C9A84C;color:#fff;font-size:10px;padding:4px 16px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;font-weight:500}
-    .gs-pkg-icon{font-size:28px;margin-bottom:16px}
-    .gs-pkg-icon i{font-size:36px;color:#C9A84C}
-    .gs-pkg-title{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;margin:0 0 10px}
-    .gs-pkg-desc{font-size:13px;color:#7a7670;line-height:1.7;margin-bottom:20px}
-    .gs-pkg-features{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
-    .gs-pkg-features li{font-size:13px;color:#7a7670;display:flex;align-items:center;gap:8px}
-    .gs-pkg-features li::before{content:'';width:6px;height:6px;border-radius:50%;background:#C9A84C;flex-shrink:0}
-    .gs-pkg-cta{text-align:center;margin-top:32px}
+    .gs-pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:44px}
+    .gs-pkg-card{border:1px solid var(--gs-line);border-radius:8px;padding:32px 28px;position:relative;background:#fff;transition:transform .3s var(--gs-ease),box-shadow .3s var(--gs-ease)}
+    .gs-pkg-card:hover{transform:translateY(-4px);box-shadow:var(--gs-shadow)}
+    .gs-pkg-card.featured{border:1.5px solid var(--gs-gold);background:linear-gradient(180deg,var(--gs-gold-pale) 0%,#fff 42%)}
+    .gs-pkg-badge{position:absolute;top:-13px;left:28px;background:var(--gs-gold);color:var(--gs-ink);font-size:10.5px;padding:5px 16px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;font-weight:700}
+    .gs-pkg-icon{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--gs-gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+    .gs-pkg-icon i{font-size:19px;color:var(--gs-gold-deep)}
+    .gs-pkg-title{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em}
+    .gs-pkg-desc{font-size:13.5px;color:var(--gs-body);line-height:1.75;margin-bottom:22px}
+    .gs-pkg-features{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+    .gs-pkg-features li{font-size:13px;color:var(--gs-ink);display:flex;align-items:center;gap:9px;font-weight:500}
+    .gs-pkg-features li::before{content:'\f00c';font-family:'Font Awesome 5 Free';font-weight:900;font-size:9px;color:var(--gs-gold-deep);flex-shrink:0}
+    .gs-pkg-cta{text-align:center;margin-top:36px}
+    .gs-pkg-note{text-align:center;font-size:13.5px;color:var(--gs-body);margin:36px 0 8px}
+    .gs-pkg-note a{color:var(--gs-gold-deep);text-decoration:none;border-bottom:1px solid var(--gs-gold-deep);font-weight:600}
 
     /* TESTIMONIALS */
-    .gs-testimonials{background:#1a1a1a;padding:76px 24px}
-    .gs-t-inner{max-width:1100px;margin:0 auto}
-    .gs-t-header{text-align:center;margin-bottom:40px}
-    .gs-t-header .gs-tag{color:#C9A84C}
+    .gs-testimonials{background:var(--gs-ink);padding:clamp(64px,9vw,108px) 24px}
+    .gs-t-inner{max-width:1120px;margin:0 auto}
+    .gs-t-header{max-width:640px;margin:0 0 44px}
+    .gs-t-header .gs-tag{color:var(--gs-gold)}
     .gs-t-header .gs-title{color:#fff}
-    .gs-t-header p{font-size:13px;color:rgba(255,255,255,0.7);margin-top:8px}
-    .gs-t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .gs-t-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:26px}
-    .gs-t-stars{color:#C9A84C;font-size:13px;margin-bottom:12px;letter-spacing:2px}
-    .gs-t-text{font-size:13px;color:rgba(255,255,255,0.72);line-height:1.8;margin-bottom:16px;font-style:italic}
-    .gs-t-author{font-size:11px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:1px;text-transform:uppercase}
-    .gs-t-cta{text-align:center;margin-top:32px}
-    .gs-btn-gold-outline{border:1.5px solid #C9A84C;color:#C9A84C;padding:12px 28px;border-radius:4px;font-size:13px;font-weight:500;text-decoration:none;display:inline-block;transition:background 0.2s,color 0.2s}
-    .gs-btn-gold-outline:hover{background:#C9A84C!important;color:#fff!important}
-
-    /* CHARC */
-    .gs-charc-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-    .gs-charc-img{border-radius:8px;background:#e8e4da;height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .gs-charc-img img{width:100%;height:100%;object-fit:cover;border-radius:8px}
-
-    /* ADD-ON CARDS */
-    .gs-addons-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
-    .gs-addon-card{border:1px solid #e8e4da;border-radius:8px;padding:28px;background:#fff}
-    .gs-addon-icon{font-size:32px;margin-bottom:14px}
-    .gs-addon-icon i{font-size:32px;color:#C9A84C}
-    .gs-addon-title{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;margin:0 0 10px;color:#1a1a1a}
-    .gs-addon-desc{font-size:13px;color:#7a7670;line-height:1.75;margin-bottom:18px}
-    .gs-addon-features{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:8px}
-    .gs-addon-features li{font-size:13px;color:#7a7670;display:flex;align-items:center;gap:8px}
-    .gs-addon-features li::before{content:'';width:6px;height:6px;border-radius:50%;background:#C9A84C;flex-shrink:0}
-    .gs-addon-features li b{color:#1a1a1a}
-    .gs-boards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
-    .gs-board{background:#fff;border:1px solid #e8e4da;border-radius:6px;padding:18px}
-    .gs-board-icon{font-size:22px;margin-bottom:8px}
-    .gs-board-icon i{font-size:24px;color:#C9A84C}
-    .gs-board-name{font-size:14px;font-weight:500;margin-bottom:4px}
-    .gs-board-desc{font-size:12px;color:#7a7670;line-height:1.6}
+    .gs-t-header p{font-size:13.5px;color:var(--gs-body-on-dark);margin-top:6px;font-weight:600;letter-spacing:.3px}
+    .gs-t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+    .gs-t-card{background:rgba(255,255,255,.04);border:1px solid var(--gs-line-on-dark);border-radius:8px;padding:30px 26px;position:relative;transition:transform .3s var(--gs-ease),background .3s var(--gs-ease)}
+    .gs-t-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.06)}
+    .gs-t-quote{font-family:'Playfair Display',Georgia,serif;font-size:44px;line-height:1;color:var(--gs-gold);opacity:.5;margin-bottom:6px;display:block}
+    .gs-t-stars{color:var(--gs-gold);font-size:13px;margin-bottom:14px;letter-spacing:2px}
+    .gs-t-text{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.85;margin-bottom:18px}
+    .gs-t-author{font-size:11px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1px;text-transform:uppercase}
+    .gs-t-cta{text-align:center;margin-top:36px}
+    .gs-btn-gold-outline{border:1.5px solid var(--gs-gold);color:var(--gs-gold);padding:12px 28px;border-radius:3px;font-size:13px;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s,color .2s,transform .2s}
+    .gs-btn-gold-outline:hover{background:var(--gs-gold);color:var(--gs-ink);transform:translateY(-2px)}
 
     /* FAQ */
-    .gs-faq-header{text-align:center;margin-bottom:40px}
-    .gs-faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-    .gs-faq-col{display:flex;flex-direction:column;gap:24px}
-    .gs-faq-item{border-bottom:1px solid #e8e4da;padding-bottom:20px}
-    .gs-faq-q{font-size:15px;font-weight:500;margin-bottom:8px}
-    .gs-faq-a{font-size:13px;color:#7a7670;line-height:1.8}
+    .gs-faq-inner{max-width:820px;margin:0 auto}
+    .gs-faq-header{margin-bottom:44px}
+    .gs-accordion-item{border-bottom:1px solid var(--gs-line-on-dark);overflow:hidden}
+    .gs-accordion-btn{width:100%;background:none;border:none;padding:24px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:20px}
+    .gs-accordion-btn:hover .gs-accordion-q{color:var(--gs-gold)}
+    .gs-accordion-q{font-size:15.5px;font-weight:600;color:#fff;font-family:'DM Sans',sans-serif;line-height:1.4;transition:color .2s}
+    .gs-accordion-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s var(--gs-ease);color:rgba(255,255,255,.55);font-size:18px;line-height:1}
+    .gs-accordion-item.open .gs-accordion-icon{border-color:var(--gs-gold);color:var(--gs-gold);transform:rotate(45deg)}
+    .gs-accordion-body{max-height:0;overflow:hidden;transition:max-height .4s var(--gs-ease)}
+    .gs-accordion-item.open .gs-accordion-body{max-height:300px}
+    .gs-accordion-a{padding:0 0 22px;font-size:14px;color:rgba(255,255,255,.68);line-height:1.9;font-family:'DM Sans',sans-serif;max-width:64ch}
 
-    /* CTA BAND */
-    .gs-cta-band{background:#C9A84C;padding:72px 24px;text-align:center}
-    .gs-cta-band h2{font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:700;color:#fff;margin:0 0 14px}
-    .gs-cta-band p{font-size:15px;color:rgba(255,255,255,0.85);margin:0 0 28px}
-    .gs-btn-white{background:#fff;color:#9A7530;padding:14px 36px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;display:inline-block}
-    .gs-btn-white:hover{background:rgba(255,255,255,0.85)!important;color:#9A7530}
-
-    /* FOOTER */
-    .gs-footer{background:#1a1a1a;padding:44px 24px 24px}
-    .gs-footer-top{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:16px}
-    .gs-footer-logo{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#fff;text-decoration:none}
-    .gs-footer-logo span{color:#C9A84C}
-    .gs-footer-right{display:flex;align-items:center}
-    .gs-footer-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
-    .gs-footer-links a{font-size:12px;color:rgba(255,255,255,0.7);text-decoration:none;letter-spacing:0.5px;transition:color 0.2s}
-    .gs-footer-links a:hover{color:#C9A84C}
-    .gs-footer-social-icon{color:rgba(255,255,255,0.5);text-decoration:none;display:flex;align-items:center;transition:color 0.2s}
-    .gs-footer-social-icon:hover{color:#C9A84C}
-    .gs-footer-copy{text-align:center;font-size:11px;color:rgba(255,255,255,0.55);padding-top:20px;letter-spacing:0.5px;max-width:1100px;margin:0 auto}
+    /* CONTACT */
+    .gs-contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start}
+    .gs-contact-info-list{display:flex;flex-direction:column;gap:15px}
+    .gs-contact-info-item{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:var(--gs-ink)}
+    .gs-contact-info-item i{color:var(--gs-gold-deep);width:15px;text-align:center;margin-top:1px}
+    .gs-contact-card{background:#fff;border:1px solid var(--gs-line);border-radius:8px;padding:clamp(24px,3vw,40px);box-shadow:var(--gs-shadow)}
 
     /* FORM */
-    #gsForm label{display:block;font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#7a7670;margin-bottom:6px}
-    #gsForm .gs-field-wrap{margin-bottom:16px;position:relative}
+    #gsForm label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--gs-body);margin-bottom:7px}
+    #gsForm .gs-field-wrap{margin-bottom:18px;position:relative}
     #gsForm select{-webkit-appearance:none!important;-moz-appearance:none!important;appearance:none!important;cursor:pointer}
-    #gsForm input:not([type="radio"]),#gsForm select,#gsForm textarea{display:block!important;width:100%!important;padding:12px 14px!important;border:1px solid #e8e4da!important;border-radius:4px!important;font-size:14px!important;font-family:'DM Sans',sans-serif!important;background-color:#fff!important;color:#1a1a1a!important;box-sizing:border-box!important;box-shadow:none!important;outline:none!important}
-    #gsForm select{height:46px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237a7670' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 14px center!important;background-size:14px!important;padding-right:40px!important}
+    #gsForm input:not([type="radio"]),#gsForm select,#gsForm textarea{display:block!important;width:100%!important;padding:12px 14px!important;border:1px solid var(--gs-line)!important;border-radius:5px!important;font-size:14px!important;font-family:'DM Sans',sans-serif!important;background-color:#fff!important;color:var(--gs-ink)!important;box-sizing:border-box!important;box-shadow:none!important;outline:none!important;transition:border-color .2s,box-shadow .2s}
+    #gsForm select{height:46px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23524c42' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 14px center!important;background-size:14px!important;padding-right:40px!important}
     #gsForm input:not([type="radio"]){height:46px!important}
-    #gsForm input:not([type="radio"]):focus,#gsForm select:focus,#gsForm textarea:focus{border-color:#C9A84C!important}
+    #gsForm input:not([type="radio"]):focus,#gsForm select:focus,#gsForm textarea:focus{border-color:var(--gs-gold)!important;box-shadow:0 0 0 3px rgba(201,168,76,.18)!important}
     #gsForm textarea{min-height:150px!important;resize:vertical;padding-top:12px}
-    .gsRow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+    .gsRow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
     .gsRow .gs-field-wrap{margin-bottom:0}
-    .gs-radio-group{display:flex;flex-direction:column;gap:10px;padding:4px 0 2px}
-    #gsForm label.gs-radio-opt{display:flex!important;align-items:center;gap:10px;font-size:14px!important;font-weight:400!important;letter-spacing:0!important;text-transform:none!important;color:#1a1a1a!important;margin-bottom:0!important;cursor:pointer;line-height:1.4}
-    #gsForm input[type="radio"]{display:inline-block!important;width:17px!important;height:17px!important;min-width:17px!important;padding:0!important;border:1.5px solid #e8e4da!important;border-radius:50%!important;background:#fff!important;flex-shrink:0;appearance:none!important;-webkit-appearance:none!important;position:relative;transition:border-color 0.15s;box-shadow:none!important;outline:none!important;cursor:pointer}
-    #gsForm input[type="radio"]:checked{border-color:#C9A84C!important}
-    #gsForm input[type="radio"]:checked::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:#C9A84C}
-    #gsForm label.gs-radio-opt:hover input[type="radio"]:not(:checked){border-color:#C9A84C!important}
-    #gsSubmit{width:100%;padding:15px;background:#C9A84C;color:#1a1a1a;border:none;border-radius:4px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:0.5px;margin-top:8px;transition:background 0.2s,color 0.2s}
-    #gsSubmit:hover{background:#9A7530;color:#fff}
-    #gsSuccess{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:4px;padding:14px;color:#166534;font-size:14px;text-align:center;margin-top:14px;display:none}
-    #gsError{background:#fef2f2;border:1px solid #fecaca;border-radius:4px;padding:14px;color:#991b1b;font-size:14px;text-align:center;margin-top:14px;display:none}
+    .gs-radio-group{display:flex;flex-direction:column;gap:11px;padding:4px 0 2px}
+    #gsForm label.gs-radio-opt{display:flex!important;align-items:center;gap:10px;font-size:14px!important;font-weight:400!important;letter-spacing:0!important;text-transform:none!important;color:var(--gs-ink)!important;margin-bottom:0!important;cursor:pointer;line-height:1.4}
+    #gsForm input[type="radio"]{display:inline-block!important;width:17px!important;height:17px!important;min-width:17px!important;padding:0!important;border:1.5px solid var(--gs-line)!important;border-radius:50%!important;background:#fff!important;flex-shrink:0;appearance:none!important;-webkit-appearance:none!important;position:relative;transition:border-color .15s;box-shadow:none!important;outline:none!important;cursor:pointer}
+    #gsForm input[type="radio"]:checked{border-color:var(--gs-gold)!important}
+    #gsForm input[type="radio"]:checked::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:var(--gs-gold)}
+    #gsForm label.gs-radio-opt:hover input[type="radio"]:not(:checked){border-color:var(--gs-gold)!important}
+    #gsSubmit{width:100%;padding:16px;background:var(--gs-gold);color:var(--gs-ink);border:none;border-radius:5px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:.4px;margin-top:10px;transition:background .2s,color .2s,transform .2s}
+    #gsSubmit:hover:not(:disabled){background:var(--gs-gold-deep);color:#fff;transform:translateY(-1px)}
+    #gsSubmit:disabled{cursor:default}
+    #gsSuccess{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:5px;padding:14px;color:#166534;font-size:14px;text-align:center;margin-top:14px;display:none}
+    #gsError{background:#fef2f2;border:1px solid #fecaca;border-radius:5px;padding:14px;color:#991b1b;font-size:14px;text-align:center;margin-top:14px;display:none}
 
     /* HAMBURGER */
     .gs-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
-    .gs-hamburger span{width:22px;height:2px;background:#1a1a1a;border-radius:2px;display:block;transition:all 0.25s}
+    .gs-hamburger span{width:22px;height:2px;background:var(--gs-ink);border-radius:2px;display:block;transition:all .25s var(--gs-ease)}
     .gs-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .gs-hamburger.open span:nth-child(2){opacity:0}
     .gs-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .gs-mobile-menu{display:none;position:fixed;top:61px;left:0;right:0;background:#fff;border-bottom:1px solid #e8e4da;padding:8px 24px 20px;flex-direction:column;z-index:99;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+    .gs-mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--gs-line);padding:8px 24px 20px;flex-direction:column;z-index:var(--z-overlay);box-shadow:0 12px 28px -18px rgba(23,20,15,.3)}
     .gs-mobile-menu.open{display:flex}
-    .gs-mobile-menu a{font-size:13px;font-weight:500;color:#7a7670;text-decoration:none;letter-spacing:1px;text-transform:uppercase;padding:13px 0;border-bottom:1px solid #f0ede8}
+    .gs-mobile-menu a{font-size:13px;font-weight:600;color:var(--gs-body);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;padding:14px 0;border-bottom:1px solid var(--gs-paper-deep)}
     .gs-mobile-menu a:last-child{border-bottom:none}
-    .gs-mobile-menu a:hover{color:#C9A84C}
-    .gs-mobile-cta{background:#C9A84C!important;color:#fff!important;text-align:center;border-radius:4px;padding:13px 0!important;margin-top:8px;border-bottom:none!important}
+    .gs-mobile-menu a:hover{color:var(--gs-gold-deep)}
+    .gs-mobile-cta{background:var(--gs-gold)!important;color:var(--gs-ink)!important;text-align:center;border-radius:4px;padding:13px 0!important;margin-top:8px;border-bottom:none!important}
+
+    /* FOOTER */
+    .gs-footer{background:var(--gs-ink);padding:48px 24px 26px}
+    .gs-footer-top{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-bottom:30px;border-bottom:1px solid var(--gs-line-on-dark);flex-wrap:wrap;gap:16px}
+    .gs-footer-logo{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#fff;text-decoration:none}
+    .gs-footer-logo span{color:var(--gs-gold)}
+    .gs-footer-right{display:flex;align-items:center}
+    .gs-footer-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+    .gs-footer-links a{font-size:12px;color:rgba(255,255,255,.72);text-decoration:none;letter-spacing:.5px;font-weight:500;transition:color .2s}
+    .gs-footer-links a:hover{color:var(--gs-gold)}
+    .gs-footer-social-icon{color:rgba(255,255,255,.55);text-decoration:none;display:flex;align-items:center;transition:color .2s}
+    .gs-footer-social-icon:hover{color:var(--gs-gold)}
+    .gs-footer-copy{text-align:center;font-size:11.5px;color:rgba(255,255,255,.5);padding-top:22px;letter-spacing:.4px;max-width:1120px;margin:0 auto}
 
     /* RESPONSIVE */
     @media(max-width:900px){
-      .gs-hero h1{font-size:40px}
+      .gs-hero{min-height:88vh}
+      .gs-hero-content{padding-top:100px}
       .gs-split,.gs-charc-grid{grid-template-columns:1fr}
-      .gs-about-img{height:300px}
-      .gs-pkg-grid,.gs-t-grid{grid-template-columns:1fr}
-      .gs-logo-grid{grid-template-columns:repeat(3,1fr)}
-      .gs-logo-cell:nth-child(5n){border-right:1px solid #e8e4da}
-      .gs-logo-cell:nth-child(3n){border-right:none}
+      .gs-about-img{height:320px}
+      .gs-charc-img{order:-1;height:280px}
       .gs-faq-grid{grid-template-columns:1fr}
       .gs-stats{flex-wrap:wrap}
-      .gs-stat{min-width:45%;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1)}
+      .gs-stat{min-width:45%;border-right:none;border-bottom:1px solid var(--gs-line-on-dark)}
+      .gs-logo-grid{grid-template-columns:repeat(3,1fr)}
+      .gs-logo-cell:nth-child(5n){border-right:1px solid var(--gs-line)}
+      .gs-logo-cell:nth-child(3n){border-right:none}
     }
     @media(max-width:600px){
-      .gs-hero h1{font-size:32px}
-      .gs-title{font-size:28px}
-      .gs-logo-grid{grid-template-columns:repeat(2,1fr)}
-      .gs-boards{grid-template-columns:1fr}
+      .gs-hero-content{padding-top:88px}
       .gsRow{grid-template-columns:1fr;gap:16px}
       .gs-nav-links{display:none}
-      .gs-hero-img{height:320px}
       .gs-hamburger{display:flex}
       .gs-nav-cta{display:none}
-      .gs-addons-grid{grid-template-columns:1fr}
       .gs-contact-grid{grid-template-columns:1fr!important}
+      .gs-logo-grid{grid-template-columns:repeat(2,1fr)}
     }
   </style>
 </head>
@@ -385,7 +418,7 @@
 <div class="gs-wrap">
 
   <!-- NAV -->
-  <nav class="gs-nav">
+  <nav class="gs-nav" id="gsNav">
     <a href="#" class="gs-nav-logo"><span>GOLDEN</span> SERVICE</a>
     <ul class="gs-nav-links">
       <li><a href="#gs-about">About</a></li>
@@ -414,21 +447,26 @@
   <main>
   <!-- HERO -->
   <div class="gs-hero">
-    <h1><span style="color:#C9A84C">GOLDEN</span> SERVICE</h1>
-    <p class="gs-hero-eyebrow">Mobile Bar & Catering · Est. 2016</p>
-    <p class="gs-hero-sub">Halifax's mobile bar service for weddings, corporate events, and private parties. Licensed, insured, and local with hundreds of events served across Nova Scotia.</p>
-    <div class="gs-hero-btns">
-      <a href="#gs-contact" class="gs-btn-primary">Get a Quote</a>
-      <a href="#gs-packages" class="gs-btn-outline">View Packages</a>
+    <div class="gs-hero-media">
+      <img src="champagne-toast-service-wedding-events.jpg" alt="Golden Service Mobile Bar pouring champagne at a Halifax wedding event" loading="eager" fetchpriority="high">
+      <div class="gs-hero-scrim"></div>
     </div>
-    <img class="gs-hero-img" src="champagne-toast-service-wedding-events.jpg" alt="Golden Service Mobile Bar pouring champagne at a Halifax wedding event" loading="eager">
+    <div class="gs-hero-content">
+      <p class="gs-hero-eyebrow">Mobile Bar &amp; Catering &middot; Est. 2016</p>
+      <h1>The <em>Golden Standard</em> for Halifax events</h1>
+      <p class="gs-hero-sub">Weddings, corporate events, and private parties. Fully licensed, insured, and local.</p>
+      <div class="gs-hero-btns">
+        <a href="#gs-contact" class="gs-btn-primary">Get a Quote</a>
+        <a href="#gs-packages" class="gs-btn-outline">View Packages</a>
+      </div>
+    </div>
   </div>
 
   <!-- STATS -->
   <div class="gs-stats">
-    <div class="gs-stat"><div class="gs-stat-num">100<sup>+</sup></div><div class="gs-stat-lbl">Events Per Year</div></div>
+    <div class="gs-stat"><div class="gs-stat-num" style="font-size:36px;white-space:nowrap">2-Hour</div><div class="gs-stat-lbl">Average Response Time</div></div>
     <div class="gs-stat"><div class="gs-stat-num" style="font-size:26px;padding-top:10px">5&#9733;</div><div class="gs-stat-lbl">on Google Reviews</div></div>
-    <div class="gs-stat"><div class="gs-stat-num" style="font-size:24px;white-space:nowrap">Halifax, Nova Scotia</div><div class="gs-stat-lbl">Home Base</div></div>
+    <div class="gs-stat"><div class="gs-stat-num" data-count-to="25" data-count-suffix="+">0<sup>+</sup></div><div class="gs-stat-lbl">Local &amp; National Clients</div></div>
   </div>
 
   <!-- TICKER -->
@@ -443,15 +481,14 @@
   <div id="gs-about">
     <div class="gs-section">
       <div class="gs-split">
-        <div class="gs-about-img">
-          <img src="golden-service-mobile-bar-catering-team.jpg" alt="Professional bartender serving cocktails at a Halifax wedding event — Golden Service Mobile Bar" style="width:100%;height:100%;object-fit:cover;border-radius:8px" loading="lazy">
+        <div class="gs-about-img" data-reveal>
+          <img src="golden-service-mobile-bar-catering-team.jpg" alt="Golden Service Mobile Bar bartender serving cocktails at a Halifax wedding" loading="lazy">
           <div class="gs-about-badge"><div class="num">100+</div><div class="lbl">Events Every Year</div></div>
         </div>
-        <div>
-          <div class="gs-tag">About Us</div>
+        <div data-reveal>
           <h2 class="gs-title">Halifax's Most Trusted Mobile Bar</h2>
           <div class="gs-divider"></div>
-          <p class="gs-body">Golden Service takes care of everything so you never have to think about the bar. We handle the licensing, staffing, and logistics so you can actually be present at your own event. Every booking gets the same level of attention whether it is a corporate gala or a backyard wedding. One team, one point of contact, everything covered.</p>
+          <p class="gs-body">Golden Service takes care of everything, from licensing to staffing to logistics, so you can actually be present at your own event. One team, one point of contact, whether it's a corporate gala or a backyard wedding.</p>
           <div class="gs-feat-list">
             <div class="gs-feat-item">
               <div class="gs-feat-icon"><i class="fas fa-bolt"></i></div>
@@ -463,8 +500,8 @@
             <div class="gs-feat-item">
               <div class="gs-feat-icon"><i class="fas fa-leaf"></i></div>
               <div class="gs-feat-text">
-                <strong>Local &amp; Seasonal Selections</strong>
-                <span>Nova Scotia's best craft beer, wine, and spirits.</span>
+                <strong>Local, Domestic &amp; Seasonal Selections</strong>
+                <span>Craft beer, wine, and spirits from Nova Scotia and across Canada, rotated with the seasons.</span>
               </div>
             </div>
             <div class="gs-feat-item">
@@ -475,7 +512,7 @@
               </div>
             </div>
           </div>
-          <div style="margin-top:28px">
+          <div style="margin-top:32px">
             <a href="#gs-contact" class="gs-btn-primary">Get a Quote</a>
           </div>
         </div>
@@ -486,20 +523,19 @@
   <!-- EVENT MANAGEMENT -->
   <div id="gs-direction" class="gs-section">
     <div class="gs-charc-grid">
-      <div>
-        <p class="gs-tag">Event Management</p>
+      <div data-reveal>
         <h2 class="gs-title">Every detail, start to finish.</h2>
         <div class="gs-divider"></div>
-        <p style="font-size:15px;color:#7a7670;line-height:1.8;margin-bottom:20px;">We handle the behind-the-scenes complexity so your day feels effortless. From the first permit to the final pour, we manage the systems and coordination that keep every detail in sync.</p>
-        <ul class="gs-addon-features" style="margin-bottom:28px;">
-          <li><b>Logistics.</b> Permits, site plans handled from day one.</li>
-          <li><b>Operations.</b> Bar and payment systems ready before your guests arrive.</li>
-          <li><b>Staffing.</b> A managed professional team with one point of contact.</li>
+        <p style="font-size:15.5px;color:var(--gs-body);line-height:1.85;margin-bottom:24px;max-width:56ch">We handle the behind-the-scenes complexity, from the first permit to the final pour, so your day feels effortless.</p>
+        <ul class="gs-charc-list">
+          <li><span><b>Logistics.</b> Permits, site plans handled from day one.</span></li>
+          <li><span><b>Operations.</b> Bar and payment systems ready before your guests arrive.</span></li>
+          <li><span><b>Staffing.</b> A managed professional team with one point of contact.</span></li>
         </ul>
         <a href="#gs-contact" class="gs-btn-primary">Get in Touch &rarr;</a>
       </div>
-      <div class="gs-charc-img">
-        <img src="mobile-bar-event-management-halifax.jpg" alt="Event management and coordination team at Golden Service Mobile Bar Halifax" style="width:100%;height:100%;object-fit:cover;border-radius:8px" loading="lazy">
+      <div class="gs-charc-img" data-reveal>
+        <img src="mobile-bar-event-management-halifax.jpg" alt="Event management and coordination team at Golden Service Mobile Bar Halifax" loading="lazy">
       </div>
     </div>
   </div>
@@ -507,13 +543,13 @@
   <!-- CLIENTS -->
   <div id="gs-clients" class="gs-section-full">
     <div class="gs-section-full-inner">
-      <div class="gs-clients-intro">
-        <p class="gs-tag">Trusted By</p>
+      <div class="gs-clients-intro" data-reveal>
+        <div class="gs-tag">Trusted By</div>
         <h2 class="gs-title">Who We've Served</h2>
-        <div class="gs-divider" style="margin:18px auto;"></div>
-        <p style="font-size:13px;color:#7a7670;margin-top:8px;">Trusted by major Nova Scotia institutions and nationally recognized brands. We are proud to have served some incredible clients.</p>
+        <div class="gs-divider"></div>
+        <p style="font-size:13px;color:var(--gs-body)">Trusted by major Nova Scotia institutions and nationally recognized brands.</p>
       </div>
-      <div class="gs-logo-grid">
+      <div class="gs-logo-grid" data-reveal>
         <div class="gs-logo-cell"><span class="gs-logo-text">Atlantic Film<br>Festival</span></div>
         <div class="gs-logo-cell"><span class="gs-logo-text">Bastid's<br>BBQ</span></div>
         <div class="gs-logo-cell"><span class="gs-logo-text">Dalhousie<br>University</span></div>
@@ -551,22 +587,24 @@
   <!-- PACKAGES -->
   <div id="gs-packages">
     <div class="gs-section">
-      <div style="text-align:center;margin-bottom:8px">
+      <div style="max-width:640px" data-reveal>
         <div class="gs-tag">Our Services</div>
-        <h2 class="gs-title" style="max-width:440px;margin:0 auto 12px">Bar Packages For Every Occasion</h2>
-        <p style="font-size:14px;color:#7a7670">All packages include professional staff, glassware, ice, garnishes, and full bar setup.</p>
+        <h2 class="gs-title">Bar Packages For Every Occasion</h2>
+        <div class="gs-divider"></div>
+        <p style="font-size:14px;color:var(--gs-body)">All packages include professional staff, glassware, ice, garnishes, and full bar setup.</p>
       </div>
-      <div class="gs-pkg-grid">
+      <div class="gs-pkg-grid" data-reveal>
         <div class="gs-pkg-card">
           <div class="gs-pkg-icon"><i class="fas fa-money-bill-wave"></i></div>
           <div class="gs-pkg-title">Cash Bar</div>
           <p class="gs-pkg-desc">Guests purchase their own drinks from a full bar menu. Beer, wine, spirits, ciders, and non-alcoholic options available. A debit machine is always on site.</p>
           <ul class="gs-pkg-features"><li>Full bar menu</li><li>Debit machines on site</li></ul>
         </div>
-        <div class="gs-pkg-card">
+        <div class="gs-pkg-card featured">
+          <div class="gs-pkg-badge">Most Popular</div>
           <div class="gs-pkg-icon"><i class="fas fa-glass-cheers"></i></div>
           <div class="gs-pkg-title">Open Bar</div>
-          <p class="gs-pkg-desc">One flat rate covers unlimited drinks for your guests all night. No transactions, no limits — just a seamless bar experience from start to finish. The most popular choice for weddings and corporate events.</p>
+          <p class="gs-pkg-desc">One flat rate covers unlimited drinks for your guests all night. No transactions, no limits.</p>
           <ul class="gs-pkg-features"><li>Unlimited drinks at a set rate</li><li>Signature cocktail option</li><li>Licensing fully handled</li></ul>
         </div>
         <div class="gs-pkg-card">
@@ -576,7 +614,7 @@
           <ul class="gs-pkg-features"><li>Customizable ticket count</li><li>Seamless transition to cash bar</li></ul>
         </div>
       </div>
-      <p style="text-align:center;font-size:13px;color:#7a7670;margin:32px 0 8px">Looking to add something extra? Ask us about our <a href="#gs-contact" style="color:#C9A84C;text-decoration:none;border-bottom:1px solid #C9A84C">Signature Cocktail</a> add-on.</p>
+      <p class="gs-pkg-note">Looking to add something extra? Ask us about our <a href="#gs-contact">Signature Cocktail</a> add-on.</p>
       <div class="gs-pkg-cta"><a href="#gs-contact" class="gs-btn-primary">Request a Custom Quote</a></div>
     </div>
   </div>
@@ -584,15 +622,15 @@
   <!-- TESTIMONIALS -->
   <div class="gs-testimonials">
     <div class="gs-t-inner">
-      <div class="gs-t-header">
+      <div class="gs-t-header" data-reveal>
         <div class="gs-tag">Testimonials</div>
         <h2 class="gs-title">What Our Clients Say</h2>
-        <p>Rated Excellent &nbsp;&middot;&nbsp; 50 Reviews on Google</p>
+        <p>Rated Excellent &nbsp;&middot;&nbsp; 49 Reviews on Google</p>
       </div>
-      <div class="gs-t-grid">
-        <div class="gs-t-card"><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">"Tristan and his team are BOMB DOT COM. Everyone at our wedding raved about how awesome they were. They took over all our alcohol planning and did a fabulous job. Planning a wedding is so challenging — Golden Service made it effortless."</p><div class="gs-t-author">— Nalz</div></div>
-        <div class="gs-t-card"><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">"The bartenders were absolute gems of human beings for the whole night. Professional, personable, and a pleasure to work with. Thank you for making our wedding absolutely amazing."</p><div class="gs-t-author">— Angelica M.</div></div>
-        <div class="gs-t-card"><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">"Golden Service provided incredible service for our wedding. Our guests were singing their praises all night — they went the extra mile to make sure we all had an amazing time. Highly recommended!"</p><div class="gs-t-author">— Justin C.</div></div>
+      <div class="gs-t-grid" data-reveal>
+        <div class="gs-t-card"><span class="gs-t-quote">&#8220;</span><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">Tristan and his team are BOMB DOT COM. Everyone at our wedding raved about how awesome they were. They took over all our alcohol planning and did a fabulous job. Planning a wedding is so challenging — Golden Service made it effortless.</p><div class="gs-t-author">— Nalz</div></div>
+        <div class="gs-t-card"><span class="gs-t-quote">&#8220;</span><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">The bartenders were absolute gems of human beings for the whole night. Professional, personable, and a pleasure to work with. Thank you for making our wedding absolutely amazing.</p><div class="gs-t-author">— Angelica M.</div></div>
+        <div class="gs-t-card"><span class="gs-t-quote">&#8220;</span><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">Golden Service provided incredible service for our wedding. Our guests were singing their praises all night — they went the extra mile to make sure we all had an amazing time. Highly recommended!</p><div class="gs-t-author">— Justin C.</div></div>
       </div>
       <div class="gs-t-cta"><a href="https://www.google.com/search?q=Golden+Service+Mobile+Bar+Halifax" target="_blank" rel="noopener" class="gs-btn-gold-outline">Read All Reviews on Google &rarr;</a></div>
     </div>
@@ -601,11 +639,10 @@
   <!-- FAQ -->
   <div id="gs-faq" class="gs-section-dark">
     <div class="gs-faq-inner">
-      <div class="gs-faq-header">
-        <div class="gs-tag">FAQ</div>
+      <div class="gs-faq-header" data-reveal>
         <h2 class="gs-title">Frequently Asked Questions</h2>
       </div>
-      <div class="gs-accordion">
+      <div class="gs-accordion" data-reveal>
         <div class="gs-accordion-item">
           <button class="gs-accordion-btn" onclick="gsToggle(this)">
             <span class="gs-accordion-q">Who handles the licensing?</span>
@@ -656,23 +693,23 @@
   </div>
 
   <!-- CONTACT -->
-  <div id="gs-contact" style="background:#FAFAF8;padding:72px 0">
-    <div style="max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start" class="gs-contact-grid">
-      <div>
-        <p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:500;margin:0 0 12px">Book Now</p>
-        <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:700;line-height:1.2;margin:0 0 14px;color:#1a1a1a">Let's Plan Your Event</h2>
-        <div style="width:48px;height:2px;background:#C9A84C;margin:18px 0"></div>
-        <p style="font-size:15px;color:#1a1a1a;line-height:1.8;margin:0 0 24px">Tell us about your event and we'll put together a custom quote tailored to your needs.</p>
-        <div style="display:flex;flex-direction:column;gap:14px">
-          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#1a1a1a"><span><i class="fas fa-map-marker-alt" style="color:#C9A84C"></i></span> Based in Halifax, NS. Serving HRM &amp; surrounding areas.</div>
-          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#1a1a1a"><span><i class="fas fa-star" style="color:#C9A84C"></i></span> 50 Five Star Reviews on Google</div>
-          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#1a1a1a"><span><i class="fas fa-check-circle" style="color:#C9A84C"></i></span> Fully licensed, insured &amp; ready to serve.</div>
-          <div style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#1a1a1a"><span><i class="fas fa-bolt" style="color:#C9A84C"></i></span> Fast response. Typically within 2 hours. Check your spam folder just in case.</div>
+  <div id="gs-contact" style="background:var(--gs-paper);padding:clamp(64px,9vw,108px) 0">
+    <div style="max-width:1120px;margin:0 auto;padding:0 24px" class="gs-contact-grid">
+      <div data-reveal>
+        <div class="gs-tag">Book Now</div>
+        <h2 class="gs-title">Let's Plan Your Event</h2>
+        <div class="gs-divider"></div>
+        <p style="font-size:15.5px;color:var(--gs-ink);line-height:1.8;margin:0 0 26px">Tell us about your event and we'll put together a custom quote.</p>
+        <div class="gs-contact-info-list">
+          <div class="gs-contact-info-item"><i class="fas fa-map-marker-alt"></i> Based in Halifax, NS. Serving HRM &amp; surrounding areas.</div>
+          <div class="gs-contact-info-item"><i class="fas fa-star"></i> 49 Five Star Reviews on Google</div>
+          <div class="gs-contact-info-item"><i class="fas fa-check-circle"></i> Fully licensed and insured.</div>
+          <div class="gs-contact-info-item"><i class="fas fa-bolt"></i> Fast response. Typically within 2 hours. Check your spam folder just in case.</div>
         </div>
       </div>
-      <div style="background:#fff;border:1px solid #e8e4da;border-radius:8px;padding:36px">
+      <div class="gs-contact-card" data-reveal>
         <form id="gsForm" action="https://formspree.io/f/mdapozvl" method="POST">
-          <div style="font-size:11px;color:#7a7670;text-align:right;margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase;">* Indicates a required field</div>
+          <div style="font-size:11px;color:var(--gs-body);text-align:right;margin-bottom:16px;letter-spacing:.5px;text-transform:uppercase;">* Indicates a required field</div>
           <div class="gsRow">
             <div class="gs-field-wrap">
               <label for="gs-name">Full Name *</label>
@@ -686,7 +723,7 @@
           <div class="gsRow" style="align-items:start">
             <div class="gs-field-wrap">
               <fieldset style="border:none;padding:0;margin:0">
-                <legend style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#7a7670;margin-bottom:10px;padding:0">Type of Event *</legend>
+                <legend style="font-size:11.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--gs-body);margin-bottom:11px;padding:0">Type of Event *</legend>
                 <div class="gs-radio-group">
                   <label class="gs-radio-opt"><input type="radio" name="event_type" value="Wedding" required> Wedding</label>
                   <label class="gs-radio-opt"><input type="radio" name="event_type" value="Corporate Event"> Corporate Event</label>
@@ -721,7 +758,7 @@
           </div>
           <div class="gs-field-wrap" style="margin-bottom:16px">
             <fieldset style="border:none;padding:0;margin:0">
-              <legend style="font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#7a7670;margin-bottom:10px;padding:0">What Package *</legend>
+              <legend style="font-size:11.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--gs-body);margin-bottom:11px;padding:0">What Package *</legend>
               <div class="gs-radio-group">
                 <label class="gs-radio-opt"><input type="radio" name="package" value="Cash Bar" required> Cash Bar</label>
                 <label class="gs-radio-opt"><input type="radio" name="package" value="Open Bar"> Open Bar</label>
@@ -737,7 +774,7 @@
           <input type="hidden" name="_subject" value="New Booking Inquiry - Golden Service">
           <button type="submit" id="gsSubmit">Request A Quote &rarr;</button>
           <div id="gsSuccess">&#10003; Thanks! We'll be in touch within 24 hours. Please check your spam folders.</div>
-          <div id="gsError">Oops — something went wrong. Please email us directly at <a href="mailto:goldenservicebar@gmail.com" style="color:#991b1b">goldenservicebar@gmail.com</a> and we'll get right back to you!</div>
+          <div id="gsError">Oops, something went wrong. Please email us directly at <a href="mailto:goldenservicebar@gmail.com" style="color:#991b1b">goldenservicebar@gmail.com</a> and we'll get right back to you!</div>
         </form>
       </div>
     </div>
@@ -785,6 +822,22 @@
     });
   })();
 
+  // Nav scrolled state
+  (function(){
+    var nav = document.getElementById('gsNav');
+    if(!nav) return;
+    var ticking = false;
+    function update(){
+      if(window.scrollY > 8){ nav.classList.add('gs-nav--scrolled'); }
+      else{ nav.classList.remove('gs-nav--scrolled'); }
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){ window.requestAnimationFrame(update); ticking = true; }
+    }, {passive:true});
+    update();
+  })();
+
   // FAQ accordion
   function gsToggle(btn) {
     var item = btn.parentElement;
@@ -822,6 +875,62 @@
         btn.disabled = false;
       });
     });
+  })();
+
+  // Scroll reveal — progressive enhancement only. Anything visible on load
+  // is left alone (no hidden flash); only below-fold sections get the
+  // fade-up treatment as they scroll into view.
+  (function(){
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduceMotion || !('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('[data-reveal]');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('gs-reveal-in');
+          entry.target.classList.remove('gs-reveal-pending');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.1});
+    els.forEach(function(el){
+      var rect = el.getBoundingClientRect();
+      var alreadyVisible = rect.top < window.innerHeight * 0.92;
+      if(!alreadyVisible){
+        el.classList.add('gs-reveal-pending');
+        io.observe(el);
+      }
+    });
+  })();
+
+  // Stat count-up — purely decorative, degrades to static value already in markup.
+  (function(){
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var el = document.querySelector('[data-count-to]');
+    if(!el || reduceMotion || !('IntersectionObserver' in window)) return;
+    var target = parseInt(el.getAttribute('data-count-to'), 10);
+    var suffix = el.getAttribute('data-count-suffix') || '';
+    var done = false;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !done){
+          done = true;
+          var start = null, duration = 1400;
+          function step(ts){
+            if(start === null) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var val = Math.round(eased * target);
+            el.textContent = val + suffix;
+            if(progress < 1){ window.requestAnimationFrame(step); }
+            else { el.textContent = target + suffix; }
+          }
+          window.requestAnimationFrame(step);
+          io.unobserve(el);
+        }
+      });
+    }, {threshold:0.6});
+    io.observe(el);
   })();
 </script>
 
