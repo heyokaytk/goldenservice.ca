@@ -172,7 +172,10 @@
       /* z-index scale */
       --z-sticky:100;
       --z-overlay:99;
+      --z-backdrop:95;
     }
+
+    html.gs-menu-locked, html.gs-menu-locked body{overflow:hidden;height:100%}
 
     .gs-wrap{font-family:'DM Sans',sans-serif;color:var(--gs-ink);margin:0;padding:0;background:#fff}
     .gs-wrap *{box-sizing:border-box}
@@ -230,6 +233,9 @@
     .gs-ticker-inner span{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gs-ink);font-weight:600;padding:0 0 0 30px}
     .gs-ticker-inner span::after{content:'◆';font-size:7px;color:rgba(23,20,15,.35);margin-left:30px;vertical-align:middle;line-height:0}
     @keyframes gsTicker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @media(prefers-reduced-motion:reduce){
+      .gs-ticker-inner{animation:none}
+    }
 
     /* SECTION SHELL */
     .gs-section{padding:clamp(64px,9vw,108px) 24px;max-width:1120px;margin:0 auto}
@@ -278,12 +284,10 @@
     .gs-clients-intro{text-align:center;margin-bottom:40px}
     .gs-clients-intro .gs-divider{margin:0 auto 22px}
     .gs-logo-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--gs-line);border-radius:8px;overflow:hidden;background:#fff;max-width:1060px;margin:0 auto}
-    .gs-logo-cell{padding:22px 14px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--gs-line);border-bottom:1px solid var(--gs-line);text-align:center;transition:background .2s,color .2s}
-    .gs-logo-cell:hover{background:rgba(201,168,76,.08)}
+    .gs-logo-cell{padding:22px 14px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--gs-line);border-bottom:1px solid var(--gs-line);text-align:center}
     .gs-logo-cell:nth-child(5n){border-right:none}
     .gs-logo-cell:nth-last-child(-n+5){border-bottom:none}
-    .gs-logo-text{font-size:11px;font-weight:600;color:var(--gs-body);letter-spacing:.5px;text-transform:uppercase;line-height:1.4;transition:color .2s}
-    .gs-logo-cell:hover .gs-logo-text{color:var(--gs-gold-deep)}
+    .gs-logo-text{font-size:11px;font-weight:600;color:var(--gs-body);letter-spacing:.5px;text-transform:uppercase;line-height:1.4}
 
     /* PACKAGES */
     .gs-pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:44px}
@@ -369,6 +373,8 @@
     .gs-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .gs-hamburger.open span:nth-child(2){opacity:0}
     .gs-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .gs-nav-backdrop{display:none;position:fixed;inset:0;background:rgba(23,20,15,.35);z-index:var(--z-backdrop)}
+    .gs-nav-backdrop.open{display:block}
     .gs-mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--gs-line);padding:8px 24px 20px;flex-direction:column;z-index:var(--z-overlay);box-shadow:0 12px 28px -18px rgba(23,20,15,.3)}
     .gs-mobile-menu.open{display:flex}
     .gs-mobile-menu a{font-size:13px;font-weight:600;color:var(--gs-body);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;padding:14px 0;border-bottom:1px solid var(--gs-paper-deep)}
@@ -411,6 +417,8 @@
       .gs-nav-cta{display:none}
       .gs-contact-grid{grid-template-columns:1fr!important}
       .gs-logo-grid{grid-template-columns:repeat(2,1fr)}
+      .gs-logo-cell:nth-child(odd){border-right:1px solid var(--gs-line)}
+      .gs-logo-cell:nth-child(2n){border-right:none}
     }
   </style>
 </head>
@@ -429,10 +437,12 @@
       <li><a href="#gs-contact">Contact</a></li>
     </ul>
     <a href="#gs-contact" class="gs-nav-cta">Book Now</a>
-    <button class="gs-hamburger" id="gsHamburger" aria-label="Open menu">
+    <button class="gs-hamburger" id="gsHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="gsMobileMenu">
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="gs-nav-backdrop" id="gsNavBackdrop"></div>
 
   <!-- MOBILE MENU -->
   <div class="gs-mobile-menu" id="gsMobileMenu">
@@ -559,7 +569,7 @@
         <div class="gs-logo-cell"><span class="gs-logo-text">Ernst &amp;<br>Young LLP</span></div>
         <div class="gs-logo-cell"><span class="gs-logo-text">Greenfoot Energy<br>Centre</span></div>
         <div class="gs-logo-cell"><span class="gs-logo-text">Grant<br>Thorton</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Ha!ifax Comedy<br>Fest</span></div>
+        <div class="gs-logo-cell"><span class="gs-logo-text">Halifax Comedy<br>Fest</span></div>
         <div class="gs-logo-cell"><span class="gs-logo-text">Halifax Public<br>Library</span></div>
         <div class="gs-logo-cell"><span class="gs-logo-text">Halifax Regional<br>Municipality</span></div>
         <div class="gs-logo-cell"><span class="gs-logo-text">Maritime Museum<br>of the Atlantic</span></div>
@@ -644,47 +654,47 @@
       </div>
       <div class="gs-accordion" data-reveal>
         <div class="gs-accordion-item">
-          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)" aria-expanded="false" aria-controls="gs-faq-body-1">
             <span class="gs-accordion-q">Who handles the licensing?</span>
             <span class="gs-accordion-icon">+</span>
           </button>
-          <div class="gs-accordion-body">
+          <div class="gs-accordion-body" id="gs-faq-body-1">
             <p class="gs-accordion-a">We do. Golden Service is fully licensed and insured. If your venue requires a special event liquor license, we apply for it on your behalf at no extra charge.</p>
           </div>
         </div>
         <div class="gs-accordion-item">
-          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)" aria-expanded="false" aria-controls="gs-faq-body-2">
             <span class="gs-accordion-q">What's actually included in a booking?</span>
             <span class="gs-accordion-icon">+</span>
           </button>
-          <div class="gs-accordion-body">
+          <div class="gs-accordion-body" id="gs-faq-body-2">
             <p class="gs-accordion-a">Every booking includes professional bartenders, all mixers, garnishes, ice, glassware, and debit machines. We arrive early for setup and handle the full teardown at the end of the night.</p>
           </div>
         </div>
         <div class="gs-accordion-item">
-          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)" aria-expanded="false" aria-controls="gs-faq-body-3">
             <span class="gs-accordion-q">Do you handle non-bar logistics?</span>
             <span class="gs-accordion-icon">+</span>
           </button>
-          <div class="gs-accordion-body">
+          <div class="gs-accordion-body" id="gs-faq-body-3">
             <p class="gs-accordion-a">Yes. Beyond the bar we can manage your full event operations including site plans, permits, and staffing. You have one point of contact for the entire setup.</p>
           </div>
         </div>
         <div class="gs-accordion-item">
-          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)" aria-expanded="false" aria-controls="gs-faq-body-4">
             <span class="gs-accordion-q">How do I secure my date?</span>
             <span class="gs-accordion-icon">+</span>
           </button>
-          <div class="gs-accordion-body">
+          <div class="gs-accordion-body" id="gs-faq-body-4">
             <p class="gs-accordion-a">We require a non-refundable deposit to hold your date. For open bar packages the final balance is due 60 days before your event. If you need to reschedule, reach out as early as possible and we will do our best to accommodate.</p>
           </div>
         </div>
         <div class="gs-accordion-item">
-          <button class="gs-accordion-btn" onclick="gsToggle(this)">
+          <button class="gs-accordion-btn" onclick="gsToggle(this)" aria-expanded="false" aria-controls="gs-faq-body-5">
             <span class="gs-accordion-q">Do you travel outside Halifax?</span>
             <span class="gs-accordion-icon">+</span>
           </button>
-          <div class="gs-accordion-body">
+          <div class="gs-accordion-body" id="gs-faq-body-5">
             <p class="gs-accordion-a">We are based in Halifax and regularly service events across Nova Scotia. Let us know your location and we will handle the rest.</p>
           </div>
         </div>
@@ -735,13 +745,13 @@
             </div>
             <div class="gs-field-wrap">
               <label for="gs-date">Event Date *</label>
-              <input id="gs-date" type="text" name="event_date" required>
+              <input id="gs-date" type="date" name="event_date" required>
             </div>
           </div>
           <div class="gsRow">
             <div class="gs-field-wrap">
               <label for="gs-guests">Number of Guests *</label>
-              <input id="gs-guests" type="number" name="guests" required>
+              <input id="gs-guests" type="number" name="guests" min="1" required>
             </div>
             <div class="gs-field-wrap">
               <label for="gs-hours">Estimated Hours of Service *</label>
@@ -809,16 +819,26 @@
   (function(){
     var btn = document.getElementById('gsHamburger');
     var menu = document.getElementById('gsMobileMenu');
-    if(!btn || !menu) return;
+    var backdrop = document.getElementById('gsNavBackdrop');
+    if(!btn || !menu || !backdrop) return;
+
+    var setOpen = function(isOpen){
+      btn.classList.toggle('open', isOpen);
+      menu.classList.toggle('open', isOpen);
+      backdrop.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', String(isOpen));
+      document.documentElement.classList.toggle('gs-menu-locked', isOpen);
+    };
+
     btn.addEventListener('click', function(){
-      btn.classList.toggle('open');
-      menu.classList.toggle('open');
+      setOpen(!menu.classList.contains('open'));
     });
+    backdrop.addEventListener('click', function(){ setOpen(false); });
     menu.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){
-        btn.classList.remove('open');
-        menu.classList.remove('open');
-      });
+      a.addEventListener('click', function(){ setOpen(false); });
+    });
+    document.addEventListener('keydown', function(event){
+      if(event.key === 'Escape' && menu.classList.contains('open')) setOpen(false);
     });
   })();
 
@@ -842,8 +862,14 @@
   function gsToggle(btn) {
     var item = btn.parentElement;
     var isOpen = item.classList.contains('open');
-    document.querySelectorAll('.gs-accordion-item.open').forEach(function(i){ i.classList.remove('open'); });
-    if (!isOpen) { item.classList.add('open'); }
+    document.querySelectorAll('.gs-accordion-item.open').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.gs-accordion-btn').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
   }
 
   // Contact form
