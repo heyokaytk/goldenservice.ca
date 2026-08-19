@@ -113,7 +113,7 @@
         "name": "Do you provide food or catering?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, we don't provide food or catering — we're a bar service only. We're happy to recommend a few trusted caterers we work with."
+          "text": "No, we don't provide food or catering. We're a bar service only, but we're happy to recommend a few trusted caterers we work with."
         }
       },
       {
@@ -349,8 +349,9 @@
     .gs-accordion-q{font-size:15.5px;font-weight:600;color:#fff;font-family:'DM Sans',sans-serif;line-height:1.4;transition:color .2s}
     .gs-accordion-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s var(--gs-ease);color:rgba(255,255,255,.55);font-size:18px;line-height:1}
     .gs-accordion-item.open .gs-accordion-icon{border-color:var(--gs-gold);color:var(--gs-gold);transform:rotate(45deg)}
-    .gs-accordion-body{max-height:0;overflow:hidden;transition:max-height .4s var(--gs-ease)}
-    .gs-accordion-item.open .gs-accordion-body{max-height:300px}
+    .gs-accordion-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--gs-ease)}
+    .gs-accordion-body>*{overflow:hidden}
+    .gs-accordion-item.open .gs-accordion-body{grid-template-rows:1fr}
     .gs-accordion-a{padding:0 0 22px;font-size:14px;color:rgba(255,255,255,.68);line-height:1.9;font-family:'DM Sans',sans-serif;max-width:64ch}
 
     /* CONTACT */
@@ -693,7 +694,7 @@
             <span class="gs-accordion-icon">+</span>
           </button>
           <div class="gs-accordion-body" id="gs-faq-body-3">
-            <p class="gs-accordion-a">No, we don't provide food or catering — we're a bar service only. We're happy to recommend a few trusted caterers we work with.</p>
+            <p class="gs-accordion-a">No, we don't provide food or catering. We're a bar service only, but we're happy to recommend a few trusted caterers we work with.</p>
           </div>
         </div>
         <div class="gs-accordion-item">
