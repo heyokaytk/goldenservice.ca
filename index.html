@@ -59,7 +59,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "49",
+      "reviewCount": "52",
       "bestRating": "5",
       "worstRating": "1"
     },
@@ -392,6 +392,10 @@
     #gsForm input[type="radio"]:checked{border-color:var(--gs-gold)!important}
     #gsForm input[type="radio"]:checked::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:var(--gs-gold)}
     #gsForm label.gs-radio-opt:hover input[type="radio"]:not(:checked){border-color:var(--gs-gold)!important}
+    #gsForm input[type="checkbox"]{display:inline-block!important;width:17px!important;height:17px!important;min-width:17px!important;padding:0!important;border:1.5px solid var(--gs-line)!important;border-radius:4px!important;background:#fff!important;flex-shrink:0;appearance:none!important;-webkit-appearance:none!important;position:relative;transition:border-color .15s,background .15s;box-shadow:none!important;outline:none!important;cursor:pointer}
+    #gsForm input[type="checkbox"]:checked{border-color:var(--gs-gold)!important;background:var(--gs-gold)!important}
+    #gsForm input[type="checkbox"]:checked::after{content:'\f00c';font-family:'Font Awesome 5 Free';font-weight:900;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:9px;color:var(--gs-ink)}
+    #gsForm label.gs-radio-opt:hover input[type="checkbox"]:not(:checked){border-color:var(--gs-gold)!important}
     #gsSubmit{width:100%;padding:16px;background:var(--gs-gold);color:var(--gs-ink);border:none;border-radius:5px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:.4px;margin-top:10px;transition:background .2s,color .2s,transform .2s}
     #gsSubmit:hover:not(:disabled){background:var(--gs-gold-deep);color:#fff;transform:translateY(-1px)}
     #gsSubmit:disabled{cursor:default}
@@ -704,7 +708,7 @@
       <div class="gs-t-header" data-reveal>
         <div class="gs-tag">Testimonials</div>
         <h2 class="gs-title">What Our Clients Say</h2>
-        <p>Rated Excellent &nbsp;&middot;&nbsp; 49 Reviews on Google</p>
+        <p>Rated Excellent &nbsp;&middot;&nbsp; 52 Reviews on Google</p>
       </div>
       <div class="gs-t-grid" data-reveal>
         <div class="gs-t-card"><span class="gs-t-quote">&#8220;</span><div class="gs-t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="gs-t-text">Tristan and his team are BOMB DOT COM. Everyone at our wedding raved about how awesome they were. They took over all our alcohol planning and did a fabulous job. Planning a wedding is so challenging — Golden Service made it effortless.</p><div class="gs-t-author">— Nalz</div></div>
@@ -799,7 +803,7 @@
         <p style="font-size:15.5px;color:var(--gs-ink);line-height:1.8;margin:0 0 26px">Tell us about your event and we'll put together a custom quote.</p>
         <div class="gs-contact-info-list">
           <div class="gs-contact-info-item"><i class="fas fa-map-marker-alt"></i> Based in Halifax, NS. Serving HRM &amp; surrounding areas.</div>
-          <div class="gs-contact-info-item"><i class="fas fa-star"></i> 49 Five Star Reviews on Google</div>
+          <div class="gs-contact-info-item"><i class="fas fa-star"></i> 52 Five Star Reviews on Google</div>
           <div class="gs-contact-info-item"><i class="fas fa-check-circle"></i> Fully licensed and insured.</div>
           <div class="gs-contact-info-item"><i class="fas fa-bolt"></i> Fast response. Typically within 2 hours. Check your spam folder just in case.</div>
         </div>
@@ -861,6 +865,7 @@
                 <label class="gs-radio-opt"><input type="radio" name="package" value="Open Bar"> Open Bar</label>
                 <label class="gs-radio-opt"><input type="radio" name="package" value="Drink Tickets"> Drink Tickets</label>
                 <label class="gs-radio-opt"><input type="radio" name="package" value="Event Management"> Event Management</label>
+                <label class="gs-radio-opt"><input type="radio" name="package" value="Food & Catering"> Food &amp; Catering</label>
               </div>
             </fieldset>
           </div>
