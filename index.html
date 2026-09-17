@@ -224,7 +224,6 @@
       linear-gradient(180deg, rgba(15,12,8,.05) 0%, rgba(15,12,8,.28) 46%, rgba(13,11,7,.86) 92%),
       linear-gradient(90deg, rgba(10,8,5,.45) 0%, rgba(10,8,5,0) 55%)}
     .gs-hero-content{position:relative;width:100%;max-width:1100px;margin:0 auto;padding:120px 28px 72px}
-    .gs-hero-eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gs-gold);font-weight:600;margin:0 0 20px;text-shadow:0 2px 16px rgba(0,0,0,.4)}
     .gs-hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.6rem,3vw + 2.3rem,4.75rem);font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0 0 22px;max-width:14ch;text-shadow:0 4px 30px rgba(0,0,0,.35)}
     .gs-hero h1 em{color:var(--gs-gold);font-style:italic}
     .gs-hero-sub{font-size:clamp(15px,1vw + 12px,18px);color:rgba(255,255,255,.88);max-width:46ch;margin:0 0 40px;line-height:1.7;font-weight:300}
@@ -310,7 +309,7 @@
     .gs-pkg-card{border:1px solid var(--gs-line);border-radius:8px;padding:32px 28px;position:relative;background:#fff;transition:transform .3s var(--gs-ease),box-shadow .3s var(--gs-ease)}
     .gs-pkg-card:hover{transform:translateY(-4px);box-shadow:var(--gs-shadow)}
     .gs-pkg-card.featured{border:1.5px solid var(--gs-gold);background:linear-gradient(180deg,var(--gs-gold-pale) 0%,#fff 42%)}
-    .gs-pkg-badge{position:absolute;top:-13px;left:28px;background:var(--gs-gold);color:var(--gs-ink);font-size:10.5px;padding:5px 16px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;font-weight:700}
+    .gs-pkg-badge{position:absolute;top:-13px;left:28px;background:var(--gs-gold);color:var(--gs-ink);font-size:11px;padding:5px 16px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;font-weight:700}
     .gs-pkg-icon{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--gs-gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
     .gs-pkg-icon i{font-size:19px;color:var(--gs-gold-deep)}
     .gs-pkg-title{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em}
@@ -321,6 +320,21 @@
     .gs-pkg-cta{text-align:center;margin-top:36px}
     .gs-pkg-note{text-align:center;font-size:13.5px;color:var(--gs-body);margin:36px 0 8px}
     .gs-pkg-note a{color:var(--gs-gold-deep);text-decoration:none;border-bottom:1px solid var(--gs-gold-deep);font-weight:600}
+
+    /* CATERING */
+    .gs-cater-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:44px}
+    .gs-cater-card{border:1px solid var(--gs-line);border-radius:8px;overflow:hidden;background:#fff;transition:transform .3s var(--gs-ease),box-shadow .3s var(--gs-ease)}
+    .gs-cater-card:hover{transform:translateY(-4px);box-shadow:var(--gs-shadow)}
+    .gs-cater-img{height:190px;overflow:hidden}
+    .gs-cater-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--gs-ease)}
+    .gs-cater-card:hover .gs-cater-img img{transform:scale(1.06)}
+    .gs-cater-body{padding:24px 26px 28px}
+    .gs-cater-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:8px}
+    .gs-cater-title{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;letter-spacing:-.01em;margin:0}
+    .gs-cater-price{font-size:14px;font-weight:700;color:var(--gs-gold-deep);white-space:nowrap}
+    .gs-cater-desc{font-size:13.5px;color:var(--gs-body);line-height:1.75;margin:0 0 14px}
+    .gs-cater-includes{font-size:12px;color:var(--gs-body);letter-spacing:.2px;display:flex;align-items:center;gap:7px}
+    .gs-cater-includes i{color:var(--gs-gold-deep);font-size:10px}
 
     /* TESTIMONIALS */
     .gs-testimonials{background:var(--gs-ink);padding:clamp(64px,9vw,108px) 24px}
@@ -479,9 +493,8 @@
       <div class="gs-hero-scrim"></div>
     </div>
     <div class="gs-hero-content">
-      <p class="gs-hero-eyebrow">Mobile Bar &amp; Catering &middot; Est. 2016</p>
       <h1>The <em>Golden Standard</em> for Halifax events</h1>
-      <p class="gs-hero-sub">Weddings, corporate events, and private parties. Fully licensed, insured, and local.</p>
+      <p class="gs-hero-sub">Mobile bar &amp; catering since 2016 for weddings, corporate events, and private parties. Fully licensed, insured, and local.</p>
       <div class="gs-hero-btns">
         <a href="#gs-contact" class="gs-btn-primary">Get a Quote</a>
         <a href="#gs-packages" class="gs-btn-outline">View Packages</a>
@@ -641,8 +654,47 @@
           <ul class="gs-pkg-features"><li>Customizable ticket count</li><li>Seamless transition to cash bar</li></ul>
         </div>
       </div>
-      <p class="gs-pkg-note">Looking to add something extra? Ask us about our <a href="#gs-contact">Signature Cocktail</a> add-on.</p>
+      <p class="gs-pkg-note">Looking to add something extra? Ask us about our <a href="#gs-contact">Signature Cocktail</a> add-on or our <a href="#gs-catering">Catering Trays</a> below.</p>
       <div class="gs-pkg-cta"><a href="#gs-contact" class="gs-btn-primary">Request a Custom Quote</a></div>
+    </div>
+  </div>
+
+  <!-- CATERING -->
+  <div id="gs-catering">
+    <div class="gs-section">
+      <div style="max-width:640px" data-reveal>
+        <div class="gs-tag">Also Available</div>
+        <h2 class="gs-title">Light Fare For Your Event</h2>
+        <div class="gs-divider"></div>
+        <p style="font-size:14px;color:var(--gs-body)">Add a tray to your bar service and keep guests fed between drinks. Each tray comes with dip, napkins, and utensils.</p>
+      </div>
+      <div class="gs-cater-grid" data-reveal>
+        <div class="gs-cater-card">
+          <div class="gs-cater-img"><img src="fruit-tray-catering-halifax.jpg" alt="Fresh fruit tray with watermelon, cantaloupe, honeydew, grapes, and strawberries for Halifax event catering" loading="lazy" width="900" height="600"></div>
+          <div class="gs-cater-body">
+            <div class="gs-cater-head"><h3 class="gs-cater-title">Fruit Tray</h3><span class="gs-cater-price">$75</span></div>
+            <p class="gs-cater-desc">A fresh seasonal fruit selection, sliced and ready to serve.</p>
+            <div class="gs-cater-includes"><i class="fas fa-check"></i> Serves 15&ndash;20 guests</div>
+          </div>
+        </div>
+        <div class="gs-cater-card">
+          <div class="gs-cater-img"><img src="veggie-tray-catering-halifax.jpg" alt="Fresh vegetable tray with broccoli, cauliflower, cucumber, celery, and cherry tomatoes with ranch dip" loading="lazy" width="900" height="600"></div>
+          <div class="gs-cater-body">
+            <div class="gs-cater-head"><h3 class="gs-cater-title">Veggie Tray</h3><span class="gs-cater-price">$75</span></div>
+            <p class="gs-cater-desc">Crisp, fresh-cut vegetables served with a creamy ranch dip.</p>
+            <div class="gs-cater-includes"><i class="fas fa-check"></i> Serves 15&ndash;20 guests</div>
+          </div>
+        </div>
+        <div class="gs-cater-card">
+          <div class="gs-cater-img"><img src="cheese-tray-catering-halifax.jpg" alt="Cheese tray with brie, cheddar, and blue cheese, grapes, blueberries, and crackers for Halifax event catering" loading="lazy" width="900" height="600"></div>
+          <div class="gs-cater-body">
+            <div class="gs-cater-head"><h3 class="gs-cater-title">Cheese Tray</h3><span class="gs-cater-price">$75</span></div>
+            <p class="gs-cater-desc">An assortment of cheeses paired with grapes, berries, and crackers.</p>
+            <div class="gs-cater-includes"><i class="fas fa-check"></i> Serves 15&ndash;20 guests</div>
+          </div>
+        </div>
+      </div>
+      <div class="gs-pkg-cta"><a href="#gs-contact" class="gs-btn-primary">Add A Tray To Your Quote</a></div>
     </div>
   </div>
 
@@ -694,7 +746,7 @@
             <span class="gs-accordion-icon">+</span>
           </button>
           <div class="gs-accordion-body" id="gs-faq-body-3">
-            <p class="gs-accordion-a">No, we don't provide food or catering. We're a bar service only, but we're happy to recommend a few trusted caterers we work with.</p>
+            <p class="gs-accordion-a">We offer light catering trays &mdash; fruit, veggie, and cheese &mdash; that pair well with your bar service. For full meal catering, we're happy to recommend a few trusted caterers we work with.</p>
           </div>
         </div>
         <div class="gs-accordion-item">
@@ -809,6 +861,16 @@
                 <label class="gs-radio-opt"><input type="radio" name="package" value="Open Bar"> Open Bar</label>
                 <label class="gs-radio-opt"><input type="radio" name="package" value="Drink Tickets"> Drink Tickets</label>
                 <label class="gs-radio-opt"><input type="radio" name="package" value="Event Management"> Event Management</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="gs-field-wrap" style="margin-bottom:16px">
+            <fieldset style="border:none;padding:0;margin:0">
+              <legend style="font-size:11.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--gs-body);margin-bottom:11px;padding:0">Add-Ons</legend>
+              <div class="gs-radio-group">
+                <label class="gs-radio-opt"><input type="checkbox" name="addons" value="Fruit Tray"> Fruit Tray ($75)</label>
+                <label class="gs-radio-opt"><input type="checkbox" name="addons" value="Veggie Tray"> Veggie Tray ($75)</label>
+                <label class="gs-radio-opt"><input type="checkbox" name="addons" value="Cheese Tray"> Cheese Tray ($75)</label>
               </div>
             </fieldset>
           </div>
