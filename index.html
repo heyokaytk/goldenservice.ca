@@ -296,13 +296,16 @@
     .gs-charc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gs-gold);flex-shrink:0;transform:translateY(-3px)}
 
     /* CLIENTS */
-    .gs-clients-intro{text-align:center;margin-bottom:40px}
+    .gs-clients-intro{text-align:center;margin-bottom:44px}
     .gs-clients-intro .gs-divider{margin:0 auto 22px}
-    .gs-logo-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--gs-line);border-radius:8px;overflow:hidden;background:#fff;max-width:1060px;margin:0 auto}
-    .gs-logo-cell{padding:22px 14px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--gs-line);border-bottom:1px solid var(--gs-line);text-align:center}
-    .gs-logo-cell:nth-child(5n){border-right:none}
-    .gs-logo-cell:nth-last-child(-n+5){border-bottom:none}
-    .gs-logo-text{font-size:11px;font-weight:600;color:var(--gs-body);letter-spacing:.5px;text-transform:uppercase;line-height:1.4}
+    .gs-logo-wall{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px;max-width:1040px;margin:0 auto}
+    .gs-logo-item{width:132px;height:54px;display:flex;align-items:center;justify-content:center}
+    .gs-logo-item img{max-width:100%;max-height:100%;object-fit:contain;filter:opacity(.82);transition:filter .25s var(--gs-ease),transform .25s var(--gs-ease)}
+    .gs-logo-item img:hover{filter:opacity(1);transform:translateY(-2px)}
+    .gs-clients-more{text-align:center;max-width:780px;margin:44px auto 0;padding-top:34px;border-top:1px solid var(--gs-line)}
+    .gs-clients-more-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gs-gold-deep);margin-bottom:10px}
+    .gs-clients-more p{font-size:13px;color:var(--gs-body);line-height:1.9;margin:0 0 8px}
+    .gs-clients-more p:last-child{margin-bottom:0}
 
     /* PACKAGES */
     .gs-pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:44px}
@@ -440,9 +443,6 @@
       .gs-faq-grid{grid-template-columns:1fr}
       .gs-stats{flex-wrap:wrap}
       .gs-stat{min-width:45%;border-right:none;border-bottom:1px solid var(--gs-line-on-dark)}
-      .gs-logo-grid{grid-template-columns:repeat(3,1fr)}
-      .gs-logo-cell:nth-child(5n){border-right:1px solid var(--gs-line)}
-      .gs-logo-cell:nth-child(3n){border-right:none}
     }
     @media(max-width:600px){
       .gs-hero-content{padding-top:88px}
@@ -451,9 +451,7 @@
       .gs-hamburger{display:flex}
       .gs-nav-cta{display:none}
       .gs-contact-grid{grid-template-columns:1fr!important}
-      .gs-logo-grid{grid-template-columns:repeat(2,1fr)}
-      .gs-logo-cell:nth-child(odd){border-right:1px solid var(--gs-line)}
-      .gs-logo-cell:nth-child(2n){border-right:none}
+      .gs-logo-item{width:112px;height:60px}
     }
   </style>
 </head>
@@ -595,37 +593,32 @@
         <div class="gs-divider"></div>
         <p style="font-size:13px;color:var(--gs-body)">Trusted by major Nova Scotia institutions and nationally recognized brands.</p>
       </div>
-      <div class="gs-logo-grid" data-reveal>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Atlantic Film<br>Festival</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Bastid's<br>BBQ</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Dalhousie<br>University</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Dash Hudson</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Deloitte</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Digital Nova<br>Scotia</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Ernst &amp;<br>Young LLP</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Greenfoot Energy<br>Centre</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Grant<br>Thornton</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Halifax Comedy<br>Fest</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Halifax Public<br>Library</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Halifax Regional<br>Municipality</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Maritime Museum<br>of the Atlantic</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">L-Spark</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">McInnes<br>Cooper</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">NS Health<br>Innovation Hub</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">NS Power</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Origin Living<br>Apartments</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Outshine</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">QEII<br>Foundation</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">RBC<br>Centre</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Remax</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Skate<br>Canada</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">TD Jazz<br>Fest</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Telus</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">The COVE</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">The Junos</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">The PIER</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Volta</span></div>
-        <div class="gs-logo-cell"><span class="gs-logo-text">Women's Infrastructure<br>Network</span></div>
+      <div class="gs-logo-wall" data-reveal>
+        <div class="gs-logo-item"><img src="client-logos/asug.png" alt="ASUG" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/cove.svg" alt="COVE, Centre for Ocean Ventures and Entrepreneurship" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/dalhousie-university.png" alt="Dalhousie University" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/dash-social.svg" alt="Dash Social" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/digital-nova-scotia.svg" alt="Digital Nova Scotia" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/fintech-cadence.png" alt="Fintech Cadence" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/grant-thornton.png" alt="Grant Thornton" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/halifax-comedy-fest.png" alt="Ha!ifax ComedyFest" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/halifax-public-library.png" alt="Halifax Public Libraries" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/l-spark.svg" alt="L-Spark" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/maritime-museum.svg" alt="Maritime Museum of the Atlantic" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/mcinnes-cooper.png" alt="McInnes Cooper" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/ns-health-innovation-hub.png" alt="Nova Scotia Health Innovation Hub" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/origin-living.svg" alt="Origin Living" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/outshine.png" alt="Outshine" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/partners-global.png" alt="Partners Global Corporate Real Estate" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/the-pier.png" alt="The PIER, Port of Halifax" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/qeii-foundation.svg" alt="QEII Foundation" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/remax.png" alt="RE/MAX" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/volta.svg" alt="Volta" loading="lazy"></div>
+        <div class="gs-logo-item"><img src="client-logos/womens-infrastructure-network.png" alt="Women's Infrastructure Network" loading="lazy"></div>
+      </div>
+      <div class="gs-clients-more" data-reveal>
+        <div class="gs-clients-more-label">Also Served</div>
+        <p><span style="white-space:nowrap">Atlantic International Film Festival</span> &middot; Deloitte &middot; EY &middot; <span style="white-space:nowrap">Greenfoot Energy Centre</span> &middot; <span style="white-space:nowrap">Halifax Regional Municipality</span> &middot; <span style="white-space:nowrap">NS Power</span> &middot; <span style="white-space:nowrap">RBC Centre</span> &middot; <span style="white-space:nowrap">Skate Canada</span> &middot; <span style="white-space:nowrap">TD Halifax Jazz Festival</span> &middot; TELUS &middot; <span style="white-space:nowrap">The Junos</span> &middot; plus more</p>
       </div>
     </div>
   </div>
