@@ -121,7 +121,7 @@
         "name": "Can I supply my own alcohol?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Golden Service is a fully comprehensive bar service — we supply the alcohol, licensing, ice, and garnishes along with professional staff. One point of contact, no logistics for you to manage."
+          "text": "No. Golden Service is a fully comprehensive bar service. We supply the alcohol, licensing, ice, and garnishes along with professional staff. One point of contact, no logistics for you to manage."
         }
       },
       {
@@ -290,10 +290,6 @@
     .gs-charc-img{border-radius:6px;background:var(--gs-line);height:420px;overflow:hidden}
     .gs-charc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--gs-ease)}
     .gs-charc-img:hover img{transform:scale(1.045)}
-    .gs-charc-list{list-style:none;padding:0;margin:0 0 30px;display:flex;flex-direction:column;gap:14px}
-    .gs-charc-list li{font-size:14.5px;color:var(--gs-body);line-height:1.7;display:flex;gap:12px;align-items:baseline}
-    .gs-charc-list li b{color:var(--gs-ink);font-weight:600}
-    .gs-charc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gs-gold);flex-shrink:0;transform:translateY(-3px)}
 
     /* CLIENTS */
     .gs-clients-intro{text-align:center;margin-bottom:44px}
@@ -345,7 +341,7 @@
     .gs-t-header{max-width:640px;margin:0 0 44px}
     .gs-t-header .gs-tag{color:var(--gs-gold)}
     .gs-t-header .gs-title{color:#fff}
-    .gs-t-header p{font-size:13.5px;color:var(--gs-body-on-dark);margin-top:6px;font-weight:600;letter-spacing:.3px}
+    .gs-t-header p{font-size:14px;color:var(--gs-body-on-dark);margin-top:6px;font-weight:600;letter-spacing:.3px}
     .gs-t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
     .gs-t-card{background:rgba(255,255,255,.04);border:1px solid var(--gs-line-on-dark);border-radius:8px;padding:30px 26px;position:relative;transition:transform .3s var(--gs-ease),background .3s var(--gs-ease)}
     .gs-t-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.06)}
@@ -366,9 +362,7 @@
     .gs-accordion-q{font-size:15.5px;font-weight:600;color:#fff;font-family:'DM Sans',sans-serif;line-height:1.4;transition:color .2s}
     .gs-accordion-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s var(--gs-ease);color:rgba(255,255,255,.55);font-size:18px;line-height:1}
     .gs-accordion-item.open .gs-accordion-icon{border-color:var(--gs-gold);color:var(--gs-gold);transform:rotate(45deg)}
-    .gs-accordion-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--gs-ease)}
-    .gs-accordion-body>*{overflow:hidden}
-    .gs-accordion-item.open .gs-accordion-body{grid-template-rows:1fr}
+    .gs-accordion-body{max-height:0;overflow:hidden;transition:max-height .4s var(--gs-ease)}
     .gs-accordion-a{padding:0 0 22px;font-size:14px;color:rgba(255,255,255,.68);line-height:1.9;font-family:'DM Sans',sans-serif;max-width:64ch}
 
     /* CONTACT */
@@ -440,7 +434,6 @@
       .gs-split,.gs-charc-grid{grid-template-columns:1fr}
       .gs-about-img{height:320px}
       .gs-charc-img{order:-1;height:280px}
-      .gs-faq-grid{grid-template-columns:1fr}
       .gs-stats{flex-wrap:wrap}
       .gs-stat{min-width:45%;border-right:none;border-bottom:1px solid var(--gs-line-on-dark)}
     }
@@ -463,7 +456,7 @@
     <a href="#" class="gs-nav-logo"><span>GOLDEN</span> SERVICE</a>
     <ul class="gs-nav-links">
       <li><a href="#gs-about">About</a></li>
-      <li><a href="#gs-direction">Event Management</a></li>
+      <li><a href="#gs-corporate">Corporate Events</a></li>
       <li><a href="#gs-clients">Clients</a></li>
       <li><a href="#gs-packages">Packages</a></li>
       <li><a href="#gs-faq">FAQ</a></li>
@@ -480,7 +473,7 @@
   <!-- MOBILE MENU -->
   <div class="gs-mobile-menu" id="gsMobileMenu">
     <a href="#gs-about">About</a>
-    <a href="#gs-direction">Event Management</a>
+    <a href="#gs-corporate">Corporate Events</a>
     <a href="#gs-clients">Clients</a>
     <a href="#gs-packages">Packages</a>
     <a href="#gs-faq">FAQ</a>
@@ -498,7 +491,7 @@
       <h1>The <em>Golden Standard</em> for Halifax events</h1>
       <p class="gs-hero-sub">Mobile bar &amp; catering since 2016 for weddings, corporate events, and private parties. Fully licensed, insured, and local.</p>
       <div class="gs-hero-btns">
-        <a href="#gs-contact" class="gs-btn-primary">Get a Quote</a>
+        <a href="#gs-contact" class="gs-btn-primary">Get a Quote &rarr;</a>
         <a href="#gs-packages" class="gs-btn-outline">View Packages</a>
       </div>
     </div>
@@ -557,29 +550,50 @@
             </div>
           </div>
           <div style="margin-top:32px">
-            <a href="#gs-contact" class="gs-btn-primary">Get a Quote</a>
+            <a href="#gs-contact" class="gs-btn-primary">Get a Quote &rarr;</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- EVENT MANAGEMENT -->
-  <div id="gs-direction" class="gs-section">
+  <!-- CORPORATE -->
+  <div id="gs-corporate" class="gs-section">
     <div class="gs-charc-grid">
       <div data-reveal>
-        <h2 class="gs-title">Every detail, start to finish.</h2>
+        <div class="gs-tag">For Corporate Events</div>
+        <h2 class="gs-title">One Vendor. Every Detail Handled.</h2>
         <div class="gs-divider"></div>
-        <p style="font-size:15.5px;color:var(--gs-body);line-height:1.85;margin-bottom:24px;max-width:56ch">We handle the behind-the-scenes complexity, from the first permit to the final pour, so your day feels effortless.</p>
-        <ul class="gs-charc-list">
-          <li><span><b>Logistics.</b> Permits, site plans handled from day one.</span></li>
-          <li><span><b>Operations.</b> Bar and payment systems ready before your guests arrive.</span></li>
-          <li><span><b>Staffing.</b> A managed professional team with one point of contact.</span></li>
-        </ul>
-        <a href="#gs-contact" class="gs-btn-primary">Get in Touch &rarr;</a>
+        <p style="font-size:14px;color:var(--gs-body);line-height:1.85;margin-bottom:24px;max-width:56ch">The single point of contact Halifax companies rely on for holiday parties, client events, and team celebrations. Simple invoicing, zero logistics for you to manage.</p>
+        <div class="gs-feat-list">
+          <div class="gs-feat-item">
+            <div class="gs-feat-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="gs-feat-text">
+              <strong>One Point of Contact</strong>
+              <span>Permits, staffing, setup, and teardown. One team manages it all, so nothing falls on your plate.</span>
+            </div>
+          </div>
+          <div class="gs-feat-item">
+            <div class="gs-feat-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <div class="gs-feat-text">
+              <strong>Straightforward Invoicing</strong>
+              <span>One clear invoice, ready for your PO or expense report. No surprise costs after the event.</span>
+            </div>
+          </div>
+          <div class="gs-feat-item">
+            <div class="gs-feat-icon"><i class="fas fa-handshake"></i></div>
+            <div class="gs-feat-text">
+              <strong>A Standing Vendor, Not a One-Off</strong>
+              <span>Many of our corporate clients keep us on as a preferred vendor for recurring team events, holiday parties, and monthly gatherings.</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:32px">
+          <a href="#gs-contact" class="gs-btn-primary">Request a Corporate Quote &rarr;</a>
+        </div>
       </div>
       <div class="gs-charc-img" data-reveal>
-        <img src="mobile-bar-event-management-halifax.jpg" alt="Event management and coordination team at Golden Service Mobile Bar Halifax" loading="lazy">
+        <img src="mobile-bar-event-management-halifax.jpg" alt="Golden Service team managing a corporate event bar setup in Halifax" loading="lazy">
       </div>
     </div>
   </div>
@@ -591,7 +605,7 @@
         <div class="gs-tag">Trusted By</div>
         <h2 class="gs-title">Who We've Served</h2>
         <div class="gs-divider"></div>
-        <p style="font-size:13px;color:var(--gs-body)">Trusted by major Nova Scotia institutions and nationally recognized brands.</p>
+        <p style="font-size:14px;color:var(--gs-body)">Trusted by major Nova Scotia institutions and nationally recognized brands.</p>
       </div>
       <div class="gs-logo-wall" data-reveal>
         <div class="gs-logo-item"><img src="client-logos/asug.png" alt="ASUG" loading="lazy"></div>
@@ -653,8 +667,8 @@
           <ul class="gs-pkg-features"><li>Customizable ticket count</li><li>Seamless transition to cash bar</li></ul>
         </div>
       </div>
-      <p class="gs-pkg-note">Looking to add something extra? Ask us about our <a href="#gs-contact">Signature Cocktail</a> add-on or our <a href="#gs-catering">Catering Trays</a> below.</p>
-      <div class="gs-pkg-cta"><a href="#gs-contact" class="gs-btn-primary">Request a Custom Quote</a></div>
+      <p class="gs-pkg-note">Looking to add something extra? Ask us about our <a href="#gs-catering">Catering Trays</a> below.</p>
+      <div class="gs-pkg-cta"><a href="#gs-contact" class="gs-btn-primary">Request a Custom Quote &rarr;</a></div>
     </div>
   </div>
 
@@ -693,7 +707,7 @@
           </div>
         </div>
       </div>
-      <div class="gs-pkg-cta"><a href="#gs-contact" class="gs-btn-primary">Add A Tray To Your Quote</a></div>
+      <div class="gs-pkg-cta"><a href="#gs-contact" class="gs-btn-primary">Add a Tray to Your Quote &rarr;</a></div>
     </div>
   </div>
 
@@ -703,6 +717,7 @@
       <div class="gs-t-header" data-reveal>
         <div class="gs-tag">Testimonials</div>
         <h2 class="gs-title">What Our Clients Say</h2>
+        <div class="gs-divider"></div>
         <p>Rated Excellent &nbsp;&middot;&nbsp; 52 Reviews on Google</p>
       </div>
       <div class="gs-t-grid" data-reveal>
@@ -718,7 +733,10 @@
   <div id="gs-faq" class="gs-section-dark">
     <div class="gs-faq-inner">
       <div class="gs-faq-header" data-reveal>
+        <div class="gs-tag">Good To Know</div>
         <h2 class="gs-title">Frequently Asked Questions</h2>
+        <div class="gs-divider"></div>
+        <p style="font-size:14px;color:var(--gs-body-on-dark)">Answers to what we hear most from couples and planners.</p>
       </div>
       <div class="gs-accordion" data-reveal>
         <div class="gs-accordion-item">
@@ -754,7 +772,7 @@
             <span class="gs-accordion-icon">+</span>
           </button>
           <div class="gs-accordion-body" id="gs-faq-body-4">
-            <p class="gs-accordion-a">No. Golden Service is a fully comprehensive bar service — we supply the alcohol, licensing, ice, and garnishes along with professional staff. One point of contact, no logistics for you to manage.</p>
+            <p class="gs-accordion-a">No. Golden Service is a fully comprehensive bar service. We supply the alcohol, licensing, ice, and garnishes along with professional staff. One point of contact, no logistics for you to manage.</p>
           </div>
         </div>
         <div class="gs-accordion-item">
@@ -795,7 +813,7 @@
         <div class="gs-tag">Book Now</div>
         <h2 class="gs-title">Let's Plan Your Event</h2>
         <div class="gs-divider"></div>
-        <p style="font-size:15.5px;color:var(--gs-ink);line-height:1.8;margin:0 0 26px">Tell us about your event and we'll put together a custom quote.</p>
+        <p style="font-size:14px;color:var(--gs-ink);line-height:1.8;margin:0 0 26px">Tell us about your event and we'll put together a custom quote.</p>
         <div class="gs-contact-info-list">
           <div class="gs-contact-info-item"><i class="fas fa-map-marker-alt"></i> Based in Halifax, NS. Serving HRM &amp; surrounding areas.</div>
           <div class="gs-contact-info-item"><i class="fas fa-star"></i> 52 Five Star Reviews on Google</div>
@@ -885,7 +903,7 @@
             <textarea id="gs-message" name="message"></textarea>
           </div>
           <input type="hidden" name="_subject" value="New Booking Inquiry - Golden Service">
-          <button type="submit" id="gsSubmit">Request A Quote &rarr;</button>
+          <button type="submit" id="gsSubmit">Request a Quote &rarr;</button>
           <p style="text-align:center;font-size:12.5px;color:var(--gs-body);margin:14px 0 0">Heads up: our replies sometimes land in spam. Check there if you don't hear from us within 24 hours.</p>
           <div id="gsSuccess">&#10003; Thanks! We'll be in touch within 24 hours. Please check your spam folders.</div>
           <div id="gsError">Oops, something went wrong. Please email us directly at <a href="mailto:goldenservicebar@gmail.com" style="color:#991b1b">goldenservicebar@gmail.com</a> and we'll get right back to you!</div>
@@ -903,7 +921,7 @@
       <div class="gs-footer-right">
         <div class="gs-footer-links">
           <a href="#gs-about">About</a>
-          <a href="#gs-direction">Event Management</a>
+          <a href="#gs-corporate">Corporate Events</a>
           <a href="#gs-clients">Clients</a>
           <a href="#gs-packages">Packages</a>
           <a href="#gs-faq">FAQ</a>
@@ -969,10 +987,13 @@
     document.querySelectorAll('.gs-accordion-item.open').forEach(function(i){
       i.classList.remove('open');
       i.querySelector('.gs-accordion-btn').setAttribute('aria-expanded', 'false');
+      i.querySelector('.gs-accordion-body').style.maxHeight = '';
     });
     if (!isOpen) {
       item.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
+      var body = item.querySelector('.gs-accordion-body');
+      body.style.maxHeight = body.scrollHeight + 'px';
     }
   }
 
