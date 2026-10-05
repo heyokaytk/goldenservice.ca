@@ -28,7 +28,8 @@ One vendor handles the whole bar: licence, staff, stock, setup, teardown and one
 - Corporate payment terms: deposit holds the date; balance invoiced net 15 after the event. PO and EFT accepted.
 - Liability insurance: $5M. Certificate of insurance on request.
 - All bartenders are Serve Right (responsible beverage service) certified.
-- Holiday pricing (decided 2026-09-29): no per-tier prices on the site. One public anchor only: "Office holiday parties typically start under $1,000." Exact pricing goes out by email. The hero sample quote ($950 for 40 guests, 2 hrs) stays as an illustrative example.
+- Pricing on the corporate page: no bar prices anywhere (no tiers, no "under $1,000" anchor, no sample quote; client events range up to ~$20K and a low anchor undercuts them). Exact pricing goes out by email. Only public price: $75 catering trays.
+- Response time promise: "Most quotes go out within a few hours."
 
 ## Brand Commitments
 - Name: Golden Service Mobile Bar & Catering. Line: "The Golden Standard".

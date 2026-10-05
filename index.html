@@ -302,6 +302,8 @@
     .gs-clients-more-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gs-gold-deep);margin-bottom:10px}
     .gs-clients-more p{font-size:13px;color:var(--gs-body);line-height:1.9;margin:0 0 8px}
     .gs-clients-more p:last-child{margin-bottom:0}
+    .gs-served .gs-sv{white-space:nowrap}
+    .gs-served .gs-sep.is-edge{display:none}
 
     /* PACKAGES */
     .gs-pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:44px}
@@ -632,7 +634,7 @@
       </div>
       <div class="gs-clients-more" data-reveal>
         <div class="gs-clients-more-label">Also Served</div>
-        <p><span style="white-space:nowrap">Atlantic International Film Festival</span> &middot; Deloitte &middot; EY &middot; <span style="white-space:nowrap">Greenfoot Energy Centre</span> &middot; <span style="white-space:nowrap">Halifax Regional Municipality</span> &middot; <span style="white-space:nowrap">NS Power</span> &middot; <span style="white-space:nowrap">RBC Centre</span> &middot; <span style="white-space:nowrap">Skate Canada</span> &middot; <span style="white-space:nowrap">TD Halifax Jazz Festival</span> &middot; TELUS &middot; <span style="white-space:nowrap">The Junos</span> &middot; plus more</p>
+        <p class="gs-served"><span class="gs-sv">Atlantic International Film Festival</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">Deloitte</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">EY</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">Greenfoot Energy Centre</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">Halifax Regional Municipality</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">NS Power</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">RBC Centre</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">Skate Canada</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">TD Halifax Jazz Festival</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">TELUS</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">The Junos</span> <span class="gs-sep" aria-hidden="true">&middot;</span> <span class="gs-sv">plus more</span></p>
       </div>
     </div>
   </div>
@@ -1052,6 +1054,27 @@
         io.observe(el);
       }
     });
+  })();
+
+  // Also Served: hide any separator dot that lands at the start or end of a line.
+  (function(){
+    var list = document.querySelector('.gs-served');
+    if(!list) return;
+    var seps = list.querySelectorAll('.gs-sep');
+    function tidy(){
+      seps.forEach(function(sep){ sep.classList.remove('is-edge'); });
+      seps.forEach(function(sep){
+        var prev = sep.previousElementSibling, next = sep.nextElementSibling;
+        var top = sep.getBoundingClientRect().top;
+        if(Math.abs(prev.getBoundingClientRect().top - top) > 2 || Math.abs(next.getBoundingClientRect().top - top) > 2){
+          sep.classList.add('is-edge');
+        }
+      });
+    }
+    var t;
+    window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(tidy, 120); });
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(tidy); }
+    tidy();
   })();
 
   // Stat count-up — purely decorative, degrades to static value already in markup.

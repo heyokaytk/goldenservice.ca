@@ -433,7 +433,7 @@
             <a href="#quote" class="gs-tier-cta" data-package="The Year-End Gala">Get pricing</a>
           </article>
         </div>
-        <p class="gs-holiday-anchor">From 20-person office toasts to <strong>full-scale galas</strong>. Tell us your headcount and we'll send exact pricing the same day.</p>
+        <p class="gs-holiday-anchor">From 20-person office toasts to <strong>full-scale galas</strong>. Tell us your headcount and we'll send exact pricing, usually within a few hours.</p>
 
         <div class="gs-promises" data-reveal>
           <div>
@@ -509,15 +509,18 @@
               <p class="gs-step-label"><b>Step 1 of 2</b> &middot; The basics</p>
               <div class="gs-row">
                 <div class="gs-field"><label for="f-name">Your name</label><input class="gs-input" id="f-name" name="name" type="text" autocomplete="name" required></div>
-                <div class="gs-field"><label for="f-email">Work email</label><input class="gs-input" id="f-email" name="_replyto" type="email" autocomplete="email" required></div>
+                <div class="gs-field"><label for="f-company">Company</label><input class="gs-input" id="f-company" name="company" type="text" autocomplete="organization" required></div>
               </div>
-              <div class="gs-field"><label for="f-company">Company</label><input class="gs-input" id="f-company" name="company" type="text" autocomplete="organization" required></div>
+              <div class="gs-row">
+                <div class="gs-field"><label for="f-email">Work email</label><input class="gs-input" id="f-email" name="_replyto" type="email" autocomplete="email" required></div>
+                <div class="gs-field"><label for="f-phone">Phone <i>(optional)</i></label><input class="gs-input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="902-555-0123"></div>
+              </div>
               <div class="gs-row">
                 <div class="gs-field"><label for="f-date">Event date</label><input class="gs-input" id="f-date" name="event_date" type="date" required></div>
                 <div class="gs-field"><label for="f-guests">Approx. guests</label><input class="gs-input" id="f-guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="e.g. 60" required></div>
               </div>
               <button type="button" class="gs-submit" id="gsNext">Next &rarr;</button>
-              <div class="gs-form-foot"><p class="gs-promise">A real person replies the same business day.</p></div>
+              <div class="gs-form-foot"><p class="gs-promise">Most quotes go out within a few hours.</p></div>
             </div>
 
             <div class="gs-step" id="gsStep2">
@@ -543,12 +546,12 @@
               <input type="hidden" name="_subject" value="Corporate Quote Request - Golden Service">
               <button type="submit" class="gs-submit" id="gsSubmit">Get my quote</button>
               <div class="gs-form-foot">
-                <p class="gs-promise">A real person replies the same business day.</p>
+                <p class="gs-promise">Most quotes go out within a few hours.</p>
                 <button type="button" class="gs-back" id="gsBack">&larr; Back</button>
               </div>
             </div>
 
-            <div class="gs-status ok" id="gsSuccess" role="status" hidden>Got it. Tristan will reply with your quote the same business day.</div>
+            <div class="gs-status ok" id="gsSuccess" role="status" hidden>Thanks, it's in. We'll be in touch with your quote shortly.</div>
             <div class="gs-status err" id="gsError" role="alert" hidden>That didn't send. Email <a href="mailto:goldenservicebar@gmail.com">goldenservicebar@gmail.com</a> or call <a href="tel:+19024970006">902-497-0006</a> and we'll take it from there.</div>
           </form>
         </div>
