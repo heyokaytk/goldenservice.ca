@@ -192,6 +192,9 @@
     .gs-fare-row figcaption{padding-top:14px;font-size:14.5px;color:var(--gs-body);line-height:1.6}
     .gs-fare-row figcaption strong{display:block;color:var(--gs-ink);font-weight:600;font-size:16px;margin-bottom:2px}
     .gs-addon{margin:-6px 0 22px!important}
+    .gs-addon .gs-inline-check{margin:0}
+    .gs-tray-opts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:10px;padding-left:25px}
+    .gs-tray-opts[hidden]{display:none}
 
     /* PROCUREMENT SPEC SHEET */
     .gs-proc{padding:clamp(64px,9vw,108px) 0}
@@ -538,8 +541,16 @@
                   <label class="gs-choice"><input type="radio" name="service_style" value="Not sure, recommend one" checked> Not sure, recommend one</label>
                 </div>
               </fieldset>
-              <label class="gs-inline-check gs-addon"><input type="checkbox" name="addons" value="Catering trays"> Add light fare trays (fruit, veggie, cheese)</label>
-              <div class="gs-field"><label for="f-msg">Anything else? <i>(optional)</i></label><textarea class="gs-input" id="f-msg" name="message" rows="3"></textarea></div>
+              <div class="gs-addon">
+                <label class="gs-inline-check"><input type="checkbox" id="gsTrays" aria-controls="gsTrayOpts" aria-expanded="false"> Add light fare trays (fruit, veggie, cheese)</label>
+                <div class="gs-tray-opts" id="gsTrayOpts" role="group" aria-label="Tray types" hidden>
+                  <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Fruit" checked> Fruit</label>
+                  <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Veggie" checked> Veggie</label>
+                  <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Cheese" checked> Cheese</label>
+                </div>
+              </div>
+              <input type="hidden" name="addons" id="f-addons" value="">
+              <div class="gs-field"><label for="f-msg">Tell us about your event <i>(optional)</i></label><textarea class="gs-input" id="f-msg" name="message" rows="3" placeholder="Venue, timing, theme, dietary needs, anything we should know."></textarea></div>
               <input type="hidden" name="package_interest" id="f-package" value="">
               <input type="hidden" name="event_type" value="Corporate Event">
               <input type="hidden" name="source" value="goldenservice.ca/corporate">
@@ -657,9 +668,24 @@
       });
     });
 
+    // Tray picks are sent as one line, e.g. "Light fare trays: Fruit, Cheese".
+    var trays = document.getElementById('gsTrays');
+    var trayOpts = document.getElementById('gsTrayOpts');
+    var addons = document.getElementById('f-addons');
+    trays.addEventListener('change', function(){
+      trayOpts.hidden = !trays.checked;
+      trays.setAttribute('aria-expanded', trays.checked);
+    });
+    function trayValue(){
+      if(!trays.checked) return '';
+      var picks = [].map.call(trayOpts.querySelectorAll('.gs-tray:checked'), function(c){ return c.value; });
+      return 'Light fare trays: ' + (picks.length ? picks.join(', ') : 'type not specified');
+    }
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
       if(!step1Valid()){ showStep(1); step1Valid(); return; }
+      addons.value = trayValue();
       submit.disabled = true;
       submit.textContent = 'Sending...';
       err.hidden = true;
