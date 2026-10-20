@@ -18,7 +18,7 @@ Golden Service Mobile Bar & Catering is a licensed mobile bar setup (never a tra
 One vendor handles the whole bar: licence, staff, stock, setup, teardown and one itemized invoice. The strongest fit for corporate work is companies hosting in their own space or at unlicensed venues (offices, coworking spaces, galleries, museums, warehouses), where licensing and host liability are the buyer's worry.
 
 ## Operating Context
-- Quotes are requested through a Formspree form (`https://formspree.io/f/mdapozvl`) and answered by Tristan by email.
+- Quotes are requested through a Web3Forms form (endpoint `https://api.web3forms.com/submit`, delivering to hello@goldenservice.ca) and answered by Tristan by email.
 - Bartenders are hired per event; December Friday capacity is 10+ staff.
 - Special event liquor licences are applied for on the client's behalf at no extra charge.
 

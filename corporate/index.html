@@ -496,8 +496,10 @@
         </div>
 
         <div class="gs-card" data-reveal>
-          <form id="gsForm" action="https://formspree.io/f/mdapozvl" method="POST" novalidate>
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <form id="gsForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="cbef750b-b37a-4d63-a776-7276fa377355">
+            <input type="hidden" name="from_name" value="Golden Service Website">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
 
             <div id="gsStep1">
               <div class="gs-row">
@@ -505,7 +507,7 @@
                 <div class="gs-field"><label for="f-company">Company</label><input class="gs-input" id="f-company" name="company" type="text" autocomplete="organization" required></div>
               </div>
               <div class="gs-row">
-                <div class="gs-field"><label for="f-email">Work email</label><input class="gs-input" id="f-email" name="_replyto" type="email" autocomplete="email" required></div>
+                <div class="gs-field"><label for="f-email">Work email</label><input class="gs-input" id="f-email" name="email" type="email" autocomplete="email" required></div>
                 <div class="gs-field"><label for="f-phone">Phone</label><input class="gs-input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="902-555-0123" pattern="[\d\s\(\)\+\.\-]{10,}" title="Please enter a phone number with area code" required></div>
               </div>
               <div class="gs-row">
@@ -543,14 +545,14 @@
               <input type="hidden" name="package_interest" id="f-package" value="">
               <input type="hidden" name="event_type" value="Corporate Event">
               <input type="hidden" name="source" value="goldenservice.ca/corporate">
-              <input type="hidden" name="_subject" value="Corporate Quote Request - Golden Service">
+              <input type="hidden" name="subject" value="Corporate Quote Request - Golden Service">
               </div>
             </details>
             <button type="submit" class="gs-submit" id="gsSubmit">Get my quote</button>
             <div class="gs-form-foot" id="gsFormFoot"><p class="gs-promise">Most quotes go out within a few hours.</p></div>
 
             <div class="gs-status ok" id="gsSuccess" role="status" hidden>Thanks, it's in. We'll be in touch with your quote shortly.</div>
-            <div class="gs-status err" id="gsError" role="alert" hidden>That didn't send. Email <a href="mailto:goldenservicebar@gmail.com">goldenservicebar@gmail.com</a> or call <a href="tel:+19024970006">902-497-0006</a> and we'll take it from there.</div>
+            <div class="gs-status err" id="gsError" role="alert" hidden>That didn't send. Email <a href="mailto:hello@goldenservice.ca">hello@goldenservice.ca</a> or call <a href="tel:+19024970006">902-497-0006</a> and we'll take it from there.</div>
           </form>
         </div>
       </div>

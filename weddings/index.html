@@ -653,14 +653,16 @@
         </div>
 
         <div class="gs-card" data-reveal>
-          <form id="gsForm" action="https://formspree.io/f/mdapozvl" method="POST" novalidate>
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <form id="gsForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="cbef750b-b37a-4d63-a776-7276fa377355">
+            <input type="hidden" name="from_name" value="Golden Service Website">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
 
             <div id="gsStep1">
               <p class="gs-venue-note" id="gsVenueNote" role="status" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Venue added: <b id="gsVenueNoteName"></b></span></p>
               <div class="gs-row">
                 <div class="gs-field"><label for="f-name">Your names</label><input class="gs-input" id="f-name" name="name" type="text" autocomplete="name" placeholder="e.g. Sam &amp; Jordan" required></div>
-                <div class="gs-field"><label for="f-email">Email</label><input class="gs-input" id="f-email" name="_replyto" type="email" autocomplete="email" required></div>
+                <div class="gs-field"><label for="f-email">Email</label><input class="gs-input" id="f-email" name="email" type="email" autocomplete="email" required></div>
               </div>
               <div class="gs-row">
                 <div class="gs-field"><label for="f-date">Wedding date</label><input class="gs-input" id="f-date" name="event_date" type="date" max="2099-12-31" required></div>
@@ -697,14 +699,14 @@
               <div class="gs-field"><label for="f-msg">Tell us about your wedding <i>(optional)</i></label><textarea class="gs-input" id="f-msg" name="message" rows="3" placeholder="Reception hours, favourite drinks, signature cocktail ideas, anything we should know."></textarea></div>
               <input type="hidden" name="event_type" value="Wedding">
               <input type="hidden" name="source" value="goldenservice.ca/weddings">
-              <input type="hidden" name="_subject" value="Wedding Quote Request - Golden Service">
+              <input type="hidden" name="subject" value="Wedding Quote Request - Golden Service">
               </div>
             </details>
             <button type="submit" class="gs-submit" id="gsSubmit">Get my quote</button>
             <div class="gs-form-foot" id="gsFormFoot"><p class="gs-promise">Most quotes go out within a few hours.</p></div>
 
             <div class="gs-status ok" id="gsSuccess" role="status" hidden>Thanks, it's in. We'll be in touch with your quote shortly. Check your spam folder if you don't see it.</div>
-            <div class="gs-status err" id="gsError" role="alert" hidden>That didn't send. Email <a href="mailto:goldenservicebar@gmail.com">goldenservicebar@gmail.com</a> or call <a href="tel:+19024970006">902-497-0006</a> and we'll take it from there.</div>
+            <div class="gs-status err" id="gsError" role="alert" hidden>That didn't send. Email <a href="mailto:hello@goldenservice.ca">hello@goldenservice.ca</a> or call <a href="tel:+19024970006">902-497-0006</a> and we'll take it from there.</div>
           </form>
         </div>
       </div>
