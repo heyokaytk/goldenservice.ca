@@ -12,6 +12,13 @@
   <meta property="og:url" content="https://goldenservice.ca/weddings/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://goldenservice.ca/champagne-toast-service-wedding-events.jpg">
+  <meta property="og:image:width" content="2400">
+  <meta property="og:image:height" content="1160">
+  <meta property="og:image:alt" content="Golden Service bartender pouring champagne at a Nova Scotia wedding">
+  <meta property="og:site_name" content="Golden Service Mobile Bar & Catering">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#17140f">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -20,7 +27,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <link rel="canonical" href="https://goldenservice.ca/weddings/">
-  <link rel="preload" as="image" href="/champagne-toast-service-wedding-events.jpg" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="/champagne-toast-service-wedding-events-1024.webp" media="(max-width: 760px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="/champagne-toast-service-wedding-events-1600.webp" media="(min-width: 761px)" fetchpriority="high">
 
   <script type="application/ld+json">
   {
@@ -65,7 +73,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet"></noscript>
 
   <style>
     *,*::before,*::after{box-sizing:border-box}
@@ -151,7 +161,8 @@
 
     /* HERO */
     .gs-hero{background:var(--gs-ink);color:#fff;position:relative;overflow:hidden;isolation:isolate}
-    .gs-hero::before{content:'';position:absolute;inset:0;z-index:-1;background:url('/champagne-toast-service-wedding-events.jpg') 70% 40%/cover no-repeat}
+    .gs-hero::before{content:'';position:absolute;inset:0;z-index:-1;background:url('/champagne-toast-service-wedding-events.jpg') 70% 40%/cover no-repeat;background-image:image-set(url('/champagne-toast-service-wedding-events-1600.webp') type('image/webp'),url('/champagne-toast-service-wedding-events.jpg') type('image/jpeg'))}
+    @media(max-width:760px){.gs-hero::before{background-image:image-set(url('/champagne-toast-service-wedding-events-1024.webp') type('image/webp'),url('/champagne-toast-service-wedding-events.jpg') type('image/jpeg'))}}
     .gs-hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,20,15,.94) 0%,rgba(23,20,15,.8) 45%,rgba(23,20,15,.3) 100%)}
     .gs-hero-grid{min-height:min(76vh,680px);display:flex;flex-direction:column;justify-content:center;padding:clamp(64px,9vw,112px) 24px;max-width:1160px;margin:0 auto}
     .gs-hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.6rem,3.2vw + 1.9rem,4.6rem);font-weight:700;line-height:1.03;letter-spacing:-.015em;margin:0 0 24px;max-width:11ch}
@@ -475,7 +486,7 @@
         <div data-reveal>
           <h2 class="gs-title" id="gsHandledTitle">Everything behind the bar, <em>on us.</em></h2>
           <p class="gs-lede">One vendor for the whole bar. No liquor store runs, no borrowed coolers, no one in the wedding party stuck pouring drinks.</p>
-          <div class="gs-handled-photo"><img src="/golden-service-mobile-bar-setup-wedding.jpg" alt="Golden Service mobile bar set up for a wedding, with a stocked back bar, drink menu and signature cocktail banner" loading="lazy" width="1600" height="1000"></div>
+          <div class="gs-handled-photo"><picture><source type="image/webp" srcset="/golden-service-mobile-bar-setup-wedding-640.webp 640w, /golden-service-mobile-bar-setup-wedding-1024.webp 1024w, /golden-service-mobile-bar-setup-wedding-1600.webp 1600w" sizes="(max-width: 980px) min(560px, calc(100vw - 48px)), 440px"><img src="/golden-service-mobile-bar-setup-wedding.jpg" alt="Golden Service mobile bar set up for a wedding, with a stocked back bar, drink menu and signature cocktail banner" loading="lazy" width="1600" height="1000"></picture></div>
         </div>
         <dl class="gs-spec" data-reveal>
           <div><dt>Alcohol</dt><dd><strong>We supply all of it</strong>The domestic beers your guests know, local Nova Scotia favourites, wine, spirits and ciders, plus non-alcoholic options.</dd></div>
@@ -615,7 +626,7 @@
       <div class="gs-shell gs-faq-grid">
         <div data-reveal>
           <h2 class="gs-title" id="gsFaqTitle">Wedding bar questions, <em>answered.</em></h2>
-          <p class="gs-lede">Something else on your mind? Call <a class="gs-link-on-dark" style="white-space:nowrap" href="tel:+19024970006">902-497-0006</a> or ask in your quote request.</p>
+          <p class="gs-lede">Planning the details? Read our <a class="gs-link-on-dark" href="/wedding-bar-guide/">wedding bar planning guide</a>. Something else on your mind? Call <a class="gs-link-on-dark" style="white-space:nowrap" href="tel:+19024970006">902-497-0006</a> or ask in your quote request.</p>
         </div>
         <div class="gs-faq-list" data-reveal>
           <details><summary>Can we bring our own alcohol?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. We supply all the alcohol along with the licence, bartenders, ice and garnishes. One vendor runs the whole bar, so there's nothing for you to buy, chill or haul.</p></details>
@@ -643,6 +654,7 @@
 
         <div class="gs-card" data-reveal>
           <form id="gsForm" action="https://formspree.io/f/mdapozvl" method="POST" novalidate>
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
             <div id="gsStep1">
               <p class="gs-venue-note" id="gsVenueNote" role="status" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Venue added: <b id="gsVenueNoteName"></b></span></p>
@@ -715,6 +727,7 @@
         <a href="#quote">Get a Quote</a>
         <a href="https://www.instagram.com/goldenservicebar/" target="_blank" rel="noopener" aria-label="Instagram" class="gs-footer-social"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
         <a href="https://www.facebook.com/goldenservicebar/" target="_blank" rel="noopener" aria-label="Facebook" class="gs-footer-social"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/golden-service-mobile-bar/" target="_blank" rel="noopener" aria-label="LinkedIn" class="gs-footer-social"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
       </div>
     </div>
     <div class="gs-footer-copy">© 2026 Golden Service Mobile Bar &amp; Catering Ltd. · Halifax, Nova Scotia</div>

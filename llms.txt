@@ -65,6 +65,7 @@
 - [Home](https://goldenservice.ca/): Overview of services, bar styles, light fare, reviews, FAQ and the quote form.
 - [Weddings](https://goldenservice.ca/weddings/): Wedding bar service, what's included, bar styles, the full list of venues worked, wedding FAQ and a wedding quote form.
 - [Corporate events](https://goldenservice.ca/corporate/): Holiday party packages, client list, procurement details (insurance, licensing, invoicing, payment terms) and a corporate quote form.
+- [Wedding bar planning guide](https://goldenservice.ca/wedding-bar-guide/): How much alcohol to plan for (1 to 1.5 drinks per guest per hour), open bar vs drink tickets vs cash bar, Nova Scotia special event liquor licensing, what a full-service bar covers, booking timeline and questions to ask a bar company.
 - [Get a quote](https://goldenservice.ca/#quote): Quote request form. Most quotes go out within a few hours.
 
 ## Optional
@@ -72,3 +73,4 @@
 - [Google reviews](https://www.google.com/search?q=Golden+Service+Mobile+Bar+Halifax): 52 five-star reviews.
 - [Instagram](https://www.instagram.com/goldenservicebar/)
 - [Facebook](https://www.facebook.com/goldenservicebar/)
+- [LinkedIn](https://www.linkedin.com/company/golden-service-mobile-bar/)

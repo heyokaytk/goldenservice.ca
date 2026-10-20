@@ -15,6 +15,11 @@
   <meta property="og:image" content="https://goldenservice.ca/champagne-toast-service-wedding-events.jpg">
   <meta property="og:image:width" content="2400">
   <meta property="og:image:height" content="1160">
+  <meta property="og:image:alt" content="Golden Service bartender pouring champagne at a Nova Scotia event">
+  <meta property="og:site_name" content="Golden Service Mobile Bar & Catering">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#17140f">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -53,9 +58,23 @@
     },
     "sameAs": [
       "https://www.facebook.com/goldenservicebar/",
-      "https://www.instagram.com/goldenservicebar/"
+      "https://www.instagram.com/goldenservicebar/",
+      "https://www.linkedin.com/company/golden-service-mobile-bar/"
     ],
     "priceRange": "$$",
+    "knowsAbout": ["Mobile bar service", "Wedding bar service", "Corporate event bartending", "Special event liquor licensing in Nova Scotia"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Mobile bar services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Open bar service", "description": "Licensed open bar with bartenders, mixers, ice, glassware, setup and cleanup." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drink ticket bar service", "description": "Host-covered drink tickets followed by a cash bar." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cash bar service", "description": "Licensed cash bar with debit machines on site." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding bar service", "description": "Mobile bar service for weddings anywhere in Nova Scotia." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate event bar service", "description": "Licensed bar service for holiday parties, client events and company celebrations, with one PO-ready invoice." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Light fare trays", "description": "Fruit, veggie and cheese trays, each serving 15 to 20 guests." } }
+      ]
+    },
     "servesCuisine": "Bar & Catering",
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -106,10 +125,12 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Hero image priority -->
-  <link rel="preload" as="image" href="/champagne-toast-service-wedding-events.jpg" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="/champagne-toast-service-wedding-events-640.webp 640w, /champagne-toast-service-wedding-events-1024.webp 1024w, /champagne-toast-service-wedding-events-1600.webp 1600w, /champagne-toast-service-wedding-events-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
 
   <style>
     *,*::before,*::after{box-sizing:border-box}
@@ -447,7 +468,7 @@
     <!-- HERO -->
     <section class="gs-hero" aria-labelledby="gsHeroTitle">
       <div class="gs-hero-media">
-        <img src="/champagne-toast-service-wedding-events.jpg" alt="Golden Service bartender pouring champagne at a Nova Scotia event" fetchpriority="high" width="2400" height="1160">
+        <picture><source type="image/webp" srcset="/champagne-toast-service-wedding-events-640.webp 640w, /champagne-toast-service-wedding-events-1024.webp 1024w, /champagne-toast-service-wedding-events-1600.webp 1600w, /champagne-toast-service-wedding-events-2400.webp 2400w" sizes="100vw"><img src="/champagne-toast-service-wedding-events.jpg" alt="Golden Service bartender pouring champagne at a Nova Scotia event" fetchpriority="high" width="2400" height="1160"></picture>
       </div>
       <div class="gs-hero-content">
         <h1 id="gsHeroTitle">Nova Scotia's mobile bar, <em>fully handled.</em></h1>
@@ -476,12 +497,12 @@
         <h2 class="gs-title" id="gsDoorsTitle" data-reveal>What are you planning?</h2>
         <div class="gs-doors-grid" data-reveal>
           <a class="gs-door" href="/weddings/">
-            <div class="gs-door-photo"><img src="/golden-service-mobile-bar-setup-wedding.jpg" alt="Golden Service mobile bar set up for a wedding, with a stocked back bar, drink menu and signature cocktail banner" loading="lazy" width="1600" height="1000"></div>
+            <div class="gs-door-photo"><picture><source type="image/webp" srcset="/golden-service-mobile-bar-setup-wedding-640.webp 640w, /golden-service-mobile-bar-setup-wedding-1024.webp 1024w, /golden-service-mobile-bar-setup-wedding-1600.webp 1600w" sizes="(max-width: 760px) calc(100vw - 48px), 556px"><img src="/golden-service-mobile-bar-setup-wedding.jpg" alt="Golden Service mobile bar set up for a wedding, with a stocked back bar, drink menu and signature cocktail banner" loading="lazy" width="1600" height="1000"></picture></div>
             <h3>A wedding <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></h3>
             <p>Open bar, drink tickets or cash bar, anywhere in Nova Scotia. See the dozens of venues we've already worked.</p>
           </a>
           <a class="gs-door" href="/corporate/">
-            <div class="gs-door-photo"><img src="/corporate-event-wine-service-halifax.jpg" alt="Bartender pouring wine for guests at a Halifax corporate event" loading="lazy" width="2000" height="1331"></div>
+            <div class="gs-door-photo"><picture><source type="image/webp" srcset="/corporate-event-wine-service-halifax-640.webp 640w, /corporate-event-wine-service-halifax-1024.webp 1024w, /corporate-event-wine-service-halifax-1600.webp 1600w, /corporate-event-wine-service-halifax-2000.webp 2000w" sizes="(max-width: 760px) calc(100vw - 48px), 556px"><img src="/corporate-event-wine-service-halifax.jpg" alt="Bartender pouring wine for guests at a Halifax corporate event" loading="lazy" width="2000" height="1331"></picture></div>
             <h3>A company event <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></h3>
             <p>Holiday parties, client events and team celebrations. One PO-ready invoice, certificate of insurance on request.</p>
           </a>
@@ -523,7 +544,7 @@
         <div data-reveal>
           <h2 class="gs-title" id="gsHandledTitle">One team runs <em>the whole bar.</em></h2>
           <p class="gs-lede">From the licence to the last glass cleared, so you can actually be present at your own event.</p>
-          <div class="gs-handled-photo"><img src="/mobile-bar-event-management-halifax.jpg" alt="Golden Service team running a bar setup at a Halifax event" loading="lazy" width="1200" height="900"></div>
+          <div class="gs-handled-photo"><picture><source type="image/webp" srcset="/mobile-bar-event-management-halifax-640.webp 640w, /mobile-bar-event-management-halifax-1024.webp 1024w" sizes="(max-width: 980px) min(560px, calc(100vw - 48px)), 440px"><img src="/mobile-bar-event-management-halifax.jpg" alt="Golden Service team running a bar setup at a Halifax event" loading="lazy" width="1200" height="900"></picture></div>
         </div>
         <dl class="gs-spec" data-reveal>
           <div><dt>Alcohol</dt><dd><strong>We supply all of it</strong>The domestic beers your guests know, local Nova Scotia favourites, wine, spirits and ciders, plus non-alcoholic options.</dd></div>
@@ -612,9 +633,9 @@
           <p class="gs-lede">Fruit, veggie and cheese trays at $75 each, each serving 15 to 20 guests. Add them to your bar, or book the trays on their own.</p>
         </div>
         <div class="gs-fare-row" data-reveal>
-          <figure><img src="/fruit-tray-catering-halifax.jpg" alt="Fresh fruit tray with watermelon, cantaloupe, honeydew, grapes and strawberries" loading="lazy" width="900" height="600"><figcaption><strong>Fruit tray</strong>Fresh seasonal fruit, sliced and ready to serve.</figcaption></figure>
-          <figure><img src="/veggie-tray-catering-halifax.jpg" alt="Fresh vegetable tray with broccoli, cauliflower, cucumber, celery and cherry tomatoes with ranch dip" loading="lazy" width="900" height="600"><figcaption><strong>Veggie tray</strong>Crisp cut vegetables with a creamy ranch dip.</figcaption></figure>
-          <figure><img src="/cheese-tray-catering-halifax.jpg" alt="Cheese tray with brie, cheddar and blue cheese, grapes, blueberries and crackers" loading="lazy" width="900" height="600"><figcaption><strong>Cheese tray</strong>Assorted cheeses with grapes, berries and crackers.</figcaption></figure>
+          <figure><picture><source type="image/webp" srcset="/fruit-tray-catering-halifax-480.webp 480w, /fruit-tray-catering-halifax-900.webp 900w" sizes="(max-width: 560px) calc(100vw - 48px), 352px"><img src="/fruit-tray-catering-halifax.jpg" alt="Fresh fruit tray with watermelon, cantaloupe, honeydew, grapes and strawberries" loading="lazy" width="900" height="600"></picture><figcaption><strong>Fruit tray</strong>Fresh seasonal fruit, sliced and ready to serve.</figcaption></figure>
+          <figure><picture><source type="image/webp" srcset="/veggie-tray-catering-halifax-480.webp 480w, /veggie-tray-catering-halifax-900.webp 900w" sizes="(max-width: 560px) calc(100vw - 48px), 352px"><img src="/veggie-tray-catering-halifax.jpg" alt="Fresh vegetable tray with broccoli, cauliflower, cucumber, celery and cherry tomatoes with ranch dip" loading="lazy" width="900" height="600"></picture><figcaption><strong>Veggie tray</strong>Crisp cut vegetables with a creamy ranch dip.</figcaption></figure>
+          <figure><picture><source type="image/webp" srcset="/cheese-tray-catering-halifax-480.webp 480w, /cheese-tray-catering-halifax-900.webp 900w" sizes="(max-width: 560px) calc(100vw - 48px), 352px"><img src="/cheese-tray-catering-halifax.jpg" alt="Cheese tray with brie, cheddar and blue cheese, grapes, blueberries and crackers" loading="lazy" width="900" height="600"></picture><figcaption><strong>Cheese tray</strong>Assorted cheeses with grapes, berries and crackers.</figcaption></figure>
         </div>
       </div>
     </section>
@@ -652,6 +673,7 @@
 
         <div class="gs-card" data-reveal>
           <form id="gsForm" action="https://formspree.io/f/mdapozvl" method="POST" novalidate>
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
             <div id="gsStep1">
               <div class="gs-row">
@@ -740,6 +762,7 @@
         <a href="#quote">Get a Quote</a>
         <a href="https://www.instagram.com/goldenservicebar/" target="_blank" rel="noopener" aria-label="Instagram" class="gs-footer-social"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
         <a href="https://www.facebook.com/goldenservicebar/" target="_blank" rel="noopener" aria-label="Facebook" class="gs-footer-social"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/golden-service-mobile-bar/" target="_blank" rel="noopener" aria-label="LinkedIn" class="gs-footer-social"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
       </div>
     </div>
     <div class="gs-footer-copy">© 2026 Golden Service Mobile Bar &amp; Catering Ltd. · The Golden Standard since 2016 · Halifax, Nova Scotia</div>
