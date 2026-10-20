@@ -651,7 +651,7 @@
                 <div class="gs-field"><label for="f-email">Email</label><input class="gs-input" id="f-email" name="_replyto" type="email" autocomplete="email" required></div>
               </div>
               <div class="gs-row">
-                <div class="gs-field"><label for="f-date">Wedding date</label><input class="gs-input" id="f-date" name="event_date" type="date" required></div>
+                <div class="gs-field"><label for="f-date">Wedding date</label><input class="gs-input" id="f-date" name="event_date" type="date" max="2099-12-31" required></div>
                 <div class="gs-field"><label for="f-guests">Approx. guests</label><input class="gs-input" id="f-guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="e.g. 120" required></div>
               </div>
               <div class="gs-field"><label for="f-phone">Phone</label><input class="gs-input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="902-555-0123" pattern="[\d\s\(\)\+\.\-]{10,}" title="Please enter a phone number with area code" required></div>
@@ -774,6 +774,23 @@
     var venueNote = document.getElementById('gsVenueNote');
     var date = document.getElementById('f-date');
 
+    // Phone formats as 902-555-0123 while typing; a pasted leading 1 or +1 is dropped.
+    var phone = document.getElementById('f-phone');
+    if(phone){
+      phone.addEventListener('input', function(){
+        var caret = phone.selectionStart || 0;
+        var before = phone.value.slice(0, caret).replace(/\D/g, '').length;
+        var d = phone.value.replace(/\D/g, '');
+        if(d.length > 10 && d.charAt(0) === '1'){ d = d.slice(1); before = Math.max(0, before - 1); }
+        d = d.slice(0, 10);
+        var out = d.length > 6 ? d.slice(0,3) + '-' + d.slice(3,6) + '-' + d.slice(6) : d.length > 3 ? d.slice(0,3) + '-' + d.slice(3) : d;
+        phone.value = out;
+        var pos = 0, seen = 0;
+        while(pos < out.length && seen < before){ if(/\d/.test(out.charAt(pos))) seen++; pos++; }
+        if(document.activeElement === phone) phone.setSelectionRange(pos, pos);
+      });
+    }
+
     // No past dates.
     if(date){ var t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset()); date.min = t.toISOString().slice(0,10); }
 
@@ -829,6 +846,8 @@
       return 'Light fare trays: ' + (picks.length ? picks.join(', ') : 'type not specified');
     }
 
+    form.addEventListener('input', function(){ ok.hidden = true; });
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
       if(!valid()) return;
@@ -839,10 +858,16 @@
       fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
         .then(function(r){
           if(!r.ok) throw new Error('bad status');
+          // Keep the form in place; confirm underneath it.
           form.reset();
-          basics.hidden = true; more.hidden = true; submit.hidden = true; foot.hidden = true;
+          more.open = false;
+          trayOpts.hidden = true;
+          trays.setAttribute('aria-expanded', 'false');
           if(venueNote) venueNote.hidden = true;
+          submit.disabled = false;
+          submit.textContent = 'Get my quote';
           ok.hidden = false;
+          ok.scrollIntoView({block:'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
         })
         .catch(function(){
           err.hidden = false;
