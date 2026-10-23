@@ -272,6 +272,9 @@
     .gs-contact-lines a{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,1vw + 18px,28px);font-weight:700;color:#fff;text-decoration:none;border-bottom:1px solid var(--gs-line-on-dark)}
     .gs-contact-lines a:hover{color:var(--gs-gold);border-bottom-color:var(--gs-gold)}
     .gs-print-only{display:none}
+    .gs-venue-hero .gs-shell{position:relative}
+    .gs-seal{position:absolute;top:0;right:24px;width:clamp(72px,9vw,120px);height:auto}
+    @media(max-width:760px){.gs-seal{width:56px}}
 
     /* PRINT: the one-page PDF sheet */
     @media print{
@@ -302,6 +305,8 @@
       .gs-contact-lines{margin:0;gap:6px 30px}
       .gs-contact-lines a{font-size:22px}
       [data-reveal]{opacity:1!important;transform:none!important}
+      .gs-venue-hero .gs-shell{position:relative}
+      .gs-seal{top:50%;right:0;transform:translateY(-50%);width:96px}
     }
   </style>
 </head>
@@ -333,8 +338,9 @@
 
   <main>
     <!-- HEADER -->
-    <section class="gs-hero gs-guide-hero" aria-labelledby="gsVenueTitle">
+    <section class="gs-hero gs-guide-hero gs-venue-hero" aria-labelledby="gsVenueTitle">
       <div class="gs-shell">
+        <img class="gs-seal" src="/venues/golden-service-monogram.png" alt="Golden Service" width="360" height="360">
         <p class="gs-crumbs gs-no-print"><a href="/">Home</a> <span aria-hidden="true">/</span> For venues</p>
         <p class="gs-crumbs gs-print-only">goldenservice.ca &middot; Golden Service Mobile Bar &amp; Catering</p>
         <h1 id="gsVenueTitle">Working with <em>Golden Service.</em></h1>
