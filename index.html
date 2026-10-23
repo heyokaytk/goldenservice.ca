@@ -110,10 +110,8 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Is there a minimum?", "acceptedAnswer": { "@type": "Answer", "text": "No minimum guest count. We run everything from 20-person office toasts to festival crowds. Bar service has a 2-hour minimum." } },
+      { "@type": "Question", "name": "Is there a minimum?", "acceptedAnswer": { "@type": "Answer", "text": "No minimum guest count. We run everything from 20-person office toasts to festival crowds. Bar service has a 2-hour minimum, and cash and drink-ticket bars carry a minimum spend at the bar. Drink tickets count toward it, and it is listed on your quote." } },
       { "@type": "Question", "name": "Can I supply my own alcohol?", "acceptedAnswer": { "@type": "Answer", "text": "No. We supply the alcohol along with the licence, ice, garnishes and staff, so there is nothing for you to buy, chill or haul." } },
-      { "@type": "Question", "name": "Do you provide food or catering?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, light fare trays: fruit, veggie and cheese, $75 each, each serving 15 to 20 guests. Add them to your bar service or book the trays on their own." } },
-      { "@type": "Question", "name": "Can you run more than the bar?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. For festivals and larger events we can manage full event operations, including site plans, permits and staffing." } },
       { "@type": "Question", "name": "How do I secure my date?", "acceptedAnswer": { "@type": "Answer", "text": "A non-refundable deposit holds your date. For weddings and private events on an open bar, the balance is due 60 days before. Company events can pay the balance after the event, net 15. If you need to reschedule, reach out as early as possible and we will do our best to accommodate." } },
       { "@type": "Question", "name": "Do you travel outside Halifax?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We are based in Halifax and work events all over Nova Scotia. Outside Halifax, one flat travel fee covers our team's travel and accommodations, and it is listed on your quote." } }
     ]
@@ -282,15 +280,6 @@
     .gs-styles-note{margin:32px 0 0;font-size:clamp(16px,.5vw + 14px,19px);color:var(--gs-body-on-dark);line-height:1.6;max-width:56ch}
     .gs-styles-note strong{color:var(--gs-gold);font-weight:600}
 
-    /* LIGHT FARE */
-    .gs-fare{padding:clamp(64px,9vw,108px) 0}
-    .gs-fare-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:40px}
-    .gs-fare-head .gs-title{margin:0}
-    .gs-fare-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
-    .gs-fare-row figure{margin:0}
-    .gs-fare-row img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:6px;background:var(--gs-paper-deep)}
-    .gs-fare-row figcaption{padding-top:14px;font-size:15px;color:var(--gs-body);line-height:1.6}
-    .gs-fare-row figcaption strong{display:block;color:var(--gs-ink);font-weight:600;font-size:16px;margin-bottom:2px}
 
     /* REVIEWS */
     .gs-reviews{padding:0 0 clamp(56px,7vw,88px)}
@@ -411,8 +400,8 @@
 
     /* RESPONSIVE */
     @media(max-width:980px){
-      .gs-handled-grid,.gs-styles-head,.gs-clients-head,.gs-fare-head,.gs-faq-grid,.gs-quote-grid{grid-template-columns:1fr}
-      .gs-styles-head,.gs-clients-head,.gs-fare-head{gap:14px}
+      .gs-handled-grid,.gs-styles-head,.gs-clients-head,.gs-faq-grid,.gs-quote-grid{grid-template-columns:1fr}
+      .gs-styles-head,.gs-clients-head{gap:14px}
       .gs-tiers{grid-template-columns:1fr}
       .gs-reviews-row{grid-template-columns:1fr}
       .gs-handled-photo{aspect-ratio:16/10;max-width:560px}
@@ -428,7 +417,6 @@
     @media(max-width:560px){
       .gs-nav{padding:14px 20px}
       .gs-hero-content{padding-top:96px;padding-bottom:56px}
-      .gs-fare-row{grid-template-columns:1fr;gap:24px}
       .gs-row,.gs-choices{grid-template-columns:1fr}
       .gs-row{gap:0}
       .gs-trust ul{justify-content:flex-start;gap:10px 22px}
@@ -444,7 +432,7 @@
     <ul class="gs-nav-links">
       <li><a href="/weddings/">Weddings</a></li>
       <li><a href="/corporate/">Corporate Events</a></li>
-      <li><a href="#packages">Packages</a></li>
+      <li><a href="#packages">Bar Styles</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <a href="#quote" class="gs-nav-cta">Get a Quote</a>
@@ -457,7 +445,7 @@
     <a href="/">Home</a>
     <a href="/weddings/">Weddings</a>
     <a href="/corporate/">Corporate Events</a>
-    <a href="#packages">Packages</a>
+    <a href="#packages">Bar Styles</a>
     <a href="#faq">FAQ</a>
     <a href="#quote" class="gs-mobile-cta">Get a Quote</a>
   </div>
@@ -481,7 +469,7 @@
     <!-- TRUST STRIP -->
     <div class="gs-trust">
       <ul>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><a href="https://g.page/r/CfQs7OFa7ljxEB0/review" target="_blank" rel="noopener">5.0 on Google, 52 reviews</a></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><a href="https://www.google.com/search?q=Golden+Service+Mobile+Bar+Halifax" target="_blank" rel="noopener">5.0 on Google, 52 reviews</a></li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed, $5M insured</li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2 7 22l5-3 5 3-1.2-8.8"/></svg>Serve Right certified bartenders</li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>100+ events a year</li>
@@ -555,6 +543,37 @@
       </div>
     </section>
 
+    <!-- BAR STYLES -->
+    <section class="gs-styles" id="packages" aria-labelledby="gsStylesTitle">
+      <div class="gs-shell">
+        <div class="gs-styles-head" data-reveal>
+          <h2 class="gs-title" id="gsStylesTitle">Three ways to <em>run the bar.</em></h2>
+          <p>Every option comes with the same bartenders, bar kit, setup and teardown. The only difference is who pays for the drinks.</p>
+        </div>
+        <div class="gs-tiers" data-reveal>
+          <article class="gs-tier">
+            <h3>Open Bar</h3>
+            <p class="gs-tier-for">You cover every drink</p>
+            <p class="gs-tier-body">One flat rate covers drinks for your guests all night. No transactions, and a signature cocktail is easy to add.</p>
+            <a href="#quote" class="gs-tier-cta" data-package="Open bar">Get pricing</a>
+          </article>
+          <article class="gs-tier">
+            <h3>Drink Tickets</h3>
+            <p class="gs-tier-for">You cover a round, then cash bar</p>
+            <p class="gs-tier-body">Pre-purchase a set number of drinks for your guests. Once tickets are redeemed, the bar switches to cash and debit.</p>
+            <a href="#quote" class="gs-tier-cta" data-package="Drink tickets + cash bar">Get pricing</a>
+          </article>
+          <article class="gs-tier">
+            <h3>Cash Bar</h3>
+            <p class="gs-tier-for">Guests buy their own</p>
+            <p class="gs-tier-body">A full bar menu of beer, wine, spirits, ciders and non-alcoholic options, with debit always on site.</p>
+            <a href="#quote" class="gs-tier-cta" data-package="Cash bar">Get pricing</a>
+          </article>
+        </div>
+        <p class="gs-styles-note">Not sure which fits? Tell us your guest count and we'll <strong>recommend one</strong>, with exact pricing, usually within a few hours. Want food too? Add fruit, veggie or cheese trays at $75 each, each serving 15 to 20 guests.</p>
+      </div>
+    </section>
+
     <!-- CLIENTS -->
     <section class="gs-clients" aria-labelledby="gsClientsTitle"><div class="gs-shell">
       <div class="gs-clients-head" data-reveal>
@@ -592,51 +611,6 @@
       </div>
     </div></section>
 
-    <!-- BAR STYLES -->
-    <section class="gs-styles" id="packages" aria-labelledby="gsStylesTitle">
-      <div class="gs-shell">
-        <div class="gs-styles-head" data-reveal>
-          <h2 class="gs-title" id="gsStylesTitle">Three ways to <em>run the bar.</em></h2>
-          <p>Every option comes with the same bartenders, bar kit, setup and teardown. The only difference is who pays for the drinks.</p>
-        </div>
-        <div class="gs-tiers" data-reveal>
-          <article class="gs-tier">
-            <h3>Open Bar</h3>
-            <p class="gs-tier-for">You cover every drink</p>
-            <p class="gs-tier-body">One flat rate covers drinks for your guests all night. No transactions, and a signature cocktail is easy to add.</p>
-            <a href="#quote" class="gs-tier-cta" data-package="Open bar">Get pricing</a>
-          </article>
-          <article class="gs-tier">
-            <h3>Drink Tickets</h3>
-            <p class="gs-tier-for">You cover a round, then cash bar</p>
-            <p class="gs-tier-body">Pre-purchase a set number of drinks for your guests. Once tickets are redeemed, the bar switches to cash and debit.</p>
-            <a href="#quote" class="gs-tier-cta" data-package="Drink tickets + cash bar">Get pricing</a>
-          </article>
-          <article class="gs-tier">
-            <h3>Cash Bar</h3>
-            <p class="gs-tier-for">Guests buy their own</p>
-            <p class="gs-tier-body">A full bar menu of beer, wine, spirits, ciders and non-alcoholic options, with debit always on site.</p>
-            <a href="#quote" class="gs-tier-cta" data-package="Cash bar">Get pricing</a>
-          </article>
-        </div>
-        <p class="gs-styles-note">Not sure which fits? Tell us your guest count and we'll <strong>recommend one</strong>, with exact pricing, usually within a few hours.</p>
-      </div>
-    </section>
-
-    <!-- LIGHT FARE -->
-    <section class="gs-fare" id="fare" aria-labelledby="gsFareTitle">
-      <div class="gs-shell">
-        <div class="gs-fare-head" data-reveal>
-          <h2 class="gs-title" id="gsFareTitle">Light fare, on the same invoice.</h2>
-          <p class="gs-lede">Fruit, veggie and cheese trays at $75 each, each serving 15 to 20 guests. Add them to your bar, or book the trays on their own.</p>
-        </div>
-        <div class="gs-fare-row" data-reveal>
-          <figure><picture><source type="image/webp" srcset="/fruit-tray-catering-halifax-480.webp 480w, /fruit-tray-catering-halifax-900.webp 900w" sizes="(max-width: 560px) calc(100vw - 48px), 352px"><img src="/fruit-tray-catering-halifax.jpg" alt="Fresh fruit tray with watermelon, cantaloupe, honeydew, grapes and strawberries" loading="lazy" width="900" height="600"></picture><figcaption><strong>Fruit tray</strong>Fresh seasonal fruit, sliced and ready to serve.</figcaption></figure>
-          <figure><picture><source type="image/webp" srcset="/veggie-tray-catering-halifax-480.webp 480w, /veggie-tray-catering-halifax-900.webp 900w" sizes="(max-width: 560px) calc(100vw - 48px), 352px"><img src="/veggie-tray-catering-halifax.jpg" alt="Fresh vegetable tray with broccoli, cauliflower, cucumber, celery and cherry tomatoes with ranch dip" loading="lazy" width="900" height="600"></picture><figcaption><strong>Veggie tray</strong>Crisp cut vegetables with a creamy ranch dip.</figcaption></figure>
-          <figure><picture><source type="image/webp" srcset="/cheese-tray-catering-halifax-480.webp 480w, /cheese-tray-catering-halifax-900.webp 900w" sizes="(max-width: 560px) calc(100vw - 48px), 352px"><img src="/cheese-tray-catering-halifax.jpg" alt="Cheese tray with brie, cheddar and blue cheese, grapes, blueberries and crackers" loading="lazy" width="900" height="600"></picture><figcaption><strong>Cheese tray</strong>Assorted cheeses with grapes, berries and crackers.</figcaption></figure>
-        </div>
-      </div>
-    </section>
 
     <!-- FAQ -->
     <section class="gs-faq" id="faq" aria-labelledby="gsFaqTitle">
@@ -646,10 +620,8 @@
           <p class="gs-lede">Planning a wedding? The <a class="gs-link-on-dark" href="/weddings/#faq">wedding FAQ</a> covers bartenders, signature cocktails and more.</p>
         </div>
         <div class="gs-faq-list" data-reveal>
-          <details><summary>Is there a minimum?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>No minimum guest count. We run everything from 20-person office toasts to festival crowds. Bar service has a 2-hour minimum.</p></details>
+          <details><summary>Is there a minimum?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>No minimum guest count. We run everything from 20-person office toasts to festival crowds. Bar service has a 2-hour minimum, and cash and drink-ticket bars carry a minimum spend at the bar. Drink tickets count toward it, and it's listed on your quote.</p></details>
           <details><summary>Can I supply my own alcohol?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. We supply the alcohol along with the licence, ice, garnishes and staff, so there's nothing for you to buy, chill or haul.</p></details>
-          <details><summary>Do you provide food or catering?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes, light fare trays: fruit, veggie and cheese, $75 each, each serving 15 to 20 guests. Add them to your bar service or book the trays on their own.</p></details>
-          <details><summary>Can you run more than the bar?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. For festivals and larger events we can manage full event operations, including site plans, permits and staffing.</p></details>
           <details><summary>How do I secure my date?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>A non-refundable deposit holds your date. For weddings and private events on an open bar, the balance is due 60 days before. Company events can pay the balance after the event, net 15. If you need to reschedule, reach out as early as possible and we'll do our best to accommodate.</p></details>
           <details><summary>Do you travel outside Halifax?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. We're based in Halifax and work events all over Nova Scotia. Outside Halifax, one flat travel fee covers our team's travel and accommodations, and it's listed on your quote.</p></details>
         </div>

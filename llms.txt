@@ -12,7 +12,7 @@
 - Every bartender is Serve Right (responsible beverage service) certified.
 - Applies for the special event liquor licence on the client's behalf at no extra charge.
 - Supplies all the alcohol. Clients cannot bring their own.
-- No minimum guest count. Bar service has a 2-hour minimum.
+- No minimum guest count. Bar service has a 2-hour minimum. Cash and drink-ticket bars carry a minimum spend at the bar; drink tickets count toward it.
 - Quotes are custom and sent by email, usually within a few hours of a request.
 - Contact: 902-497-0006, hello@goldenservice.ca, or the quote form at https://goldenservice.ca/#quote
 
@@ -62,7 +62,7 @@
 
 ## Pages
 
-- [Home](https://goldenservice.ca/): Overview of services, bar styles, light fare, reviews, FAQ and the quote form.
+- [Home](https://goldenservice.ca/): Overview of services, bar styles, reviews, FAQ and the quote form.
 - [Weddings](https://goldenservice.ca/weddings/): Wedding bar service, what's included, bar styles, the full list of venues worked, wedding FAQ and a wedding quote form.
 - [Corporate events](https://goldenservice.ca/corporate/): Holiday party packages, client list, procurement details (insurance, licensing, invoicing, payment terms) and a corporate quote form.
 - [Wedding bar planning guide](https://goldenservice.ca/wedding-bar-guide/): How much alcohol to plan for (1 to 1.5 drinks per guest per hour), open bar vs drink tickets vs cash bar, Nova Scotia special event liquor licensing, what a full-service bar covers, booking timeline and questions to ask a bar company.
