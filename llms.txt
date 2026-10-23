@@ -53,6 +53,7 @@
 
 - One invoice with HST included, ready for a purchase order or expense report.
 - A deposit holds the date. The balance is invoiced after the event, payable net 15 by EFT or against a PO.
+- Year-round corporate events: client events, staff appreciation nights, product launches, conferences and production wrap parties, in offices, venues, shops and yards.
 - Holiday party packages (pricing on request):
   - The Office Toast: 20 to 60 guests in the office, 2 hours, drink tickets for every guest, 1 holiday cocktail.
   - The Holiday Social: 50 to 150 guests, 3 to 4 hours, drink tickets then a cash bar, 2 holiday cocktails.
@@ -66,6 +67,7 @@
 - [Weddings](https://goldenservice.ca/weddings/): Wedding bar service, what's included, bar styles, the full list of venues worked, wedding FAQ and a wedding quote form.
 - [Corporate events](https://goldenservice.ca/corporate/): Holiday party packages, client list, procurement details (insurance, licensing, invoicing, payment terms) and a corporate quote form.
 - [Wedding bar planning guide](https://goldenservice.ca/wedding-bar-guide/): How much alcohol to plan for (1 to 1.5 drinks per guest per hour), open bar vs drink tickets vs cash bar, Nova Scotia special event liquor licensing, what a full-service bar covers, booking timeline and questions to ask a bar company.
+- [Nova Scotia liquor licence guide](https://goldenservice.ca/liquor-licence-guide/): When an event needs a Special Occasion Liquor Licence, classes 1 to 3 and their fees ($12.45, $24.95, $62.30 per day), which class fits each bar style, rules (legal alcohol sources, Serve Right servers), outdoor requirements and applying at least 10 days ahead.
 - [Get a quote](https://goldenservice.ca/#quote): Quote request form. Most quotes go out within a few hours.
 
 ## Optional
