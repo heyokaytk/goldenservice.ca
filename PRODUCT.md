@@ -30,6 +30,7 @@ One vendor handles the whole bar: licence, staff, stock, setup, teardown and one
 - All bartenders are Serve Right (responsible beverage service) certified.
 - Pricing on the corporate page: no bar prices anywhere (no tiers, no "under $1,000" anchor, no sample quote; client events range up to ~$20K and a low anchor undercuts them). Exact pricing goes out by email. Only public price: $75 catering trays.
 - Response time promise: "Most quotes go out within a few hours."
+- Food: 3 licensed commercial kitchens. Food is prepped off-site and dropped off per permit guidelines. Golden Service carries the insurance, has chafers and transport, and provides its own contract. This makes production crew catering possible; per-head pricing and travel range are quoted per client, never published.
 
 ## Brand Commitments
 - Name: Golden Service Mobile Bar & Catering. Line: "The Golden Standard".
@@ -47,3 +48,4 @@ One vendor handles the whole bar: licence, staff, stock, setup, teardown and one
 2. Real numbers over adjectives: prices, coverage, capacity, response time.
 3. Never fabricate proof, scarcity, testimonials or client names.
 4. Corporate buyers never have to wade through wedding content to act.
+5. Clean and to the point. Enough to act, never more. If a claim is uncertain (especially licensing), cut it instead of hedging; we inquire with the province for clients. No licence fees on the site.
