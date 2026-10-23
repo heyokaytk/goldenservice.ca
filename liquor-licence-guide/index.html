@@ -117,11 +117,11 @@
     .gs-nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;letter-spacing:.5px;color:var(--gs-ink);text-decoration:none}
     .gs-nav-logo span{color:var(--gs-gold-deep)}
     .gs-nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0}
-    .gs-nav-links a{font-size:12px;font-weight:600;color:var(--gs-body);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;position:relative;padding-bottom:3px}
+    .gs-nav-links a{font-size:13px;font-weight:600;color:var(--gs-body);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;position:relative;padding-bottom:3px}
     .gs-nav-links a::after{content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gs-gold);transition:right .25s var(--gs-ease)}
     .gs-nav-links a:hover{color:var(--gs-ink)}
     .gs-nav-links a:hover::after{right:0}
-    .gs-nav-cta{background:var(--gs-gold);color:var(--gs-ink);padding:11px 24px;border-radius:3px;font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s,transform .2s}
+    .gs-nav-cta{background:var(--gs-gold);color:var(--gs-ink);padding:11px 24px;border-radius:3px;font-size:13px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s,transform .2s}
     .gs-nav-cta:hover{background:var(--gs-gold-deep);color:#fff;transform:translateY(-1px)}
     .gs-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
     .gs-hamburger span{width:22px;height:2px;background:var(--gs-ink);border-radius:2px;display:block;transition:all .25s var(--gs-ease)}
@@ -177,8 +177,8 @@
     .gs-handled-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
     .gs-spec{margin:0;border-top:2px solid var(--gs-ink)}
     .gs-spec div{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--gs-line)}
-    .gs-spec dt{font-size:12px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--gs-gold-deep);padding-top:3px}
-    .gs-spec dd{margin:0;font-size:15px;color:var(--gs-body);line-height:1.7}
+    .gs-spec dt{font-size:13px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--gs-gold-deep);padding-top:3px}
+    .gs-spec dd{margin:0;font-size:16px;color:var(--gs-body);line-height:1.7}
     .gs-spec dd strong{color:var(--gs-ink);font-weight:600;display:block;font-size:16px;margin-bottom:2px}
 
 
@@ -193,7 +193,7 @@
     @media(max-width:760px){
       .gs-mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:var(--z-sticky);padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--gs-line);box-shadow:0 -10px 24px -18px rgba(23,20,15,.4);transform:translateY(110%);transition:transform .35s var(--gs-ease)}
       .gs-mbar.on{transform:none}
-      .gs-mbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:48px;border-radius:5px;font:700 15px 'DM Sans',sans-serif;text-decoration:none}
+      .gs-mbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:48px;border-radius:5px;font:700 16px 'DM Sans',sans-serif;text-decoration:none}
       .gs-mbar-quote{flex:1;background:var(--gs-gold);color:var(--gs-ink)}
       .gs-mbar-call{width:56px;border:1.5px solid var(--gs-ink);color:var(--gs-ink)}
       body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
@@ -206,9 +206,9 @@
     .gs-footer-logo{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#fff;text-decoration:none}
     .gs-footer-logo span{color:var(--gs-gold)}
     .gs-footer-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
-    .gs-footer-links a{font-size:12px;color:rgba(255,255,255,.72);text-decoration:none;letter-spacing:.5px;font-weight:500;transition:color .2s}
+    .gs-footer-links a{font-size:13px;color:rgba(255,255,255,.72);text-decoration:none;letter-spacing:.5px;font-weight:500;transition:color .2s}
     .gs-footer-links a:hover{color:var(--gs-gold)}
-    .gs-footer-copy{text-align:center;font-size:12px;color:rgba(255,255,255,.5);padding-top:22px;letter-spacing:.4px}
+    .gs-footer-copy{text-align:center;font-size:13px;color:rgba(255,255,255,.5);padding-top:22px;letter-spacing:.4px}
 
     /* Reveal */
     [data-reveal].gs-reveal-pending{opacity:0;transform:translateY(22px);transition:opacity .7s var(--gs-ease),transform .7s var(--gs-ease)}
@@ -257,16 +257,16 @@
     .gs-quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0}
     .gs-quick-grid div{padding:26px 24px 26px 0}
     .gs-quick-grid div + div{padding-left:24px;border-left:1px solid #ddd3bf}
-    .gs-quick-grid dt{font-size:12px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--gs-gold-deep);margin-bottom:6px}
-    .gs-quick-grid dd{margin:0;font-size:15.5px;line-height:1.55;color:var(--gs-ink);font-weight:500}
+    .gs-quick-grid dt{font-size:13px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--gs-gold-deep);margin-bottom:6px}
+    .gs-quick-grid dd{margin:0;font-size:16px;line-height:1.55;color:var(--gs-ink);font-weight:500}
     .gs-guide{padding:clamp(56px,7vw,96px) 0}
     .gs-guide-grid{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:start}
     .gs-toc{position:sticky;top:96px}
-    .gs-toc p{font-size:12px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--gs-gold-deep);margin:0 0 12px}
+    .gs-toc p{font-size:13px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--gs-gold-deep);margin:0 0 12px}
     .gs-toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--gs-line)}
-    .gs-toc a{display:block;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;font-size:14.5px;color:var(--gs-body);text-decoration:none;transition:color .2s,border-color .2s}
+    .gs-toc a{display:block;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;font-size:16px;color:var(--gs-body);text-decoration:none;transition:color .2s,border-color .2s}
     .gs-toc a:hover,.gs-toc a.on{color:var(--gs-ink);border-left-color:var(--gs-gold)}
-    .gs-guide-body{max-width:70ch;min-width:0}
+    .gs-guide-body{max-width:62ch;min-width:0}
     .gs-guide-body section{scroll-margin-top:96px}
     .gs-guide-body section + section{margin-top:clamp(48px,6vw,72px);padding-top:clamp(40px,5vw,56px);border-top:1px solid var(--gs-line)}
     .gs-guide-body h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.6rem,1vw + 1.3rem,2.15rem);font-weight:700;line-height:1.18;letter-spacing:-.01em;margin:0 0 18px}
@@ -274,20 +274,28 @@
     .gs-guide-body p strong,.gs-guide-body li strong{color:var(--gs-ink);font-weight:600}
     .gs-guide-body a{color:var(--gs-ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gs-gold)}
     .gs-guide-body a:hover{color:var(--gs-gold-deep)}
-    .gs-swipe{display:none}
-    @media(max-width:620px){.gs-guide-body .gs-swipe{display:block;font-size:13px;color:#7a7263;margin:16px 0 -14px}}
     .gs-table-wrap{overflow-x:auto;margin:24px 0;-webkit-overflow-scrolling:touch}
-    .gs-table{width:100%;min-width:560px;border-collapse:collapse;font-size:15px;line-height:1.55}
+    .gs-table{width:100%;min-width:560px;border-collapse:collapse;font-size:16px;line-height:1.55}
     .gs-table th,.gs-table td{text-align:left;vertical-align:top;padding:14px 16px 14px 0;border-bottom:1px solid var(--gs-line)}
     .gs-table thead th{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:var(--gs-ink);border-bottom:2px solid var(--gs-ink)}
-    .gs-table tbody th{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--gs-gold-deep);padding-top:17px;white-space:nowrap}
+    .gs-table tbody th{font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--gs-gold-deep);padding-top:17px;white-space:nowrap}
     .gs-table td{color:var(--gs-body)}
+    @media(max-width:620px){
+      .gs-table-wrap{overflow:visible}
+      .gs-table{min-width:0}
+      .gs-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+      .gs-table tbody tr{display:block;padding:18px 0;border-bottom:1px solid var(--gs-line)}
+      .gs-table tbody th,.gs-table td{display:block;border:none;padding:0;white-space:normal}
+      .gs-table tbody th{margin-bottom:8px}
+      .gs-table td{padding:4px 0}
+      .gs-table td::before{content:attr(data-label) ": ";font-weight:600;color:var(--gs-ink)}
+    }
     .gs-check{list-style:none;margin:8px 0 22px;padding:0}
-    .gs-check li{position:relative;padding:10px 0 10px 32px;border-bottom:1px solid var(--gs-line);font-size:16.5px;line-height:1.6;color:var(--gs-ink)}
+    .gs-check li{position:relative;padding:10px 0 10px 32px;border-bottom:1px solid var(--gs-line);font-size:17px;line-height:1.6;color:var(--gs-ink)}
     .gs-check li::before{content:'';position:absolute;left:4px;top:17px;width:12px;height:7px;border-left:2px solid var(--gs-gold-deep);border-bottom:2px solid var(--gs-gold-deep);transform:rotate(-45deg)}
     .gs-check-q li::before{content:'?';border:none;transform:none;top:9px;left:2px;width:auto;height:auto;font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--gs-gold-deep)}
     .gs-steps-list{margin:8px 0 0;padding:0;list-style:none;counter-reset:st}
-    .gs-steps-list li{counter-increment:st;position:relative;padding:14px 0 14px 46px;border-bottom:1px solid var(--gs-line);font-size:16.5px;line-height:1.7;color:var(--gs-body)}
+    .gs-steps-list li{counter-increment:st;position:relative;padding:14px 0 14px 46px;border-bottom:1px solid var(--gs-line);font-size:17px;line-height:1.7;color:var(--gs-body)}
     .gs-steps-list li::before{content:counter(st);position:absolute;left:0;top:10px;font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:var(--gs-gold)}
     .gs-guide-cta{background:var(--gs-ink);color:#fff;padding:clamp(64px,8vw,100px) 0;text-align:left}
     .gs-guide-cta .gs-title em{color:var(--gs-gold)}
@@ -383,17 +391,16 @@
 
           <!-- CLASSES -->
           <section id="classes" aria-labelledby="gsClasses">
-            <h2 id="gsClasses">The three classes, side by side</h2>
+            <h2 id="gsClasses">The three classes, compared</h2>
             <p>Which class you need comes down to two questions: is the event private or open to the public, and are guests paying for their drinks?</p>
-            <p class="gs-swipe" aria-hidden="true">Swipe to compare &rarr;</p>
             <div class="gs-table-wrap">
               <table class="gs-table">
                 <thead><tr><th scope="col"></th><th scope="col">Class 1</th><th scope="col">Class 2</th><th scope="col">Class 3</th></tr></thead>
                 <tbody>
-                  <tr><th scope="row">Who attends</th><td>Invited guests only</td><td>Invited guests only</td><td>The public</td></tr>
-                  <tr><th scope="row">Drinks</th><td>Given free to guests</td><td>Sold to guests</td><td>Sold to guests</td></tr>
-                  <tr><th scope="row">Typical events</th><td>Weddings, staff parties, grand openings, birthdays, anniversaries</td><td>The same events, when guests buy their drinks</td><td>Community fundraisers run by a recognized charity, non-profit or athletic group</td></tr>
-                  <tr><th scope="row">Admission or advertising</th><td>Neither allowed</td><td>Neither allowed</td><td>Both allowed</td></tr>
+                  <tr><th scope="row">Who attends</th><td data-label="Class 1">Invited guests only</td><td data-label="Class 2">Invited guests only</td><td data-label="Class 3">The public</td></tr>
+                  <tr><th scope="row">Drinks</th><td data-label="Class 1">Given free to guests</td><td data-label="Class 2">Sold to guests</td><td data-label="Class 3">Sold to guests</td></tr>
+                  <tr><th scope="row">Typical events</th><td data-label="Class 1">Weddings, staff parties, grand openings, birthdays, anniversaries</td><td data-label="Class 2">The same events, when guests buy their drinks</td><td data-label="Class 3">Community fundraisers run by a recognized charity, non-profit or athletic group</td></tr>
+                  <tr><th scope="row">Admission or advertising</th><td data-label="Class 1">Neither allowed</td><td data-label="Class 2">Neither allowed</td><td data-label="Class 3">Both allowed</td></tr>
                 </tbody>
               </table>
             </div>
