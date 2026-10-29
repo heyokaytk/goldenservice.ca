@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Corporate &amp; Holiday Bar Service in Halifax | Golden Service</title>
-  <meta name="description" content="Licensed mobile bar service for offices, venues and holiday parties across Nova Scotia. $5M liability insurance, Serve Right certified bartenders, one PO-ready invoice.">
+  <meta name="description" content="Licensed bar service for corporate events and holiday parties in Halifax and across Nova Scotia. $5M insured, Serve Right bartenders, one PO-ready invoice.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Corporate &amp; Holiday Party Bar Service | Golden Service Halifax">
@@ -44,6 +44,19 @@
       "url": "https://goldenservice.ca",
       "telephone": "+19024970006"
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How far ahead should we book a holiday party?", "acceptedAnswer": { "@type": "Answer", "text": "As soon as you have a date. December Fridays book first, and a deposit is what holds your spot." } },
+      { "@type": "Question", "name": "Can you set up in our office?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most office events happen right in the boardroom or lobby. Golden Service brings the bar, ice, glassware and debit machines, and leaves the space the way it found it." } },
+      { "@type": "Question", "name": "Do we need to buy the alcohol?", "acceptedAnswer": { "@type": "Answer", "text": "No. Golden Service supplies beer, wine, spirits, ciders and non-alcoholic options, plus the special event liquor licence, so there is nothing to buy, chill or haul." } },
+      { "@type": "Question", "name": "Do you offer non-alcoholic options?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every bar includes non-alcoholic choices, and Golden Service can make mocktail versions of your signature cocktails so every guest gets the same drink." } }
+    ]
   }
   </script>
 
@@ -206,6 +219,36 @@
     .gs-tray-opts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:10px;padding-left:25px}
     .gs-tray-opts[hidden]{display:none}
 
+    /* EVERY EVENT */
+    .gs-events{background:var(--gs-paper);padding:clamp(64px,9vw,108px) 0}
+    .gs-events-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:40px}
+    .gs-events-head .gs-title{margin:0}
+    .gs-events-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(28px,4vw,56px);border-top:2px solid var(--gs-ink)}
+    .gs-events-list > div{padding:26px 0 28px;border-bottom:1px solid var(--gs-line)}
+    .gs-events-list h3{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:700;letter-spacing:-.01em;margin:0 0 8px;color:var(--gs-ink)}
+    .gs-events-list p{font-size:16px;line-height:1.7;color:var(--gs-body);margin:0}
+    .gs-events-cta p{color:var(--gs-ink);font-weight:500;margin:0 0 12px}
+    .gs-text-link{color:var(--gs-ink);font-size:16px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--gs-gold);padding-bottom:2px;transition:color .2s}
+    .gs-text-link:hover{color:var(--gs-gold-deep)}
+    .gs-where{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:start;margin-top:clamp(48px,6vw,72px)}
+    .gs-where .gs-title{margin:0}
+    .gs-where p{font-size:16px;line-height:1.8;color:var(--gs-body);margin:0;max-width:62ch}
+    .gs-title em{color:var(--gs-gold-deep);font-style:italic}
+
+    /* FAQ */
+    .gs-faq{background:var(--gs-ink);color:#fff;padding:clamp(64px,9vw,108px) 0}
+    .gs-faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,88px);align-items:start}
+    .gs-faq .gs-title em{color:var(--gs-gold)}
+    .gs-faq .gs-lede{color:var(--gs-body-on-dark)}
+    .gs-faq-list{border-top:1px solid var(--gs-line-on-dark)}
+    .gs-faq details{border-bottom:1px solid var(--gs-line-on-dark)}
+    .gs-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:16.5px;font-weight:600;color:#fff;transition:color .2s}
+    .gs-faq summary::-webkit-details-marker{display:none}
+    .gs-faq summary:hover{color:var(--gs-gold)}
+    .gs-faq summary svg{color:var(--gs-gold);flex-shrink:0;transition:transform .3s var(--gs-ease)}
+    .gs-faq details[open] summary svg{transform:rotate(45deg)}
+    .gs-faq details p{margin:0;padding:0 40px 24px 0;font-size:16px;line-height:1.8;color:var(--gs-body-on-dark);max-width:62ch}
+
     /* PROCUREMENT SPEC SHEET */
     .gs-proc{padding:clamp(64px,9vw,108px) 0}
     .gs-proc-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,88px);align-items:start}
@@ -309,7 +352,9 @@
     /* RESPONSIVE */
     @media(max-width:980px){
         .gs-logo-row{grid-template-columns:repeat(4,minmax(0,1fr))}
-      .gs-holiday-head,.gs-proc-grid,.gs-quote-grid,.gs-fare-head{grid-template-columns:1fr}
+      .gs-holiday-head,.gs-proc-grid,.gs-quote-grid,.gs-fare-head,.gs-events-head,.gs-where,.gs-faq-grid{grid-template-columns:1fr}
+      .gs-events-head{gap:14px}
+      .gs-events-list{grid-template-columns:repeat(2,minmax(0,1fr))}
       .gs-fare-head{gap:14px}
       .gs-holiday-head{gap:18px}
       .gs-tiers{grid-template-columns:1fr}
@@ -320,6 +365,7 @@
       .gs-nav-links,.gs-nav-cta{display:none}
       .gs-hamburger{display:flex}
       .gs-spec div{grid-template-columns:1fr;gap:6px}
+      .gs-events-list{grid-template-columns:1fr}
     }
     @media(max-width:560px){
       .gs-nav{padding:14px 20px}
@@ -347,7 +393,7 @@
       <li><a href="/weddings/">Weddings</a></li>
       <li><a href="/corporate/" aria-current="page">Corporate Events</a></li>
       <li><a href="#holiday">Packages</a></li>
-      <li><a href="#procurement">FAQ</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <a href="#quote" class="gs-nav-cta">Get a Quote</a>
     <button class="gs-hamburger" id="gsHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="gsMobileMenu">
@@ -360,7 +406,7 @@
     <a href="/weddings/">Weddings</a>
     <a href="/corporate/" aria-current="page">Corporate Events</a>
     <a href="#holiday">Packages</a>
-    <a href="#procurement">FAQ</a>
+    <a href="#faq">FAQ</a>
     <a href="#quote" class="gs-mobile-cta">Get a Quote</a>
   </div>
 
@@ -370,7 +416,7 @@
       <div class="gs-hero-grid">
         <div>
           <h1 id="gsHeroTitle">Your company event, <em>fully handled.</em></h1>
-          <p class="gs-hero-sub">Licensed bar service for offices, venues and year-end parties across Nova Scotia. One vendor. One invoice. Nothing left on your plate.</p>
+          <p class="gs-hero-sub">Licensed corporate event bar service in Halifax and across Nova Scotia, for offices, venues and year-end parties. One vendor. One invoice. Nothing left on your plate.</p>
           <div class="gs-hero-actions">
             <a href="#quote" class="gs-btn-primary" id="gsHeroCta" data-focus-date>Check December availability &rarr;</a>
             <a href="tel:+19024970006" class="gs-link-on-dark">Or call 902-497-0006</a>
@@ -386,7 +432,7 @@
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>COI on request</li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2 7 22l5-3 5 3-1.2-8.8"/></svg>Serve Right certified bartenders</li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>100+ events a year</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><a href="https://www.google.com/search?q=Golden+Service+Mobile+Bar+Halifax" target="_blank" rel="noopener">5.0 on Google, 52 reviews</a></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><a href="https://www.google.com/search?q=Golden+Service+Mobile+Bar+Halifax" target="_blank" rel="noopener">5.0 on Google, 50+ reviews</a></li>
       </ul>
     </div>
 
@@ -394,14 +440,14 @@
     <section class="gs-logos gs-shell" aria-label="Clients">
       <p class="gs-logos-lead"><strong>40+ companies and institutions</strong> have trusted us with their events.</p>
       <div class="gs-logo-row">
-        <div><img src="/client-logos/dalhousie-university.png" alt="Dalhousie University" loading="lazy"></div>
-        <div><img src="/client-logos/grant-thornton.png" alt="Grant Thornton" loading="lazy"></div>
-        <div><img src="/client-logos/mcinnes-cooper.png" alt="McInnes Cooper" loading="lazy"></div>
-        <div><img src="/client-logos/qeii-foundation.svg" alt="QEII Foundation" loading="lazy"></div>
-        <div><img src="/client-logos/volta.svg" alt="Volta" loading="lazy"></div>
-        <div><img src="/client-logos/cove.svg" alt="COVE, Centre for Ocean Ventures and Entrepreneurship" loading="lazy"></div>
-        <div><img src="/client-logos/maritime-museum.svg" alt="Maritime Museum of the Atlantic" loading="lazy"></div>
-        <div><img src="/client-logos/halifax-public-library.png" alt="Halifax Public Libraries" loading="lazy"></div>
+        <div><img src="/client-logos/dalhousie-university.png" alt="Dalhousie University" loading="lazy" width="700" height="199"></div>
+        <div><img src="/client-logos/grant-thornton.png" alt="Grant Thornton" loading="lazy" width="700" height="130"></div>
+        <div><img src="/client-logos/mcinnes-cooper.png" alt="McInnes Cooper" loading="lazy" width="700" height="289"></div>
+        <div><img src="/client-logos/qeii-foundation.svg" alt="QEII Foundation" loading="lazy" width="114" height="80"></div>
+        <div><img src="/client-logos/volta.svg" alt="Volta" loading="lazy" width="177" height="46"></div>
+        <div><img src="/client-logos/cove.svg" alt="COVE, Centre for Ocean Ventures and Entrepreneurship" loading="lazy" width="203" height="52"></div>
+        <div><img src="/client-logos/maritime-museum.svg" alt="Maritime Museum of the Atlantic" loading="lazy" width="133" height="98"></div>
+        <div><img src="/client-logos/halifax-public-library.png" alt="Halifax Public Libraries" loading="lazy" width="700" height="368"></div>
       </div>
       <p class="gs-logos-more">Also Deloitte, EY, TELUS, NS Power, RBC Centre, Halifax Regional Municipality, The Junos and the TD Halifax Jazz Festival.</p>
     </section>
@@ -445,7 +491,7 @@
             <a href="#quote" class="gs-tier-cta" data-package="The Year-End Gala">Get pricing</a>
           </article>
         </div>
-        <p class="gs-holiday-anchor">From 20-person office toasts to <strong>full-scale galas</strong>. Tell us your headcount and we'll send exact pricing, usually within a few hours. Not a holiday party? Client events, staff appreciation nights, product launches, conferences and production wrap parties get the same service year-round, in the boardroom, at a venue, or out on the shop floor and yard. Want food too? Add fruit, veggie or cheese trays at $75 each, each serving 15 to 20 guests.</p>
+        <p class="gs-holiday-anchor">From 20-person office toasts to <strong>full-scale galas</strong>. Tell us your headcount and we'll send exact pricing, usually within a few hours. Want food too? Add fruit, veggie or cheese trays at $75 each, each serving 15 to 20 guests.</p>
 
         <div class="gs-promises" data-reveal>
           <div>
@@ -468,6 +514,28 @@
       </div>
     </section>
 
+    <!-- EVERY EVENT -->
+    <section class="gs-events" id="events" aria-labelledby="gsEventsTitle">
+      <div class="gs-shell">
+        <div class="gs-events-head" data-reveal>
+          <h2 class="gs-title" id="gsEventsTitle">Corporate event bar service, <em>all year.</em></h2>
+          <p class="gs-lede">The same licence, bartenders and one-page invoice, for every kind of company event.</p>
+        </div>
+        <div class="gs-events-list" data-reveal>
+          <div><h3>Client receptions</h3><p>A polished bar and a short menu built around your brand, run by bartenders who know how to work a room full of clients.</p></div>
+          <div><h3>Staff appreciation nights</h3><p>Thank your team properly. Drink tickets keep the budget fixed, and a cash bar takes over once they're used.</p></div>
+          <div><h3>Conferences and AGMs</h3><p>Networking receptions, opening nights and closing socials, with bartenders scaled to your registration count so lines keep moving.</p></div>
+          <div><h3>Product launches and office openings</h3><p>A signature cocktail named for the launch, printed menu cards and a bar that looks good in photos.</p></div>
+          <div><h3>Wrap parties and site celebrations</h3><p>Boardroom, warehouse floor or outdoor yard. Our bar needs no power, so if there's room for it, we can set it up.</p></div>
+          <div class="gs-events-cta"><p>Tell us the headcount and the occasion. We'll recommend a format and send exact pricing, usually within a few hours.</p><a href="#quote" class="gs-text-link">Get your quote &rarr;</a></div>
+        </div>
+        <div class="gs-where" data-reveal>
+          <h2 class="gs-title" id="gsWhereTitle">Your office, or <em>a venue we know.</em></h2>
+          <p>We set up in boardrooms and lobbies across downtown Halifax, Dartmouth, Bedford and Burnside, and we've run bars at Halifax venues including the Halifax Convention Centre, Pier 21, The Pier, the Maritime Museum of the Atlantic, Halifax Central Library, Pavilion 22 and The COVE. Hosting outside the city? One flat travel fee covers our team, listed on your quote.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- PROCUREMENT -->
     <section class="gs-proc" id="procurement" aria-labelledby="gsProcTitle">
       <div class="gs-shell gs-proc-grid">
@@ -483,6 +551,22 @@
           <div><dt>Payment terms</dt><dd><strong>Deposit now, balance net 15 after</strong>A deposit holds your date. The balance is invoiced after the event, payable in 15 days by EFT or against your PO.</dd></div>
           <div><dt>Scale</dt><dd><strong>From 20-guest office toasts to festival crowds</strong>No minimum guest count, and a 2-hour minimum for bar service. Our team has run bars for the TD Halifax Jazz Festival and The Junos.</dd></div>
         </dl>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="gs-faq" id="faq" aria-labelledby="gsFaqTitle">
+      <div class="gs-shell gs-faq-grid">
+        <div data-reveal>
+          <h2 class="gs-title" id="gsFaqTitle">Corporate bar questions, <em>answered.</em></h2>
+          <p class="gs-lede">Anything else? Call <a class="gs-link-on-dark" style="white-space:nowrap" href="tel:+19024970006">902-497-0006</a> or ask in your quote request.</p>
+        </div>
+        <div class="gs-faq-list" data-reveal>
+          <details><summary>How far ahead should we book a holiday party?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>As soon as you have a date. December Fridays book first, and a deposit is what holds your spot.</p></details>
+          <details><summary>Can you set up in our office?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. Most office events happen right in the boardroom or lobby. We bring the bar, ice, glassware and debit machines, and leave the space the way we found it.</p></details>
+          <details><summary>Do we need to buy the alcohol?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. We supply beer, wine, spirits, ciders and non-alcoholic options, plus the licence, so there's nothing to buy, chill or haul.</p></details>
+          <details><summary>Do you offer non-alcoholic options?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. Every bar includes non-alcoholic choices, and we can make mocktail versions of your signature cocktails so everyone gets the same drink.</p></details>
+        </div>
       </div>
     </section>
 
@@ -575,7 +659,7 @@
         <a href="/">Home</a>
         <a href="/weddings/">Weddings</a>
         <a href="/corporate/" aria-current="page">Corporate Events</a>
-        <a href="#procurement">FAQ</a>
+        <a href="#faq">FAQ</a>
         <a href="#quote">Get a Quote</a>
         <a href="https://www.instagram.com/goldenservicebar/" target="_blank" rel="noopener" aria-label="Instagram" class="gs-footer-social"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
         <a href="https://www.facebook.com/goldenservicebar/" target="_blank" rel="noopener" aria-label="Facebook" class="gs-footer-social"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
