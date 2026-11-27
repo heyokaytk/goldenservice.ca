@@ -112,6 +112,7 @@
     .gs-choice input{appearance:none;-webkit-appearance:none;width:17px;height:17px;min-width:17px;margin:0;border:1.5px solid var(--gs-line-control);background:var(--gs-white);position:relative;cursor:pointer;transition:border-color .15s,background .15s}
     .gs-inline-check,.gs-field .gs-inline-check{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:400;color:var(--gs-body);margin:0;cursor:pointer}
     .gs-addon{margin:-6px 0 22px}
+    .gs-addon-note{color:var(--gs-muted)}
     .gs-promise{font-size:13px;color:var(--gs-body);margin:0}
     .gs-back{background:none;border:none;padding:0;font:500 13px var(--gs-font-body);color:var(--gs-body);cursor:pointer;border-bottom:1px solid var(--gs-line)}
 
@@ -431,6 +432,9 @@
                 <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Veggie" checked> Veggie</label>
                 <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Cheese" checked> Cheese</label>
               </div>
+            </div>
+            <div class="gs-addon">
+              <label class="gs-inline-check"><input type="checkbox" name="also_needs" value="Sound or lighting (OK to share details with Hard Patch)"> <span>I also need sound or lighting <span class="gs-addon-note">(we'll connect you with Hard Patch)</span></span></label>
             </div>
             <input type="hidden" name="addons" id="f-addons" value="">
             <div class="gs-field"><label for="f-msg">Tell us about your wedding <i>(optional)</i></label><textarea class="gs-input" id="f-msg" name="message" rows="3" placeholder="Favourite drinks, signature cocktail ideas, anything we should know."></textarea></div>

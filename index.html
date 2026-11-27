@@ -112,7 +112,8 @@
       { "@type": "Question", "name": "Is there a minimum?", "acceptedAnswer": { "@type": "Answer", "text": "No minimum guest count. We run everything from 20-person office toasts to festival crowds. Bar service has a 2-hour minimum, and cash and drink-ticket bars carry a minimum spend at the bar. Drink tickets count toward it, and it is listed on your quote." } },
       { "@type": "Question", "name": "Can I supply my own alcohol?", "acceptedAnswer": { "@type": "Answer", "text": "No. We supply the alcohol along with the licence, ice, garnishes and staff, so there is nothing for you to buy, chill or haul." } },
       { "@type": "Question", "name": "How do I secure my date?", "acceptedAnswer": { "@type": "Answer", "text": "A non-refundable deposit holds your date. For weddings and private events on an open bar, the balance is due 60 days before. Company events can pay the balance after the event, net 15. If you need to reschedule, reach out as early as possible and we will do our best to accommodate." } },
-      { "@type": "Question", "name": "Do you travel outside Halifax?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We are based in Halifax and work events all over Nova Scotia. Outside Halifax, one flat travel fee covers our team's travel and accommodations, and it is listed on your quote." } }
+      { "@type": "Question", "name": "Do you travel outside Halifax?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We are based in Halifax and work events all over Nova Scotia. Outside Halifax, one flat travel fee covers our team's travel and accommodations, and it is listed on your quote." } },
+      { "@type": "Question", "name": "Can you help with sound or lighting?", "acceptedAnswer": { "@type": "Answer", "text": "We stick to the bar, and for sound and lighting we recommend Hard Patch, a Halifax event production company. Tick the box on your quote and we will connect you." } }
     ]
   }
   </script>
@@ -193,6 +194,7 @@
     .gs-choices-err.on{display:block}
     .gs-inline-check{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:400;color:var(--gs-body);margin:0;cursor:pointer}
     .gs-addon{margin:-6px 0 22px}
+    .gs-addon-note{color:var(--gs-muted)}
     .gs-promise{font-size:14px;color:var(--gs-body);margin:0}
     .gs-back{background:none;border:none;padding:0;font:500 14px var(--gs-font-body);color:var(--gs-body);cursor:pointer;border-bottom:1px solid var(--gs-line)}
 
@@ -417,6 +419,7 @@
           <details><summary>Can I supply my own alcohol?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. We supply the alcohol along with the licence, ice, garnishes and staff, so there's nothing for you to buy, chill or haul.</p></details>
           <details><summary>How do I secure my date?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>A non-refundable deposit holds your date. For weddings and private events on an open bar, the balance is due 60 days before. Company events can pay the balance after the event, net 15. If you need to reschedule, reach out as early as possible and we'll do our best to accommodate.</p></details>
           <details><summary>Do you travel outside Halifax?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. We're based in Halifax and work events all over Nova Scotia. Outside Halifax, one flat travel fee covers our team's travel and accommodations, and it's listed on your quote.</p></details>
+          <details><summary>Can you help with sound or lighting?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>We stick to the bar, and for sound and lighting we recommend <a href="https://www.hardpatch.live/" target="_blank" rel="noopener">Hard Patch</a>, a Halifax event production company. Tick the box on your quote and we'll connect you.</p></details>
         </div>
       </div>
     </section>
@@ -488,6 +491,9 @@
                 <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Veggie" checked> Veggie</label>
                 <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Cheese" checked> Cheese</label>
               </div>
+            </div>
+            <div class="gs-addon">
+              <label class="gs-inline-check"><input type="checkbox" name="also_needs" value="Sound or lighting (OK to share details with Hard Patch)"> <span>I also need sound or lighting <span class="gs-addon-note">(we'll connect you with Hard Patch)</span></span></label>
             </div>
             <input type="hidden" name="addons" id="f-addons" value="">
             <div class="gs-field"><label for="f-msg">Tell us about your event <i>(optional)</i></label><textarea class="gs-input" id="f-msg" name="message" rows="3" placeholder="Timing, theme, dietary needs, anything we should know."></textarea></div>
