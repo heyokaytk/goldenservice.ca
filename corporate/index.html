@@ -369,40 +369,40 @@
                 <div class="gs-field"><label for="f-date">Event date</label><input class="gs-input" id="f-date" name="event_date" type="date" max="2099-12-31" required></div>
                 <div class="gs-field"><label for="f-guests">Approx. guests</label><input class="gs-input" id="f-guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="e.g. 60" required></div>
               </div>
+              <div class="gs-row">
+                <div class="gs-field"><label for="f-venue">Location or venue <i>(optional)</i></label><input class="gs-input" id="f-venue" name="location" type="text" placeholder="Your office, or a venue name"></div>
+                <div class="gs-field"><label for="f-hours">Bar hours <i>(optional)</i></label>
+                  <select class="gs-input" id="f-hours" name="service_hours">
+                    <option value="">Choose…</option>
+                    <option>2 hours</option><option>3 hours</option><option>4 hours</option><option>5 hours</option><option>6 hours</option><option>7+ hours</option><option>Not sure yet</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
-            <details class="gs-more" id="gsMore">
-              <summary>Add details <span>(optional, speeds up your quote)</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-              <div class="gs-more-body">
-              <div class="gs-field">
-                <label for="f-venue">Location or venue</label>
-                <input class="gs-input" id="f-venue" name="location" type="text" placeholder="Your office, or a venue name">
+            <fieldset>
+              <legend class="gs-legend">Bar style <i>(optional)</i></legend>
+              <div class="gs-choices">
+                <label class="gs-choice"><input type="radio" name="service_style" value="Open bar"> Open bar</label>
+                <label class="gs-choice"><input type="radio" name="service_style" value="Drink tickets + cash bar"> Drink tickets + cash bar</label>
+                <label class="gs-choice"><input type="radio" name="service_style" value="Cash bar"> Cash bar</label>
+                <label class="gs-choice"><input type="radio" name="service_style" value="Not sure, recommend one" checked> Not sure, recommend one</label>
               </div>
-              <fieldset>
-                <legend class="gs-legend">Service style</legend>
-                <div class="gs-choices">
-                  <label class="gs-choice"><input type="radio" name="service_style" value="Open bar"> Open bar</label>
-                  <label class="gs-choice"><input type="radio" name="service_style" value="Drink tickets + cash bar"> Drink tickets + cash bar</label>
-                  <label class="gs-choice"><input type="radio" name="service_style" value="Cash bar"> Cash bar</label>
-                  <label class="gs-choice"><input type="radio" name="service_style" value="Not sure, recommend one" checked> Not sure, recommend one</label>
-                </div>
-              </fieldset>
-              <div class="gs-addon">
-                <label class="gs-inline-check"><input type="checkbox" id="gsTrays" aria-controls="gsTrayOpts" aria-expanded="false"> Add light fare trays (fruit, veggie, cheese)</label>
-                <div class="gs-tray-opts" id="gsTrayOpts" role="group" aria-label="Tray types" hidden>
-                  <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Fruit" checked> Fruit</label>
-                  <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Veggie" checked> Veggie</label>
-                  <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Cheese" checked> Cheese</label>
-                </div>
+            </fieldset>
+            <div class="gs-addon">
+              <label class="gs-inline-check"><input type="checkbox" id="gsTrays" aria-controls="gsTrayOpts" aria-expanded="false"> Add light fare trays (fruit, veggie, cheese)</label>
+              <div class="gs-tray-opts" id="gsTrayOpts" role="group" aria-label="Tray types" hidden>
+                <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Fruit" checked> Fruit</label>
+                <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Veggie" checked> Veggie</label>
+                <label class="gs-inline-check"><input type="checkbox" class="gs-tray" value="Cheese" checked> Cheese</label>
               </div>
-              <input type="hidden" name="addons" id="f-addons" value="">
-              <div class="gs-field"><label for="f-msg">Tell us about your event <i>(optional)</i></label><textarea class="gs-input" id="f-msg" name="message" rows="3" placeholder="Venue, timing, theme, dietary needs, anything we should know."></textarea></div>
-              <input type="hidden" name="package_interest" id="f-package" value="">
-              <input type="hidden" name="event_type" value="Corporate Event">
-              <input type="hidden" name="source" value="goldenservice.ca/corporate">
-              <input type="hidden" name="subject" value="Corporate Quote Request - Golden Service">
-              </div>
-            </details>
+            </div>
+            <input type="hidden" name="addons" id="f-addons" value="">
+            <div class="gs-field"><label for="f-msg">Tell us about your event <i>(optional)</i></label><textarea class="gs-input" id="f-msg" name="message" rows="3" placeholder="Timing, theme, dietary needs, anything we should know."></textarea></div>
+            <input type="hidden" name="package_interest" id="f-package" value="">
+            <input type="hidden" name="event_type" value="Corporate Event">
+            <input type="hidden" name="source" value="goldenservice.ca/corporate">
+            <input type="hidden" name="subject" value="Corporate Quote Request - Golden Service">
             <button type="submit" class="gs-submit" id="gsSubmit">Get my quote</button>
             <div class="gs-form-foot" id="gsFormFoot"><p class="gs-promise">Most quotes go out within a few hours.</p></div>
 
@@ -481,7 +481,6 @@
     var form = document.getElementById('gsForm');
     if(!form) return null;
     var basics = document.getElementById('gsStep1');
-    var more = document.getElementById('gsMore');
     var foot = document.getElementById('gsFormFoot');
     var submit = document.getElementById('gsSubmit');
     var ok = document.getElementById('gsSuccess');
@@ -514,7 +513,7 @@
 
     // Native validity bubbles don't show on radio groups reliably, so event type gets its own message.
     function valid(){
-      var fields = basics.querySelectorAll('input[required]:not([type=radio])');
+      var fields = form.querySelectorAll('[required]:not([type=radio])');
       for(var i = 0; i < fields.length; i++){
         if(!fields[i].checkValidity()){ fields[i].reportValidity(); return false; }
       }
@@ -537,7 +536,7 @@
         var v = a.getAttribute('data-package');
         if(pkg) pkg.value = v;
         var r = form.querySelector('input[name="service_style"][value="' + v + '"]');
-        if(r){ r.checked = true; more.open = true; }
+        if(r) r.checked = true;
       });
     });
     document.querySelectorAll('a[href="#quote"]').forEach(function(a){
@@ -578,7 +577,6 @@
           if(!r.ok) throw new Error('bad status');
           // Keep the form in place; confirm underneath it.
           form.reset();
-          more.open = false;
           trayOpts.hidden = true;
           trays.setAttribute('aria-expanded', 'false');
           if(venueNote) venueNote.hidden = true;
@@ -599,7 +597,6 @@
       setVenue: function(name){
         if(!venue) return;
         venue.value = name;
-        more.open = true;
         if(venueNote){
           document.getElementById('gsVenueNoteName').textContent = name;
           venueNote.hidden = false;

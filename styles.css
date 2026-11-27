@@ -189,7 +189,7 @@ html.gs-menu-locked, html.gs-menu-locked body{overflow:hidden;height:100%}
 .gs-field{margin-bottom:18px}
 .gs-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .gs-field label,.gs-legend{display:block;font-size:14px;font-weight:600;color:var(--gs-ink);margin-bottom:7px;padding:0}
-.gs-field label i{font-style:normal;font-weight:400;color:var(--gs-muted)}
+.gs-field label i,.gs-legend i{font-style:normal;font-weight:400;color:var(--gs-muted)}
 textarea.gs-input{height:auto;min-height:110px;resize:vertical}
 .gs-input::placeholder{color:var(--gs-placeholder)}
 .gs-input:focus{border-color:var(--gs-gold);box-shadow:0 0 0 3px rgba(201,168,76,.2)}
@@ -214,14 +214,6 @@ fieldset{border:none;margin:0 0 20px;padding:0}
 .gs-status.ok{background:var(--gs-ok-bg);border:1px solid var(--gs-ok-line);color:var(--gs-ok-text)}
 .gs-status.err{background:var(--gs-error-bg);border:1px solid var(--gs-error-line);color:var(--gs-error-text)}
 .gs-status.err a{color:inherit}
-.gs-more{border-top:1px solid var(--gs-line);border-bottom:1px solid var(--gs-line);margin:4px 0 20px}
-.gs-more summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:15px 0;font-size:16px;font-weight:600;color:var(--gs-ink)}
-.gs-more summary::-webkit-details-marker{display:none}
-.gs-more summary span{font-weight:400;color:var(--gs-muted)}
-.gs-more summary svg{color:var(--gs-gold-deep);flex-shrink:0;margin-left:auto;transition:transform .3s var(--gs-ease)}
-.gs-more[open] summary svg{transform:rotate(45deg)}
-.gs-more-body{padding:4px 0 6px}
-.gs-more[hidden],#gsStep1[hidden],.gs-form-foot[hidden],.gs-submit[hidden]{display:none}
 
 /* MOBILE QUOTE BAR */
 .gs-mbar{display:none}
