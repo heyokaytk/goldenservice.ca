@@ -38,7 +38,7 @@ One vendor handles the whole bar: licence, staff, stock, setup, teardown and one
 - Site copy uses periods or rewording instead of em dashes.
 
 ## Evidence on Hand
-- 40+ corporate and institutional clients (backed by an internal spreadsheet). 100+ events a year. In business since 2016.
+- 40+ corporate and institutional clients (backed by an internal spreadsheet). 100+ events a year. Over a decade in business: say "over a decade" or "10+ years", never a founding year (outside listings disagree on it).
 - 52 five-star Google reviews: https://g.page/r/CfQs7OFa7ljxEB0/review
 - Client logos in `client-logos/` are cleared for display. Deloitte, EY, TELUS, RBC Centre, NS Power, The Junos and others may be named in text but NOT shown as logos (client privacy policies).
 - No corporate testimonials exist yet. Do not invent any.
